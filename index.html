@@ -1013,96 +1013,660 @@
 </style>  
 </head>  
 <!-- د سیستم معلومات -->
-<div id="systemInfoModal" style="
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-">
+<!-- =========================================================
+     📘 د سیستم بشپړ لارښود
+========================================================= -->
+
+<div id="systemInfoModal"
+     style="
+       display:none;
+       position:fixed;
+       inset:0;
+       background:rgba(0,0,0,.60);
+       z-index:99999;
+       align-items:center;
+       justify-content:center;
+       padding:15px;
+     ">
 
   <div style="
-    background:white;
-    width:100%;
-    max-width:600px;
-    border-radius:18px;
-    padding:25px;
-    direction:rtl;
-    text-align:right;
-    box-shadow:0 15px 50px rgba(0,0,0,.3);
-  ">
-
-    <div style="
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid #ddd;
-      padding-bottom:12px;
-      margin-bottom:18px;
+      background:#fff;
+      width:100%;
+      max-width:850px;
+      max-height:92vh;
+      overflow-y:auto;
+      border-radius:20px;
+      direction:rtl;
+      text-align:right;
+      box-shadow:0 20px 70px rgba(0,0,0,.35);
     ">
-      <h2 style="margin:0;">📋 د سیستم معلومات</h2>
+
+    <!-- سرلیک -->
+    <div style="
+        position:sticky;
+        top:0;
+        z-index:2;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:18px 22px;
+        border-bottom:1px solid #e5e7eb;
+      ">
+
+      <div>
+        <h2 style="margin:0 0 5px;">
+          📘 د دوکاندارۍ سیستم لارښود
+        </h2>
+
+        <small style="color:#64748b;">
+          د سیستم د ټولو مهمو برخو د استعمال معلومات
+        </small>
+      </div>
 
       <button type="button"
-        onclick="closeSystemInfo()"
-        style="
-          border:0;
-          background:#eee;
-          border-radius:50%;
-          width:35px;
-          height:35px;
-          font-size:22px;
-          cursor:pointer;
-        ">
+              onclick="closeSystemInfo()"
+              style="
+                border:0;
+                background:#f1f5f9;
+                color:#334155;
+                border-radius:50%;
+                width:40px;
+                height:40px;
+                font-size:25px;
+                cursor:pointer;
+              ">
         ×
       </button>
+
     </div>
 
-    <div style="line-height:2.1;">
 
-      <h3>💻 د سیستم اړوند معلومات</h3>
+    <!-- اصلي معلومات -->
+    <div style="padding:22px;line-height:2;">
 
-      <p>
-        <strong>د سیستم نوم:</strong>
-        د دوکاندارۍ سیستم
-      </p>
+      <!-- 1 -->
+      <div style="
+          background:#f0fdfa;
+          border:1px solid #99f6e4;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
 
-      <p>
-        <strong>د سیستم ډول:</strong>
-        د دوکان او محاسبې مدیریت سیستم
-      </p>
+        <h3 style="margin-top:0;">
+          🏠 ۱ ـ ډشبورډ
+        </h3>
 
-      <p>
-        <strong>اصلي برخې:</strong>
-        ډشبورډ، مشتریان، لګښتونه، صندوق، بیلونه،
-        موجودي، راپورونه او ریکارډونه
-      </p>
+        <p>
+          ډشبورډ د دوکان عمومي معلومات په لنډ ډول ښيي.
+        </p>
 
-      <p>
-        <strong>ژبه:</strong>
-        پښتو (RTL)
-      </p>
+        <ul>
+          <li>د خرڅلاو معلومات</li>
+          <li>د داخل جنس ارزښت</li>
+          <li>د موجودي معلومات</li>
+          <li>د مشتریانو پورونه</li>
+          <li>ګټه</li>
+          <li>تاوان</li>
+          <li>د ټیټې موجودۍ خبرتیا</li>
+        </ul>
 
-      <hr>
+        <p>
+          کله چې نوی بیل ثبت شي یا جنس داخل/خارج شي،
+          ډشبورډ خپل معلومات تازه کوي.
+        </p>
 
-      <h3>👨‍💻 د جوړونکي معلومات</h3>
+      </div>
 
-      <p>
-        <strong>جوړوونکی:</strong>
-        عبدالله مختار
-      </p>
 
-      <p>
-        <strong>د اړیکې شمېره:</strong>
-        0702624188
-      </p>
+      <!-- 2 -->
+      <div style="
+          background:#f8fafc;
+          border:1px solid #cbd5e1;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          ➕ ۲ ـ نوی جنس / ثبت څنګه وکړو؟
+        </h3>
+
+        <ol>
+          <li>له کیڼ اړخ څخه <b>«نوی جنس / ثبت»</b> ته لاړ شئ.</li>
+          <li>د جنس نوم ولیکئ.</li>
+          <li>مقدار ولیکئ.</li>
+          <li>د اخیستلو/داخل قیمت ولیکئ.</li>
+          <li>که اړتیا وي کودام وټاکئ.</li>
+          <li>نور اړین معلومات بشپړ کړئ.</li>
+          <li>د ثبت تڼۍ کلیک کړئ.</li>
+        </ol>
+
+        <p>
+          له ثبت وروسته جنس د موجودي او ثبتونو په برخو کې ښکاره کېږي.
+        </p>
+
+      </div>
+
+
+      <!-- 3 -->
+      <div style="
+          background:#eff6ff;
+          border:1px solid #bfdbfe;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          📋 ۳ ـ ثبتونه
+        </h3>
+
+        <p>
+          په دې برخه کې د ثبت شوو جنسونو او معاملاتو معلومات لیدل کېږي.
+        </p>
+
+        <ul>
+          <li>د جنس نوم</li>
+          <li>مقدار</li>
+          <li>نرخ</li>
+          <li>نېټه</li>
+          <li>داخل او خارج معلومات</li>
+          <li>یادښت</li>
+        </ul>
+
+        <p>
+          که د سیستم په نسخه کې د سمون یا حذف اختیار موجود وي،
+          له همدې برخې څخه یې کارولی شئ.
+        </p>
+
+      </div>
+
+
+      <!-- 4 -->
+      <div style="
+          background:#fefce8;
+          border:1px solid #fde68a;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          🏬 ۴ ـ کودام
+        </h3>
+
+        <p>
+          کودام د جنسونو د ذخیره کولو او تنظیم لپاره کارول کېږي.
+        </p>
+
+        <ol>
+          <li>د کودام برخه خلاصه کړئ.</li>
+          <li>خپل کودام/ذخیره تنظیم کړئ.</li>
+          <li>جنسونه اړوند کودام ته داخل کړئ.</li>
+          <li>وروسته د موجودي له برخې څخه یې وګورئ.</li>
+        </ol>
+
+      </div>
+
+
+      <!-- 5 -->
+      <div style="
+          background:#f0fdf4;
+          border:1px solid #bbf7d0;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          📦 ۵ ـ موجودي څنګه وګورو؟
+        </h3>
+
+        <p>
+          د <b>«موجودي»</b> له برخې څخه د دوکان د ټولو جنسونو موجود مقدار لیدل کېږي.
+        </p>
+
+        <ul>
+          <li>د جنس نوم</li>
+          <li>اوسنی مقدار</li>
+          <li>کودام</li>
+          <li>واحد</li>
+          <li>د موجودي ارزښت</li>
+        </ul>
+
+      </div>
+
+
+      <!-- 6 -->
+      <div style="
+          background:#faf5ff;
+          border:1px solid #e9d5ff;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          🧾 ۶ ـ نوی بیل څنګه جوړ کړو؟
+        </h3>
+
+        <ol>
+          <li>له مینو څخه <b>«نوی بیل / فاکتور»</b> خلاص کړئ.</li>
+          <li>د مشتری نوم ولیکئ.</li>
+          <li>د مشتری د موبایل شمېره ولیکئ که اړتیا وي.</li>
+          <li>جنس ولیکئ او جنس انتخاب کړئ.</li>
+          <li>مقدار ولیکئ.</li>
+          <li>د خرڅلاو نرخ ولیکئ.</li>
+          <li>سیستم ټول قیمت محاسبه کوي.</li>
+          <li>د ورکړې اندازه ثبت کړئ.</li>
+          <li>که پور پاتې وي، سیستم یې د پور په برخه کې ثبتوي.</li>
+          <li>په پای کې د بیل د ثبت تڼۍ کلیک کړئ.</li>
+        </ol>
+
+      </div>
+
+
+      <!-- 7 -->
+      <div style="
+          background:#fff7ed;
+          border:1px solid #fed7aa;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          🖨️ ۷ ـ بیل څنګه چاپ کړو؟
+        </h3>
+
+        <ol>
+          <li>نوی بیل جوړ او ثبت کړئ.</li>
+          <li>د بیلونو/فاکتورونو برخې ته لاړ شئ.</li>
+          <li>هغه بیل پیدا کړئ چې چاپول یې غواړئ.</li>
+          <li>د <b>«چاپ»</b> تڼۍ کلیک کړئ.</li>
+          <li>د چاپ کړکۍ کې خپل Printer انتخاب کړئ.</li>
+          <li>Print کلیک کړئ.</li>
+        </ol>
+
+        <p>
+          💡 که Printer نه وي، د چاپ په کړکۍ کې
+          <b>Save as PDF</b> هم انتخابولی شئ.
+        </p>
+
+      </div>
+
+
+      <!-- 8 -->
+      <div style="
+          background:#fdf2f8;
+          border:1px solid #fbcfe8;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          💳 ۸ ـ بلونه او پورونه
+        </h3>
+
+        <p>
+          د مشتریانو پاتې پورونه او بیلونه په دې برخه کې لیدل کېږي.
+        </p>
+
+        <ul>
+          <li>د مشتری نوم</li>
+          <li>د بیل معلومات</li>
+          <li>ټول قیمت</li>
+          <li>ورکړل شوې پیسې</li>
+          <li>پاتې پور</li>
+          <li>د پور د ورکړې معلومات</li>
+        </ul>
+
+      </div>
+
+
+      <!-- 9 -->
+      <div style="
+          background:#ecfeff;
+          border:1px solid #a5f3fc;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          📊 ۹ ـ راپور څنګه جوړ کړو؟
+        </h3>
+
+        <ol>
+          <li>له مینو څخه <b>«راپورونه»</b> خلاص کړئ.</li>
+          <li>د راپور ډول انتخاب کړئ.</li>
+          <li><b>ورځنی راپور</b> د یوې ورځې لپاره دی.</li>
+          <li><b>میاشتنی راپور</b> د یوې میاشتې لپاره دی.</li>
+          <li><b>ربع وار راپور</b> د درې میاشتو لپاره دی.</li>
+          <li>نېټه یا اړوند ربع انتخاب کړئ.</li>
+          <li>سیستم به د ټاکلې مودې خرڅلاو، لګښت، ګټه، تاوان او پورونه محاسبه کړي.</li>
+        </ol>
+
+        <p>
+          🖨️ د راپور د چاپ لپاره د <b>«چاپ راپور»</b> تڼۍ وکاروئ.
+        </p>
+
+      </div>
+
+
+      <!-- 10 -->
+      <div style="
+          background:#fff1f2;
+          border:1px solid #fecdd3;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          ⚠️ ۱۰ ـ د موجودۍ خبرتیا څنګه پټه کړو؟
+        </h3>
+
+        <p>
+          کله چې د کوم جنس موجودي تر ۵ دانو کمه یا مساوي شي،
+          سیستم په ډشبورډ کې خبرتیا ښکاره کوي.
+        </p>
+
+        <ol>
+          <li>ډشبورډ ته لاړ شئ.</li>
+          <li>د ټیټې موجودۍ خبرتیا پیدا کړئ.</li>
+          <li>د <b>«پټول ⏳»</b> تڼۍ کلیک کړئ.</li>
+          <li>خبرتیا به د ۲ ورځو لپاره پټه شي.</li>
+          <li>له ټاکلي وخت وروسته خبرتیا بېرته ښکاره کېدای شي.</li>
+        </ol>
+
+      </div>
+
+
+      <!-- 11 -->
+      <div style="
+          background:#f5f3ff;
+          border:1px solid #ddd6fe;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          🔑 ۱۱ ـ پاسورډ څنګه بدل کړو؟
+        </h3>
+
+        <ol>
+          <li>د پاسورډ بدلولو تڼۍ کلیک کړئ.</li>
+          <li>اوسنی پاسورډ داخل کړئ.</li>
+          <li>نوی پاسورډ ولیکئ.</li>
+          <li>نوی پاسورډ بیا تایید کړئ.</li>
+          <li>د خوندي کولو تڼۍ کلیک کړئ.</li>
+        </ol>
+
+        <p>
+          ⚠️ خپل پاسورډ له نورو کسانو سره مه شریکوئ.
+        </p>
+
+      </div>
+
+
+      <!-- 12 -->
+      <div style="
+          background:#f0fdfa;
+          border:1px solid #99f6e4;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          💾 ۱۲ ـ بیکاپ څنګه واخلو؟
+        </h3>
+
+        <ol>
+          <li>د <b>«بیکاپ»</b> تڼۍ کلیک کړئ.</li>
+          <li>سیستم به د معلوماتو Backup فایل جوړ کړي.</li>
+          <li>فایل په خپل کمپیوټر کې خوندي کړئ.</li>
+        </ol>
+
+        <p>
+          💡 سپارښتنه: د مهمو معلوماتو بیکاپ په منظم ډول واخلئ.
+        </p>
+
+      </div>
+
+
+      <!-- 13 -->
+      <div style="
+          background:#eff6ff;
+          border:1px solid #bfdbfe;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          ♻️ ۱۳ ـ بیکاپ بېرته څنګه راوړو؟
+        </h3>
+
+        <ol>
+          <li>د <b>«بېرته راوستل»</b> تڼۍ کلیک کړئ.</li>
+          <li>خپل Backup JSON فایل انتخاب کړئ.</li>
+          <li>سیستم به معلومات بېرته راولي.</li>
+          <li>وروسته ډشبورډ وګورئ چې معلومات سم راغلي وي.</li>
+        </ol>
+
+        <p>
+          ⚠️ د نامعلوم یا غلط فایل Import کولو څخه ډډه وکړئ.
+        </p>
+
+      </div>
+
+
+      <!-- 14 -->
+      <div style="
+          background:#f8fafc;
+          border:1px solid #cbd5e1;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          📖 ۱۴ ـ د کتاب پاڼه
+        </h3>
+
+        <p>
+          د کتاب پاڼه د جنسونو د داخل او خارج حرکتونو د کتلو لپاره کارول کېږي.
+        </p>
+
+        <ul>
+          <li>نېټه</li>
+          <li>جنس</li>
+          <li>ډول</li>
+          <li>مقدار</li>
+          <li>نرخ</li>
+          <li>داخل</li>
+          <li>خارج</li>
+          <li>بیل/حواله</li>
+          <li>یادښت</li>
+        </ul>
+
+      </div>
+
+
+      <!-- 15 -->
+      <div style="
+          background:#ecfdf5;
+          border:1px solid #a7f3d0;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          💰 ۱۵ ـ ګټه او تاوان
+        </h3>
+
+        <p>
+          سیستم د خرڅلاو او د جنس د داخل/اخیستلو لګښت پر اساس مالي نتیجه محاسبه کوي.
+        </p>
+
+        <div style="
+            background:#fff;
+            border-radius:10px;
+            padding:12px;
+            border:1px dashed #94a3b8;
+            text-align:center;
+            margin-top:10px;
+          ">
+          <b>ګټه/تاوان = خرڅلاو − د جنس لګښت</b>
+        </div>
+
+        <p>
+          که نتیجه مثبته وي، ګټه ده؛
+          که نتیجه منفي وي، تاوان دی.
+        </p>
+
+        <p>
+          📊 په راپورونو کې ورځنی، میاشتنی او ربع وار مالي نتیجه
+          د ټاکلې مودې له مخې ښودل کېږي.
+        </p>
+
+      </div>
+
+
+      <!-- 16 -->
+      <div style="
+          background:#fef2f2;
+          border:1px solid #fecaca;
+          border-radius:15px;
+          padding:18px;
+          margin-bottom:15px;
+        ">
+
+        <h3 style="margin-top:0;">
+          🚪 ۱۶ ـ له سیستم څخه وتل
+        </h3>
+
+        <p>
+          کله چې کار مو خلاص شي، د <b>«وتل 🚪»</b> تڼۍ کلیک کړئ
+          ترڅو له سیستم څخه ووځئ.
+        </p>
+
+      </div>
+
+
+      <!-- 17 -->
+      <div style="
+          background:#f8fafc;
+          border:1px solid #cbd5e1;
+          border-radius:15px;
+          padding:18px;
+        ">
+
+        <h3 style="margin-top:0;">
+          👨‍💻 ۱۷ ـ د سیستم جوړونکي معلومات
+        </h3>
+
+        <p>
+          <b>د سیستم نوم:</b>
+          د دوکاندارۍ سیستم
+        </p>
+
+        <p>
+          <b>جوړوونکی:</b>
+          عبدالله مختار
+        </p>
+
+        <p>
+          <b>د اړیکې شمېره:</b>
+          0702624188
+        </p>
+
+        <p>
+          <b>ژبه:</b>
+          پښتو (RTL)
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- د کړکۍ پای -->
+    <div style="
+        position:sticky;
+        bottom:0;
+        background:#fff;
+        border-top:1px solid #e5e7eb;
+        padding:14px 22px;
+        text-align:left;
+      ">
+
+      <button type="button"
+              onclick="closeSystemInfo()"
+              style="
+                border:0;
+                background:#0f766e;
+                color:white;
+                padding:10px 22px;
+                border-radius:10px;
+                cursor:pointer;
+                font-size:15px;
+              ">
+        ✓ پوه شوم
+      </button>
 
     </div>
 
   </div>
 </div>
+
+
+<script>
+/* =========================================================
+   د سیستم معلوماتو کړکۍ
+========================================================= */
+
+function openSystemInfo() {
+  const modal = document.getElementById("systemInfoModal");
+
+  if (modal) {
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeSystemInfo() {
+  const modal = document.getElementById("systemInfoModal");
+
+  if (modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+}
+
+/* د ESC په وهلو سره کړکۍ بندول */
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeSystemInfo();
+  }
+});
+
+/* که د کړکۍ له منځه بهر کلیک وشي، بندېږي */
+document.addEventListener("click", function(e) {
+  const modal = document.getElementById("systemInfoModal");
+
+  if (modal && e.target === modal) {
+    closeSystemInfo();
+  }
+});
+</script>
 
 <script>
 function openSystemInfo() {
