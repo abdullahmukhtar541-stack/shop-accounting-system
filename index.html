@@ -3163,26 +3163,75 @@ function getInvoiceItems(){
   })).filter(x=>x.item&&x.qty>0);  
 }  
   
-function updateInvoiceTotals(){  
-  let sale=0,cost=0;  
-  document.querySelectorAll("#invoiceItemsBody tr").forEach(tr=>{  
-    const qty=num(tr.querySelector(".inv-qty")?.value), c=num(tr.querySelector(".inv-cost")?.value), s=num(tr.querySelector(".inv-sale")?.value);  
-    const lineSale=qty*s,lineCost=qty*c;  
-    sale+=lineSale;cost+=lineCost;  
-    if(tr.querySelector(".inv-line-total"))tr.querySelector(".inv-line-total").textContent=fmt(lineSale);  
-    if(tr.querySelector(".inv-line-profit")){  
-      const p=lineSale-lineCost;tr.querySelector(".inv-line-profit").innerHTML=p>=0?`<span class="profit">${fmt(p)}</span>`:`<span class="loss">${fmt(p)}</span>`;  
-    }  
-  });  
-  const paid=Math.min(Math.max(num(document.getElementById("invoicePaid").value),0),sale);  
-  document.getElementById("invoicePaid").value=paid;  
-  const due=sale-paid,profit=sale-cost;  
-  document.getElementById("invoiceSaleTotal").textContent=fmt(sale);  
-  document.getElementById("invoiceCostTotal").textContent=fmt(cost);  
-  document.getElementById("invoiceProfitTotal").innerHTML=profit>=0?`<span class="profit">${fmt(profit)}</span>`:`<span class="loss">${fmt(profit)}</span>`;  
-  document.getElementById("invoiceDue").textContent=fmt(due);  
-}  
-  
+function updateInvoiceTotals(){
+
+  let sale = 0;
+  let cost = 0;
+
+  document.querySelectorAll("#invoiceItemsBody tr").forEach(tr => {
+
+    const qty  = num(tr.querySelector(".inv-qty")?.value);
+    const c    = num(tr.querySelector(".inv-cost")?.value);
+    const s    = num(tr.querySelector(".inv-sale")?.value);
+
+    const lineSale = qty * s;
+    const lineCost = qty * c;
+
+    sale += lineSale;
+    cost += lineCost;
+
+    if(tr.querySelector(".inv-line-total")){
+      tr.querySelector(".inv-line-total").textContent = fmt(lineSale);
+    }
+
+    if(tr.querySelector(".inv-line-profit")){
+
+      const p = lineSale - lineCost;
+
+      tr.querySelector(".inv-line-profit").innerHTML =
+        p >= 0
+        ? `<span class="profit">${fmt(p)}</span>`
+        : `<span class="loss">${fmt(p)}</span>`;
+    }
+
+  });
+
+
+  /*
+   * مهم:
+   * د تادیې عدد نور د oninput پر وخت 0 ته نه اړول کېږي.
+   * کاروونکی کولای شي په موبایل او کمپیوټر کې عدد ولیکي.
+   */
+
+  const paidInput = document.getElementById("invoicePaid");
+
+  let paid = num(paidInput?.value);
+
+  if(paid < 0){
+    paid = 0;
+  }
+
+  const due = Math.max(sale - paid, 0);
+  const profit = sale - cost;
+
+
+  document.getElementById("invoiceSaleTotal").textContent = fmt(sale);
+
+  if(document.getElementById("invoiceCostTotal")){
+    document.getElementById("invoiceCostTotal").textContent = fmt(cost);
+  }
+
+  if(document.getElementById("invoiceProfitTotal")){
+
+    document.getElementById("invoiceProfitTotal").innerHTML =
+      profit >= 0
+      ? `<span class="profit">${fmt(profit)}</span>`
+      : `<span class="loss">${fmt(profit)}</span>`;
+  }
+
+  document.getElementById("invoiceDue").textContent = fmt(due);
+}
+
 function saveInvoice(andPrint=false){  
   const customer=document.getElementById("invoiceCustomerName").value.trim()||"عمومي مشتری";  
   const phone=document.getElementById("invoiceCustomerPhone").value.trim();  
