@@ -1,6 +1,8 @@
 <!DOCTYPE html>  
 <html lang="ps" dir="rtl">  
-  <style>
+  
+<head>
+<style>
 /* ===== د جوړونکي عکسونو ځانګړی ډیزاین ===== */
 
 .creator-gallery {
@@ -92,10 +94,6 @@
     }
 }
 </style>
-<head>  
-  <link rel="manifest" href="./manifest.json">
-
-<meta name="theme-color" content="#0f766e">
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <meta name="theme-color" content="#0f766e">  
@@ -1092,8 +1090,6 @@
       .print-sign { width: 180px; border-top: 1px solid #94a3b8; margin-top: 40px; padding-top: 5px; }  
     }  
   
-<style>
-
 /* =====================================================
    📱 د دوکاندارۍ سیستم بشپړ Responsive Design
    کمپیوټر + ټابلیټ + موبایل
@@ -1254,15 +1250,7 @@ img {
 ========================= */
 
 @media (max-width: 600px) {
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js")
-      .then(() => console.log("App فعال شو"))
-      .catch(error => console.log("PWA Error:", error));
-  });
-}
-</script>
+
     body {
         font-size: 14px;
     }
@@ -1569,7 +1557,6 @@ if ("serviceWorker" in navigator) {
 
 }
 
-</style>
 </style>
   
 <!-- د سیستم معلومات -->
@@ -2237,1497 +2224,2077 @@ if ("serviceWorker" in navigator) {
 
   <!-- WhatsApp -->
   <a
-    href="https://wa.me/93702624188"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn"
-    style="
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      text-decoration:none;
-      background:#25D366;
-      color:white;
-      padding:11px 25px;
-      border-radius:10px;
-      font-size:16px;
-      font-weight:bold;
-    "
-  >
-    💬 په واټساپ اړیکه ونیسئ
-  </a>
+    href="https://wa.me/93702624188" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="btn" 
+    style=" 
+      display:inline-flex; 
+      align-items:center; 
+      justify-content:center; 
+      gap:8px; 
+      text-decoration:none; 
+      background:#25D366; 
+      color:white; 
+      padding:11px 25px; 
+      border-radius:10px; 
+      font-size:16px; 
+      font-weight:bold; 
+    " 
+  > 
+    💬 په واټساپ اړیکه ونیسئ 
+  </a> 
+ 
+</div> 
+ 
+    <!-- د کړکۍ پای --> 
+    <div style=" 
+        position:sticky; 
+        bottom:0; 
+        background:#fff; 
+        border-top:1px solid #e5e7eb; 
+        padding:14px 22px; 
+        text-align:left; 
+      "> 
+ 
+      <button type="button" 
+              onclick="closeSystemInfo()" 
+              style=" 
+                border:0; 
+                background:#0f766e; 
+                color:white; 
+                padding:10px 22px; 
+                border-radius:10px; 
+                cursor:pointer; 
+                font-size:15px; 
+              "> 
+        ✓ پوه شوم 
+      </button> 
+ 
+    </div> 
+ 
+  </div> 
+</div> 
+ 
+ 
+<script> 
+/* ========================================================= 
+   د سیستم معلوماتو کړکۍ 
+========================================================= */ 
+ 
+function openSystemInfo() { 
+  const modal = document.getElementById("systemInfoModal"); 
+ 
+  if (modal) { 
+    modal.style.display = "flex"; 
+    document.body.style.overflow = "hidden"; 
+  } 
+} 
+ 
+function closeSystemInfo() { 
+  const modal = document.getElementById("systemInfoModal"); 
+ 
+  if (modal) { 
+    modal.style.display = "none"; 
+    document.body.style.overflow = ""; 
+  } 
+} 
+ 
+/* د ESC په وهلو سره کړکۍ بندول */ 
+document.addEventListener("keydown", function(e) { 
+  if (e.key === "Escape") { 
+    closeSystemInfo(); 
+  } 
+}); 
+ 
+/* که د کړکۍ له منځه بهر کلیک وشي، بندېږي */ 
+document.addEventListener("click", function(e) { 
+  const modal = document.getElementById("systemInfoModal"); 
+ 
+  if (modal && e.target === modal) { 
+    closeSystemInfo(); 
+  } 
+}); 
+</script> 
+ 
+<script> 
+function openSystemInfo() { 
+  document.getElementById("systemInfoModal").style.display = "flex"; 
+} 
+ 
+function closeSystemInfo() { 
+  document.getElementById("systemInfoModal").style.display = "none"; 
+} 
+</script>   
+  <script> 
+ 
+</script> 
 
-</div>
-
-    <!-- د کړکۍ پای -->
-    <div style="
-        position:sticky;
-        bottom:0;
-        background:#fff;
-        border-top:1px solid #e5e7eb;
-        padding:14px 22px;
-        text-align:left;
-      ">
-
-      <button type="button"
-              onclick="closeSystemInfo()"
-              style="
-                border:0;
-                background:#0f766e;
-                color:white;
-                padding:10px 22px;
-                border-radius:10px;
-                cursor:pointer;
-                font-size:15px;
-              ">
-        ✓ پوه شوم
-      </button>
-
-    </div>
-
-  </div>
-</div>
-
-
-<script>
+<style>
 /* =========================================================
-   د سیستم معلوماتو کړکۍ
-========================================================= */
+   LOGIN SYSTEM - بشپړ CSS
+   ========================================================= */
 
-function openSystemInfo() {
-  const modal = document.getElementById("systemInfoModal");
-
-  if (modal) {
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
+/* د Login تر مخه ټول اصلي سیستم پټ ساتل */
+html body .app {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
-function closeSystemInfo() {
-  const modal = document.getElementById("systemInfoModal");
-
-  if (modal) {
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  }
+/* یوازې د Login وروسته اصلي سیستم ښکاره شي */
+html body .app.logged-in {
+    display: flex !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
-/* د ESC په وهلو سره کړکۍ بندول */
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") {
-    closeSystemInfo();
-  }
-});
 
-/* که د کړکۍ له منځه بهر کلیک وشي، بندېږي */
-document.addEventListener("click", function(e) {
-  const modal = document.getElementById("systemInfoModal");
+/* =========================================================
+   LOGIN BACKGROUND
+   ========================================================= */
 
-  if (modal && e.target === modal) {
-    closeSystemInfo();
-  }
-});
-</script>
+html body .login-screen {
+    position: fixed !important;
 
-<script>
-function openSystemInfo() {
-  document.getElementById("systemInfoModal").style.display = "flex";
-}
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
 
-function closeSystemInfo() {
-  document.getElementById("systemInfoModal").style.display = "none";
-}
-</script>  
-  <script>
+    width: 100vw !important;
+    height: 100vh !important;
 
-</script>
-<body>  
-  
-<!-- Login Screen -->  
-<div class="login-screen" id="loginScreen">  
-  <div class="login-box">  
-    <div class="brand-icon" style="margin-bottom:18px">ج</div>  
-    <h2>د سیستم امنیتي لاګین</h2>  
-    <p>مهرباني وکړئ خپل حساب ته ننوځئ</p>  
-    <form id="loginForm">  
-      <div class="field" style="margin-bottom:14px;text-align:right">  
-        <label>یوزرنیم (Username)</label>  
-        <input id="loginUser" required placeholder="admin">  
-      </div>  
-      <div class="field" style="margin-bottom:24px;text-align:right">  
-        <label>پاسورډ (Password)</label>  
-        <input id="loginPass" type="password" required placeholder="••••••••">  
-      </div>  
-      <button class="btn btn-primary" type="submit" style="width:100%;padding:14px">ننوتل 🔐</button>  
-    </form>  
-  </div>  
-</div>  
-  
-<div class="app">  
-  <aside class="sidebar" id="sidebar">  
-    <div class="brand">  
-      <div class="brand-icon">ج</div>  
-      <h1>د دوکانداری سیستم   </h1>  
-      <p>ذخیره، خرڅلاو  ډیښبورډ</p> 
-      <p>  جوړه وونکی عبدالله مختار  </p>   
-    </div>  
-    <nav class="nav"> 
-       
-      <button class="active" data-section="dashboard"><span class="icon">🏠</span> ډشبورډ</button>  
-      <button data-section="new-record"><span class="icon">➕</span> نوی جنس / ثبت</button>  
-      <button data-section="records"><span class="icon">📋</span> ثبتونه</button>  
-      <button data-section="warehouse"><span class="icon">🏬</span> کودام</button>  
-      <button data-section="stock"><span class="icon">📦</span> موجودي</button>  
-      <button data-section="book"><span class="icon">📖</span> د کتاب پاڼه</button>  
-      <button data-section="invoice"><span class="icon">🧾</span> نوی بیل / فاکتور</button>  
-      <button data-section="bills"><span class="icon">💳</span> بلونه / پورونه</button>
-      <button data-section="reports"><span class="icon">📊</span> راپورونه</button>
-      <button type="button" onclick="openSystemInfo()">
-  <span class="icon">ℹ️</span> د سیستم معلومات
-</button>
-    </nav>  
-  </aside>  
-  
-  <main class="main">  
-    <header class="topbar">  
-      <div style="display:flex;align-items:center;gap:12px">  
-        <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>  
-        <h2 id="pageTitle">ډشبورډ</h2>  
-      </div>  
-      <div class="top-actions no-print">  
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 20px !important;
+
+    box-sizing: border-box !important;
+
+    /*
+       ستا اصلي عکس
+    */
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.42),
+            rgba(0, 0, 0, 0.60)
+        ),
+        url("https://i.ibb.co/V0f4q30q/Chat-GPT-Image-Sep-15-2026-01-09-32-PM.png") !important; 
+ 
+    background-size: cover !important; 
+ 
+    background-position: center center !important; 
+ 
+    background-repeat: no-repeat !important; 
+ 
+    background-attachment: fixed !important; 
+ 
+    /* 
+       تر هر بل عنصر لوړ 
+    */ 
+    z-index: 2147483647 !important; 
+ 
+    overflow: auto !important; 
+ 
+    isolation: isolate !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN BOX 
+   ========================================================= */ 
+ 
+html body .login-box { 
+ 
+    width: 405px !important; 
+ 
+    max-width: 94vw !important; 
+ 
+    min-height: auto !important; 
+ 
+    padding: 30px 25px 28px !important; 
+ 
+    box-sizing: border-box !important; 
+ 
+    /* 
+       شفاف تور رنګ 
+    */ 
+    background: rgba(0, 0, 0, 0.50) !important; 
+ 
+    /* 
+       شیشه یي Effect 
+    */ 
+    backdrop-filter: blur(6px) !important; 
+ 
+    -webkit-backdrop-filter: blur(6px) !important; 
+ 
+    /* 
+       Border 
+    */ 
+    border: 1px solid rgba(255, 255, 255, 0.18) !important; 
+ 
+    border-radius: 13px !important; 
+ 
+    /* 
+       Shadow 
+    */ 
+    box-shadow: 
+        0 25px 55px rgba(0, 0, 0, 0.60), 
+        0 5px 20px rgba(0, 0, 0, 0.30) !important; 
+ 
+    text-align: center !important; 
+ 
+    color: #ffffff !important; 
+ 
+    position: relative !important; 
+ 
+    z-index: 2 !important; 
+ 
+    animation: loginBoxShow 0.45s ease-out !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN ICON 
+   ========================================================= */ 
+ 
+html body .login-box .brand-icon { 
+ 
+    width: 58px !important; 
+ 
+    height: 58px !important; 
+ 
+    margin: 0 auto 18px !important; 
+ 
+    border-radius: 14px !important; 
+ 
+    display: flex !important; 
+ 
+    align-items: center !important; 
+ 
+    justify-content: center !important; 
+ 
+    background: #20b9ae !important; 
+ 
+    color: #ffffff !important; 
+ 
+    font-size: 29px !important; 
+ 
+    font-weight: 700 !important; 
+ 
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.30) !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN TITLE 
+   ========================================================= */ 
+ 
+html body .login-box h2 { 
+ 
+    margin: 0 0 8px !important; 
+ 
+    color: #ffffff !important; 
+ 
+    font-family: 
+        "Noto Naskh Arabic", 
+        Tahoma, 
+        Arial, 
+        sans-serif !important; 
+ 
+    font-size: 25px !important; 
+ 
+    line-height: 1.6 !important; 
+ 
+    font-weight: 700 !important; 
+ 
+    text-align: center !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN DESCRIPTION 
+   ========================================================= */ 
+ 
+html body .login-box p { 
+ 
+    margin: 0 0 25px !important; 
+ 
+    color: rgba(255, 255, 255, 0.72) !important; 
+ 
+    font-size: 14px !important; 
+ 
+    line-height: 1.8 !important; 
+ 
+    text-align: center !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN FORM 
+   ========================================================= */ 
+ 
+html body .login-box form { 
+ 
+    width: 100% !important; 
+ 
+    margin: 0 !important; 
+ 
+    padding: 0 !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   FIELD 
+   ========================================================= */ 
+ 
+html body .login-box .field { 
+ 
+    width: 100% !important; 
+ 
+    margin-bottom: 17px !important; 
+ 
+    text-align: right !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LABEL 
+   ========================================================= */ 
+ 
+html body .login-box label { 
+ 
+    display: block !important; 
+ 
+    margin-bottom: 7px !important; 
+ 
+    color: #ffffff !important; 
+ 
+    font-size: 14px !important; 
+ 
+    font-weight: 600 !important; 
+ 
+    line-height: 1.7 !important; 
+ 
+    text-align: right !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   INPUT 
+   ========================================================= */ 
+ 
+html body .login-box input { 
+ 
+    width: 100% !important; 
+ 
+    height: 51px !important; 
+ 
+    padding: 0 16px !important; 
+ 
+    box-sizing: border-box !important; 
+ 
+    border: 1px solid rgba(255, 255, 255, 0.35) !important; 
+ 
+    border-radius: 6px !important; 
+ 
+    outline: none !important; 
+ 
+    background: rgba(255, 255, 255, 0.96) !important; 
+ 
+    color: #333333 !important; 
+ 
+    font-family: 
+        "Noto Naskh Arabic", 
+        Tahoma, 
+        Arial, 
+        sans-serif !important; 
+ 
+    font-size: 15px !important; 
+ 
+    transition: 
+        border-color 0.25s ease, 
+        box-shadow 0.25s ease !important; 
+} 
+ 
+ 
+/* Placeholder */ 
+ 
+html body .login-box input::placeholder { 
+ 
+    color: #999999 !important; 
+ 
+    opacity: 1 !important; 
+} 
+ 
+ 
+/* Input Focus */ 
+ 
+html body .login-box input:focus { 
+ 
+    border-color: #20b9ae !important; 
+ 
+    box-shadow: 
+        0 0 0 3px rgba(32, 185, 174, 0.20) !important; 
+ 
+    background: #ffffff !important; 
+} 
+ 
+ 
+/* Password Input */ 
+ 
+html body .login-box input[type="password"] { 
+ 
+    letter-spacing: 1px !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN BUTTON 
+   ========================================================= */ 
+ 
+html body .login-box .btn-primary { 
+ 
+    width: 100% !important; 
+ 
+    height: 52px !important; 
+ 
+    min-height: 52px !important; 
+ 
+    padding: 0 15px !important; 
+ 
+    margin-top: 3px !important; 
+ 
+    border: none !important; 
+ 
+    border-radius: 5px !important; 
+ 
+    outline: none !important; 
+ 
+    background: 
+        linear-gradient( 
+            90deg, 
+            #ff304e 0%, 
+            #ff5541 100% 
+        ) !important; 
+ 
+    color: #ffffff !important; 
+ 
+    font-family: 
+        "Noto Naskh Arabic", 
+        Tahoma, 
+        Arial, 
+        sans-serif !important; 
+ 
+    font-size: 16px !important; 
+ 
+    font-weight: 700 !important; 
+ 
+    cursor: pointer !important; 
+ 
+    box-shadow: 
+        0 8px 20px rgba(255, 55, 70, 0.25) !important; 
+ 
+    transition: 
+        transform 0.2s ease, 
+        box-shadow 0.2s ease, 
+        filter 0.2s ease !important; 
+} 
+ 
+ 
+/* Button Hover */ 
+ 
+html body .login-box .btn-primary:hover { 
+ 
+    transform: translateY(-2px) !important; 
+ 
+    filter: brightness(1.04) !important; 
+ 
+    box-shadow: 
+        0 12px 25px rgba(255, 55, 70, 0.38) !important; 
+} 
+ 
+ 
+/* Button Active */ 
+ 
+html body .login-box .btn-primary:active { 
+ 
+    transform: translateY(0) !important; 
+ 
+    box-shadow: 
+        0 5px 12px rgba(255, 55, 70, 0.25) !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN SCREEN HIDDEN 
+   ========================================================= */ 
+ 
+html body .login-screen.login-hidden { 
+ 
+    display: none !important; 
+ 
+    visibility: hidden !important; 
+ 
+    pointer-events: none !important; 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN ANIMATION 
+   ========================================================= */ 
+ 
+@keyframes loginBoxShow { 
+ 
+    0% { 
+ 
+        opacity: 0; 
+ 
+        transform: 
+            translateY(20px) 
+            scale(0.96); 
+    } 
+ 
+    100% { 
+ 
+        opacity: 1; 
+ 
+        transform: 
+            translateY(0) 
+            scale(1); 
+    } 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE 
+   ========================================================= */ 
+ 
+@media (max-width: 600px) { 
+ 
+    html body .login-screen { 
+ 
+        padding: 15px !important; 
+ 
+        background-position: 
+            center center !important; 
+    } 
+ 
+ 
+    html body .login-box { 
+ 
+        width: 100% !important; 
+ 
+        max-width: 390px !important; 
+ 
+        padding: 
+            27px 21px 25px !important; 
+ 
+        border-radius: 12px !important; 
+    } 
+ 
+ 
+    html body .login-box .brand-icon { 
+ 
+        width: 54px !important; 
+ 
+        height: 54px !important; 
+ 
+        font-size: 27px !important; 
+ 
+        margin-bottom: 15px !important; 
+    } 
+ 
+ 
+    html body .login-box h2 { 
+ 
+        font-size: 22px !important; 
+ 
+        margin-bottom: 6px !important; 
+    } 
+ 
+ 
+    html body .login-box p { 
+ 
+        font-size: 13px !important; 
+ 
+        margin-bottom: 21px !important; 
+    } 
+ 
+ 
+    html body .login-box input { 
+ 
+        height: 49px !important; 
+ 
+        font-size: 14px !important; 
+    } 
+ 
+ 
+    html body .login-box .btn-primary { 
+ 
+        height: 50px !important; 
+ 
+        font-size: 15px !important; 
+    } 
+} 
+ 
+ 
+/* ========================================================= 
+   VERY SMALL MOBILE 
+   ========================================================= */ 
+ 
+@media (max-width: 380px) { 
+ 
+    html body .login-screen { 
+ 
+        padding: 10px !important; 
+    } 
+ 
+ 
+    html body .login-box { 
+ 
+        padding: 
+            23px 17px 22px !important; 
+    } 
+ 
+ 
+    html body .login-box h2 { 
+ 
+        font-size: 20px !important; 
+    } 
+} 
+</style>
+</head>
+<body>   
+   
+<!-- Login Screen -->   
+<div class="login-screen" id="loginScreen">   
+  <div class="login-box">   
+    <div class="brand-icon" style="margin-bottom:18px">ج</div>   
+    <h2>د سیستم امنیتي لاګین</h2>   
+    <p>مهرباني وکړئ خپل حساب ته ننوځئ</p>   
+    <form id="loginForm">   
+      <div class="field" style="margin-bottom:14px;text-align:right">   
+        <label>یوزرنیم (Username)</label>   
+        <input id="loginUser" required placeholder="admin">   
+      </div>   
+      <div class="field" style="margin-bottom:24px;text-align:right">   
+        <label>پاسورډ (Password)</label>   
+        <input id="loginPass" type="password" required placeholder="••••••••">   
+      </div>   
+      <button class="btn btn-primary" type="submit" style="width:100%;padding:14px">ننوتل 🔐</button>   
+    </form>   
+  </div>   
+</div>   
+   
+<div class="app">   
+  <aside class="sidebar" id="sidebar">   
+    <div class="brand">   
+      <div class="brand-icon">ج</div>   
+      <h1>د دوکانداری سیستم   </h1>   
+      <p>ذخیره، خرڅلاو  ډیښبورډ</p>  
+      <p>  جوړونکی عبدالله مختار | تماس: 0702624188  </p>    
+    </div>   
+    <nav class="nav">  
         
-        <button class="btn btn-warning" onclick="openPassModal()">🔑 پاسورډ بدلول</button>  
-        <button class="btn btn-info" onclick="exportData()">⬇️ بیکاپ</button>  
-        <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">⬆️ بېرته راوستل</button>  
-        <button class="btn btn-danger" onclick="logout()">وتل 🚪</button>  
-        <input id="importFile" type="file" accept=".json" hidden>  
-      </div>  
-    </header>  
-  
-    <div class="container">  
-  
-      <!-- Dashboard -->  
-      <section class="section active" id="dashboard">  
-        <div class="section-title">  
-          <div><h3>عمومي ډشبورډ</h3><p>د جنس، موجودۍ، خرڅلاو او پورونو لنډ راپور</p></div>  
-          <div class="actions no-print" style="margin:0"><button class="btn btn-primary" onclick="showSection('invoice')">🧾 نوی بیل</button></div>  
-        </div>  
-  
-        <!-- Low Stock Alert Box -->  
-        <div class="alert-box" id="lowStockAlert">  
-          <div class="alert-header">  
-            <span>⚠️ خبرداری: د لاندې جنسونو موجودي تر ۵ عددونو کمه شوه!</span>  
-          </div>  
-          <div style="display:flex;justify-content:flex-start;margin-bottom:8px"><button class="btn btn-warning no-print" type="button" onclick="hideLowStockAlerts()">پټول ⏳</button></div><div id="lowStockTimer" style="font-size:12px;color:#991b1b;margin-bottom:10px"></div><ul class="alert-list" id="lowStockList"></ul>  
-        </div>  
-  
-        <div class="grid grid-6">  
-          
-          <div class="card metric"><div><div class="label">د داخل جنس ارزښت</div><div class="value" id="mIn">0</div></div><div class="symbol">📥</div></div>  
-          <div class="card metric danger"><div><div class="label">د وتلي جنس ارزښت</div><div class="value" id="mOut">0</div></div><div class="symbol">📤</div></div>  
-          <div class="card metric success"><div><div class="label">د موجودۍ ارزښت</div><div class="value" id="mStockValue">0</div></div><div class="symbol">📦</div></div>  
-          <div class="card metric info"><div><div class="label">د جنسونو شمېر</div><div class="value" id="mItems">0</div></div><div class="symbol">🏷️</div></div>  
-          <div class="card metric warning"><div><div class="label">کودامونه</div><div class="value" id="mWarehouses">0</div></div><div class="symbol">🏬</div></div>  
-          <div class="card metric"><div><div class="label">ټول ثبتونه</div><div class="value" id="mRecords">0</div></div><div class="symbol">📋</div></div>  
-        </div>  
-  
-        <div class="grid grid-6" style="margin-top:18px">  
-          <div class="card metric info"><div><div class="label">ټول خرڅلاو</div><div class="value" id="mSales">0</div></div><div class="symbol">💰</div></div>  
-          <div class="card metric success"><div><div class="label">نغدې ورکړې</div><div class="value" id="mPaid">0</div></div><div class="symbol">💵</div></div>  
-          <div class="card metric warning"><div><div class="label">ټول پور</div><div class="value" id="mDebt">0</div></div><div class="symbol">💳</div></div>  
-          <div class="card metric success"><div><div class="label">ګټه</div><div class="value" id="mProfit">0</div></div><div class="symbol">📈</div></div>  
-          <div class="card metric danger"><div><div class="label">تاوان</div><div class="value" id="mLoss">0</div></div><div class="symbol">📉</div></div>  
-          <div class="card metric"><div><div class="label">د بلونو شمېر</div><div class="value" id="mBills">0</div></div><div class="symbol">🧾</div></div>  
-        </div>  
-  
-        <div class="grid grid-2" style="margin-top:18px">  
-          <div class="card">  
-            <div class="section-title"><div><h3>د جنس داخل او وتل</h3><p>د ثبتونو د مقدار لنډه کتنه</p></div></div>  
-            <div class="chart-box"><canvas id="inventoryChart"></canvas></div>  
-          </div>  
-          <div class="card">  
-            <div class="section-title"><div><h3>نغدې او پور</h3><p>د ټولو ثبت شوو بلونو وضعیت</p></div></div>  
-            <div class="chart-box"><canvas id="financeChart"></canvas></div>  
-          </div>  
-        </div>  
-  
-        <div class="grid grid-2" style="margin-top:18px">  
-          <div class="card">  
-            <div class="section-title"><div><h3>د خرڅلاو بهیر</h3><p>د بلونو له مخې میاشتنی خرڅلاو</p></div></div>  
-            <div class="chart-box"><canvas id="salesChart"></canvas></div>  
-          </div>  
-          <div class="card">  
-            <div class="section-title"><div><h3>وروستي ثبتونه</h3></div><button class="btn btn-secondary no-print" onclick="showSection('records')">ټول وګورئ</button></div>  
-            <div class="table-wrap"><table><thead><tr><th>نېټه</th><th>جنس</th><th>ډول</th><th>مقدار</th><th>ټول</th></tr></thead><tbody id="recentRecords"></tbody></table></div>  
-          </div>  
-        </div>  
-      </section>  
-  
-      <!-- New Record -->  
-      <section class="section" id="new-record">  
-        <div class="section-title"><div><h3 id="recordFormTitle">نوی جنس / ثبت</h3><p>داخل یا خارج جنس ثبت کړئ</p></div></div>  
-        <div class="card">  
-          <form id="recordForm">  
-            <input type="hidden" id="recordId">  
-            <div class="form-grid">  
-              <div class="field"><label>ډول</label><select id="recordType"><option value="in">داخل</option><option value="out">خارج</option></select></div>  
-              <div class="field"><label>نېټه</label><input id="recordDate" type="date"></div>  
-              <div class="field"><label>د جنس نوم</label><input id="recordItem" required placeholder="لکه: تلیفون"></div>  
-              <div class="field"><label>واحد</label><input id="recordUnit" value="دانه" placeholder="دانه / کیلو / بوجۍ"></div>  
-              <div class="field"><label>کودام</label><input id="recordWarehouse" value="اصلي کودام" required></div>  
-              <div class="field"><label>مقدار</label><input id="recordQty" type="number" min="0.001" step="any" required></div>  
-              <div class="field"><label>فی واحد نرخ</label><input id="recordRate" type="number" min="0" step="any" required></div>  
-              <div class="field"><label>ټول مبلغ</label><input id="recordTotal" type="number" readonly></div>  
-              <div class="field"><label>مشتري / عرضه کوونکی</label><input id="recordParty" placeholder="اختیاري"></div>  
-              <div class="field"><label>حواله / نمبر</label><input id="recordRef" placeholder="اختیاري"></div>  
-              <div class="field full"><label>یادښت</label><textarea id="recordNotes" placeholder="اختیاري یادښت"></textarea></div>  
-            </div>  
-            <div class="actions">  
-              <button class="btn btn-primary" type="submit">💾 ثبتول</button>  
-              <button class="btn btn-secondary" type="button" onclick="resetRecordForm()">پاکول</button>  
-            </div>  
-          </form>  
-        </div>  
-      </section>  
-  
-      <!-- Records -->  
-      <section class="section" id="records">  
-        <div class="section-title"><div><h3>ټول ثبتونه</h3><p>د جنس د داخل او خارج تاریخچه</p></div></div>  
-        <div class="card">  
-          <div class="search-row no-print">  
-            <input id="recordSearch" placeholder="د جنس، شخص یا حوالې لټون..." oninput="renderRecords()">  
-            <select id="recordFilterType" onchange="renderRecords()"><option value="">ټول ډولونه</option><option value="in">داخل</option><option value="out">خارج</option></select>  
-            <select id="recordFilterWarehouse" onchange="renderRecords()"><option value="">ټول کودامونه</option></select>  
-            <button class="btn btn-secondary" onclick="resetRecordFilters()">فلټر پاکول</button>  
-          </div>  
-          <div class="table-wrap"><table>  
-            <thead><tr><th>نېټه</th><th>جنس</th><th>واحد</th><th>کودام</th><th>ډول</th><th>مقدار</th><th>نرخ</th><th>ټول</th><th>شخص</th><th>حواله</th><th class="no-print">عملیات</th></tr></thead>  
-            <tbody id="recordsBody"></tbody>  
-          </table></div>  
-        </div>  
-      </section>  
-  
-      <!-- Warehouse (Updated with Details) -->  
-      <section class="section" id="warehouse">  
-        <div class="section-title"><div><h3>کودامونه او تفصیلي موجودي</h3><p>د هر کودام عمومي او د اجناسو تفصیلي معلومات</p></div></div>  
-        <div class="card" style="margin-bottom:20px">  
-          <div class="section-title"><div><h4 style="margin:0">د کودامونو لښتليګ</h4></div></div>  
-          <div class="table-wrap"><table>  
-            <thead><tr><th>کودام</th><th>داخل مقدار</th><th>خارج مقدار</th><th>موجودي</th><th>موجودي ارزښت</th><th>د جنسونو بېلابېل ډولونه</th></tr></thead>  
-            <tbody id="warehouseBody"></tbody>  
-          </table></div>  
-        </div>  
-  
-        <div class="card">  
-          <div class="section-title"><div><h4 style="margin:0">د کودام پر بنسټ د اجناسو تفصیل</h4></div></div>  
-          <div class="table-wrap"><table>  
-            <thead><tr><th>کودام</th><th>جنس</th><th>واحد</th><th>داخل مقدار</th><th>خارج مقدار</th><th>شته موجودي</th><th>اوسط لګښت</th><th>مجموعي ارزښت</th></tr></thead>  
-            <tbody id="warehouseDetailsBody"></tbody>  
-          </table></div>  
-        </div>  
-      </section>  
-  
-      <!-- Stock -->  
-      <section class="section" id="stock">  
-        <div class="section-title"><div><h3>موجودي</h3><p>د جنس، واحد او کودام له مخې موجودي</p></div></div>  
-        <div class="card">  
-          <div class="search-row no-print"><input id="stockSearch" placeholder="د جنس یا کودام لټون..." oninput="renderStock()"></div>  
-          <div class="table-wrap"><table>  
-            <thead><tr><th>جنس</th><th>واحد</th><th>کودام</th><th>داخل</th><th>خارج</th><th>موجودي</th><th>اوسط لګښت</th><th>موجودي ارزښت</th><th>حالت</th></tr></thead>  
-            <tbody id="stockBody"></tbody>  
-          </table></div>  
-        </div>  
-      </section>  
-  
-      <!-- Book -->  
-      <section class="section" id="book">  
-        <div class="section-title"><div><h3>د کتاب پاڼه</h3><p>د معاملاتو تفصیلي دفتر</p></div></div>  
-        <div class="card">  
-          <div class="search-row no-print">  
-            <input id="bookFrom" type="date"><input id="bookTo" type="date">  
-            <input id="bookSearch" placeholder="لټون..." oninput="renderBook()">  
-            <button class="btn btn-secondary" onclick="renderBook()">ښکاره کول</button>  
-          </div>  
-          <div class="table-wrap"><table>  
-            <thead><tr><th>نېټه</th><th>جنس</th><th>ډول</th><th>مقدار</th><th>نرخ</th><th>داخل</th><th>خارج</th><th>بیل/حواله</th><th>یادښت</th></tr></thead>  
-            <tbody id="bookBody"></tbody>  
-          </table></div>  
-        </div>  
-      </section>  
-  
-      <!-- Reports -->
-      <section class="section" id="reports">
-        <div class="section-title">
-          <div><h3>📊 راپورونه</h3><p>ورځنی، میاشتنی او ربع وار مالي راپور</p></div>
-          <button class="btn btn-info no-print" onclick="printReport()">🖨️ چاپ راپور</button>
-        </div>
+      <button class="active" data-section="dashboard"><span class="icon">🏠</span> ډشبورډ</button>   
+      <button data-section="new-record"><span class="icon">➕</span> نوی جنس / ثبت</button>   
+      <button data-section="records"><span class="icon">📋</span> ثبتونه</button>   
+      <button data-section="warehouse"><span class="icon">🏬</span> کودام</button>   
+      <button data-section="stock"><span class="icon">📦</span> موجودي</button>   
+      <button data-section="book"><span class="icon">📖</span> د کتاب پاڼه</button>   
+      <button data-section="invoice"><span class="icon">🧾</span> نوی بیل / فاکتور</button>   
+      <button data-section="bills"><span class="icon">💳</span> بلونه / پورونه</button> 
+      <button data-section="reports"><span class="icon">📊</span> راپورونه</button> 
+      <button type="button" onclick="openSystemInfo()"> 
+  <span class="icon">ℹ️</span> د سیستم معلومات 
+</button> 
+    </nav>   
+  </aside>   
+   
+  <main class="main">   
+    <header class="topbar">   
+      <div style="display:flex;align-items:center;gap:12px">   
+        <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>   
+        <h2 id="pageTitle">ډشبورډ</h2>   
+      </div>   
+      <div class="top-actions no-print">   
+         
+        <button class="btn btn-warning" onclick="openPassModal()">🔑 پاسورډ بدلول</button>   
+        <button class="btn btn-info" onclick="exportData()">⬇️ بیکاپ</button>   
+        <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">⬆️ بېرته راوستل</button>   
+        <button class="btn btn-danger" onclick="logout()">وتل 🚪</button>   
+        <input id="importFile" type="file" accept=".json" hidden>   
+      </div>   
+    </header>   
+   
+    <div class="container">   
+   
+      <!-- Dashboard -->   
+      <section class="section active" id="dashboard">   
+        <div class="section-title">   
+          <div><h3>عمومي ډشبورډ</h3><p>د جنس، موجودۍ، خرڅلاو او پورونو لنډ راپور</p></div>   
+          <div class="actions no-print" style="margin:0"><button class="btn btn-primary" onclick="showSection('invoice')">🧾 نوی بیل</button></div>   
+        </div>   
+   
+        <!-- Low Stock Alert Box -->   
+        <div class="alert-box" id="lowStockAlert">   
+          <div class="alert-header">   
+            <span>⚠️ خبرداری: د لاندې جنسونو موجودي تر ۵ عددونو کمه شوه!</span>   
+          </div>   
+          <div style="display:flex;justify-content:flex-start;margin-bottom:8px"><button class="btn btn-warning no-print" type="button" onclick="hideLowStockAlerts()">پټول ⏳</button></div><div id="lowStockTimer" style="font-size:12px;color:#991b1b;margin-bottom:10px"></div><ul class="alert-list" id="lowStockList"></ul>   
+        </div>   
+   
+        <div class="grid grid-6">   
+           
+          <div class="card metric"><div><div class="label">د داخل جنس ارزښت</div><div class="value" id="mIn">0</div></div><div class="symbol">📥</div></div>   
+          <div class="card metric danger"><div><div class="label">د وتلي جنس ارزښت</div><div class="value" id="mOut">0</div></div><div class="symbol">📤</div></div>   
+          <div class="card metric success"><div><div class="label">د موجودۍ ارزښت</div><div class="value" id="mStockValue">0</div></div><div class="symbol">📦</div></div>   
+          <div class="card metric info"><div><div class="label">د جنسونو شمېر</div><div class="value" id="mItems">0</div></div><div class="symbol">🏷️</div></div>   
+          <div class="card metric warning"><div><div class="label">کودامونه</div><div class="value" id="mWarehouses">0</div></div><div class="symbol">🏬</div></div>   
+          <div class="card metric"><div><div class="label">ټول ثبتونه</div><div class="value" id="mRecords">0</div></div><div class="symbol">📋</div></div>   
+        </div>   
+   
+        <div class="grid grid-6" style="margin-top:18px">   
+          <div class="card metric info"><div><div class="label">ټول خرڅلاو</div><div class="value" id="mSales">0</div></div><div class="symbol">💰</div></div>   
+          <div class="card metric success"><div><div class="label">نغدې ورکړې</div><div class="value" id="mPaid">0</div></div><div class="symbol">💵</div></div>   
+          <div class="card metric warning"><div><div class="label">ټول پور</div><div class="value" id="mDebt">0</div></div><div class="symbol">💳</div></div>   
+          <div class="card metric success"><div><div class="label">ګټه</div><div class="value" id="mProfit">0</div></div><div class="symbol">📈</div></div>   
+          <div class="card metric danger"><div><div class="label">تاوان</div><div class="value" id="mLoss">0</div></div><div class="symbol">📉</div></div>   
+          <div class="card metric"><div><div class="label">د بلونو شمېر</div><div class="value" id="mBills">0</div></div><div class="symbol">🧾</div></div>   
+        </div>   
+   
+        <div class="grid grid-2" style="margin-top:18px">   
+          <div class="card">   
+            <div class="section-title"><div><h3>د جنس داخل او وتل</h3><p>د ثبتونو د مقدار لنډه کتنه</p></div></div>   
+            <div class="chart-box"><canvas id="inventoryChart"></canvas></div>   
+          </div>   
+          <div class="card">   
+            <div class="section-title"><div><h3>نغدې او پور</h3><p>د ټولو ثبت شوو بلونو وضعیت</p></div></div>   
+            <div class="chart-box"><canvas id="financeChart"></canvas></div>   
+          </div>   
+        </div>   
+   
+        <div class="grid grid-2" style="margin-top:18px">   
+          <div class="card">   
+            <div class="section-title"><div><h3>د خرڅلاو بهیر</h3><p>د بلونو له مخې میاشتنی خرڅلاو</p></div></div>   
+            <div class="chart-box"><canvas id="salesChart"></canvas></div>   
+          </div>   
+          <div class="card">   
+            <div class="section-title"><div><h3>وروستي ثبتونه</h3></div><button class="btn btn-secondary no-print" onclick="showSection('records')">ټول وګورئ</button></div>   
+            <div class="table-wrap"><table><thead><tr><th>نېټه</th><th>جنس</th><th>ډول</th><th>مقدار</th><th>ټول</th></tr></thead><tbody id="recentRecords"></tbody></table></div>   
+          </div>   
+        </div>   
+      </section>   
+   
+      <!-- New Record -->   
+      <section class="section" id="new-record">   
+        <div class="section-title"><div><h3 id="recordFormTitle">نوی جنس / ثبت</h3><p>داخل یا خارج جنس ثبت کړئ</p></div></div>   
+        <div class="card">   
+          <form id="recordForm">   
+            <input type="hidden" id="recordId">   
+            <div class="form-grid">   
+              <div class="field"><label>ډول</label><select id="recordType"><option value="in">داخل</option><option value="out">خارج</option></select></div>   
+              <div class="field"><label>نېټه</label><input id="recordDate" type="date"></div>   
+              <div class="field"><label>د جنس نوم</label><input id="recordItem" required placeholder="لکه: تلیفون"></div>   
+              <div class="field"><label>واحد</label><input id="recordUnit" value="دانه" placeholder="دانه / کیلو / بوجۍ"></div>   
+              <div class="field"><label>کودام</label><input id="recordWarehouse" value="اصلي کودام" required></div>   
+              <div class="field"><label>مقدار</label><input id="recordQty" type="number" min="0.001" step="any" required></div>   
+              <div class="field"><label>فی واحد نرخ</label><input id="recordRate" type="number" min="0" step="any" required></div>   
+              <div class="field"><label>ټول مبلغ</label><input id="recordTotal" type="number" readonly></div>   
+              <div class="field"><label>مشتري / عرضه کوونکی</label><input id="recordParty" placeholder="اختیاري"></div>   
+              <div class="field"><label>حواله / نمبر</label><input id="recordRef" placeholder="اختیاري"></div>   
+              <div class="field full"><label>یادښت</label><textarea id="recordNotes" placeholder="اختیاري یادښت"></textarea></div>   
+            </div>   
+            <div class="actions">   
+              <button class="btn btn-primary" type="submit">💾 ثبتول</button>   
+              <button class="btn btn-secondary" type="button" onclick="resetRecordForm()">پاکول</button>   
+            </div>   
+          </form>   
+        </div>   
+      </section>   
+   
+      <!-- Records -->   
+      <section class="section" id="records">   
+        <div class="section-title"><div><h3>ټول ثبتونه</h3><p>د جنس د داخل او خارج تاریخچه</p></div></div>   
+        <div class="card">   
+          <div class="search-row no-print">   
+            <input id="recordSearch" placeholder="د جنس، شخص یا حوالې لټون..." oninput="renderRecords()">   
+            <select id="recordFilterType" onchange="renderRecords()"><option value="">ټول ډولونه</option><option value="in">داخل</option><option value="out">خارج</option></select>   
+            <select id="recordFilterWarehouse" onchange="renderRecords()"><option value="">ټول کودامونه</option></select>   
+            <button class="btn btn-secondary" onclick="resetRecordFilters()">فلټر پاکول</button>   
+          </div>   
+          <div class="table-wrap"><table>   
+            <thead><tr><th>نېټه</th><th>جنس</th><th>واحد</th><th>کودام</th><th>ډول</th><th>مقدار</th><th>نرخ</th><th>ټول</th><th>شخص</th><th>حواله</th><th class="no-print">عملیات</th></tr></thead>   
+            <tbody id="recordsBody"></tbody>   
+          </table></div>   
+        </div>   
+      </section>   
+   
+      <!-- Warehouse (Updated with Details) -->   
+      <section class="section" id="warehouse">   
+        <div class="section-title"><div><h3>کودامونه او تفصیلي موجودي</h3><p>د هر کودام عمومي او د اجناسو تفصیلي معلومات</p></div></div>   
+        <div class="card" style="margin-bottom:20px">   
+          <div class="section-title"><div><h4 style="margin:0">د کودامونو لښتليګ</h4></div></div>   
+          <div class="table-wrap"><table>   
+            <thead><tr><th>کودام</th><th>داخل مقدار</th><th>خارج مقدار</th><th>موجودي</th><th>موجودي ارزښت</th><th>د جنسونو بېلابېل ډولونه</th></tr></thead>   
+            <tbody id="warehouseBody"></tbody>   
+          </table></div>   
+        </div>   
+   
+        <div class="card">   
+          <div class="section-title"><div><h4 style="margin:0">د کودام پر بنسټ د اجناسو تفصیل</h4></div></div>   
+          <div class="table-wrap"><table>   
+            <thead><tr><th>کودام</th><th>جنس</th><th>واحد</th><th>داخل مقدار</th><th>خارج مقدار</th><th>شته موجودي</th><th>اوسط لګښت</th><th>مجموعي ارزښت</th></tr></thead>   
+            <tbody id="warehouseDetailsBody"></tbody>   
+          </table></div>   
+        </div>   
+      </section>   
+   
+      <!-- Stock -->   
+      <section class="section" id="stock">   
+        <div class="section-title"><div><h3>موجودي</h3><p>د جنس، واحد او کودام له مخې موجودي</p></div></div>   
+        <div class="card">   
+          <div class="search-row no-print"><input id="stockSearch" placeholder="د جنس یا کودام لټون..." oninput="renderStock()"></div>   
+          <div class="table-wrap"><table>   
+            <thead><tr><th>جنس</th><th>واحد</th><th>کودام</th><th>داخل</th><th>خارج</th><th>موجودي</th><th>اوسط لګښت</th><th>موجودي ارزښت</th><th>حالت</th></tr></thead>   
+            <tbody id="stockBody"></tbody>   
+          </table></div>   
+        </div>   
+      </section>   
+   
+      <!-- Book -->   
+      <section class="section" id="book">   
+        <div class="section-title"><div><h3>د کتاب پاڼه</h3><p>د معاملاتو تفصیلي دفتر</p></div></div>   
+        <div class="card">   
+          <div class="search-row no-print">   
+            <input id="bookFrom" type="date"><input id="bookTo" type="date">   
+            <input id="bookSearch" placeholder="لټون..." oninput="renderBook()">   
+            <button class="btn btn-secondary" onclick="renderBook()">ښکاره کول</button>   
+          </div>   
+          <div class="table-wrap"><table>   
+            <thead><tr><th>نېټه</th><th>جنس</th><th>ډول</th><th>مقدار</th><th>نرخ</th><th>داخل</th><th>خارج</th><th>بیل/حواله</th><th>یادښت</th></tr></thead>   
+            <tbody id="bookBody"></tbody>   
+          </table></div>   
+        </div>   
+      </section>   
+   
+      <!-- Reports --> 
+      <section class="section" id="reports"> 
+        <div class="section-title"> 
+          <div><h3>📊 راپورونه</h3><p>ورځنی، میاشتنی او ربع وار مالي راپور</p></div> 
+          <button class="btn btn-info no-print" onclick="printReport()">🖨️ چاپ راپور</button> 
+        </div> 
+ 
+        <div class="card no-print" style="margin-bottom:18px"> 
+          <div class="search-row" style="margin:0"> 
+            <select id="reportPeriod" onchange="renderReports()"> 
+              <option value="day">ورځنی راپور</option> 
+              <option value="month" selected>میاشتنی راپور</option> 
+              <option value="quarter">ربع وار راپور</option> 
+            </select> 
+            <input id="reportDate" type="date" onchange="renderReports()"> 
+            <select id="reportQuarter" onchange="renderReports()" style="display:none"> 
+              <option value="1">لومړۍ ربع — جنوري تر مارچ</option> 
+              <option value="2">دوهمه ربع — اپرېل تر جون</option> 
+              <option value="3">درېیمه ربع — جولای تر سپتمبر</option> 
+              <option value="4">څلورمه ربع — اکتوبر تر دسمبر</option> 
+            </select> 
+            <button class="btn btn-primary" onclick="renderReports()">🔄 راپور تازه کول</button> 
+          </div> 
+        </div> 
+ 
+        <div class="grid grid-4 report-summary"> 
+          <div class="card metric info"><div><div class="label">ټول خرڅلاو</div><div class="value" id="rSales">0</div></div><div class="symbol">💰</div></div> 
+          <div class="card metric success"><div><div class="label">ګټه</div><div class="value" id="rProfit">0</div></div><div class="symbol">📈</div></div> 
+          <div class="card metric danger"><div><div class="label">تاوان</div><div class="value" id="rLoss">0</div></div><div class="symbol">📉</div></div> 
+          <div class="card metric warning"><div><div class="label">پور</div><div class="value" id="rDebt">0</div></div><div class="symbol">💳</div></div> 
+        </div> 
+ 
+        <div class="grid grid-2" style="margin-top:18px"> 
+          <div class="card"> 
+            <div class="section-title"><div><h3>د ګټې، تاوان او پور چارټ</h3><p id="reportRangeText">د ټاکلې مودې معلومات</p></div></div> 
+            <div class="chart-box"><canvas id="reportChart"></canvas></div> 
+          </div> 
+          <div class="card"> 
+            <div class="section-title"><div><h3>د راپور لنډیز</h3><p>د ټاکلې مودې ټول مالي معلومات</p></div></div> 
+            <div class="table-wrap"> 
+              <table> 
+                <thead><tr><th>برخه</th><th>مبلغ</th></tr></thead> 
+                <tbody id="reportBody"></tbody> 
+              </table> 
+            </div> 
+          </div> 
+        </div> 
+      </section> 
+ 
+      <!-- New Invoice (Updated UI & Summary) -->   
+      <section class="section" id="invoice">   
+        <div class="section-title">   
+          <div><h3>نوی بیل / فاکتور</h3><p>څو جنسونه په یوه بیل کې ثبت او خرڅ کړئ</p></div>   
+          <div class="actions no-print" style="margin:0">   
+            <button class="btn btn-secondary" onclick="clearInvoice()">پاکول</button>   
+            <button class="btn btn-info" onclick="printCurrentInvoice()">🖨️ چاپ بې له ثبتولو</button>   
+            <button class="btn btn-primary" onclick="saveInvoice(true)">💾 ثبت او چاپ</button>   
+          </div>   
+        </div>   
+   
+        <div class="card invoice-print" id="invoicePrintArea">   
+             
+          <!-- Print Only Template -->   
+          <div class="print-only print-bill-container">   
+            <div class="print-header">   
+              <div class="print-shop-info">   
+                <h2 id="printShopName">د جنسي محاسبې سوداګریز مرکز</h2>   
+                <p id="printShopAddress">ادرس: کابل، افغانستان | اړیکه: 0700000000</p>   
+              </div>   
+              <div class="print-bill-meta">   
+                <div><b>د بیل نمبر:</b> <span id="printNumber"></span></div>   
+                <div><b>نېټه:</b> <span id="printDate"></span></div>   
+              </div>   
+            </div>   
+   
+            <div class="print-customer-box">   
+              <div><b>د پیرودونکي نوم:</b> <span id="printCustomer"></span></div>   
+              <div><b>د ټلیفون شماره:</b> <span id="printPhone"></span></div>   
+              <div><b>ادرس:</b> <span id="printAddress"></span></div>   
+            </div>   
+   
+            <table class="print-table">   
+              <thead>   
+                <tr>   
+                  <th>شمېره</th>   
+                  <th>د جنس نوم</th>   
+                  <th>واحد</th>   
+                  <th>مقدار</th>   
+                  <th>فی واحد قیمت</th>   
+                  <th>مجموعي قیمت</th>   
+                </tr>   
+              </thead>   
+              <tbody id="printTableBody"></tbody>   
+            </table>   
+   
+            <div class="print-summary">   
+              <div>   
+                <p style="margin:0;font-size:12px;color:#64748b;">نوټ: <span id="printNotes"></span></p>   
+              </div>   
+              <table class="print-totals-table">   
+                <tr><td>مجموعي بل (ټول):</td><td id="printTotalSale">0</td></tr>   
+                <tr><td>ورکړل شوې (نغدې):</td><td id="printTotalPaid">0</td></tr>   
+                <tr class="highlight"><td>پاتې پور (باقي):</td><td id="printTotalDue">0</td></tr>   
+              </table>   
+            </div>   
+   
+            <div class="print-footer">   
+              <div class="print-sign">د پلورونکي لاسلیک</div>   
+              <div>له موږ څخه د پیرودلو له امله مننه!</div>   
+              <div class="print-sign">د پیرودونکي لاسلیک</div>   
+            </div>   
+          </div>   
+   
+          <!-- On Screen Invoice Form -->   
+          <div class="invoice-head no-print">   
+            <div class="field"><label>د دوکان / شرکت نوم</label><input id="shopName" value="د جنسي محاسبې سوداګریز مرکز"></div>   
+            <div class="field"><label>د دوکان ادرس او اړیکه</label><input id="shopAddress" value="ادرس: کابل، افغانستان | اړیکه: 0700000000"></div>   
+            <div class="field"><label>د بیل نمبر</label><input id="invoiceNumber" readonly></div>   
+   
+            <div class="field"><label>مشتري نوم</label><input id="invoiceCustomerName" placeholder="د مشتری نوم"></div>   
+            <div class="field"><label>د موبایل شمېره</label><input id="invoiceCustomerPhone" placeholder="اختیاري"></div>   
+            <div class="field"><label>د مشتری ادرس</label><input id="invoiceCustomerAddress" placeholder="اختیاري"></div>   
+   
+            <div class="field"><label>نېټه</label><input id="invoiceDate" type="date"></div>   
+            <div class="field"><label>کودام</label><input id="invoiceWarehouse" value="اصلي کودام"></div>   
+            <div class="field"><label>یادښت</label><input id="invoiceNotes" placeholder="اختیاري"></div>   
+          </div>   
+   
+          <datalist id="itemList"></datalist>   
+   
+          <div class="invoice-items no-print">   
+            <div class="table-wrap">   
+              <table style="min-width:1000px" class="inv-table">   
+                <thead>   
+                  <tr>   
+                    <th style="width: 25%;">جنس (لټون / نوی)</th>   
+                    <th style="width: 10%;">واحد</th>   
+                    <th style="width: 10%;">مقدار</th>   
+                    <th style="width: 12%;">لګښت/واحد</th>   
+                    <th style="width: 12%;">خرڅ/واحد</th>   
+                    <th style="width: 12%;">ټول خرڅ</th>   
+                    <th style="width: 12%;">ګټه/تاوان</th>   
+                    <th style="width: 7%;">عمل</th>   
+                  </tr>   
+                </thead>   
+                <tbody id="invoiceItemsBody"></tbody>   
+              </table>   
+            </div>   
+            <div class="actions no-print" style="margin-top:14px"><button class="btn btn-secondary" onclick="addInvoiceRow()">➕ نوی جنس اضافه کول</button></div>   
+          </div>   
+   
+          <!-- Invoice Summary Cards -->   
+          <div class="invoice-summary-grid no-print">   
+            <div class="inv-summary-card">   
+              <div class="s-label">ټول خرڅ</div>   
+              <div class="s-value" id="invoiceSaleTotal">0</div>   
+            </div>   
+            <div class="inv-summary-card">   
+              <div class="s-label">ټول لګښت</div>   
+              <div class="s-value" id="invoiceCostTotal">0</div>   
+            </div>   
+            <div class="inv-summary-card">   
+              <div class="s-label">ګټه / تاوان</div>   
+              <div class="s-value" id="invoiceProfitTotal">0</div>   
+            </div>   
+            <div class="inv-summary-card highlight">   
+              <div class="s-label">ورکړل شوي (نغدې)</div>   
+              <div style="margin-top:4px">   
+                <input id="invoicePaid" type="number" min="0" step="any" value="0" style="width:100%;text-align:center;font-size:18px;font-weight:800;border:1.5px solid #86efac;border-radius:10px;padding:6px" oninput="updateInvoiceTotals()">   
+              </div>   
+            </div>   
+            <div class="inv-summary-card danger">   
+              <div class="s-label">پور (باقي)</div>   
+              <div class="s-value" style="color:var(--danger)" id="invoiceDue">0</div>   
+            </div>   
+          </div>   
+   
+        </div>   
+      </section>   
+   
+      <!-- Bills -->   
+      <section class="section" id="bills">   
+        <div class="section-title"><div><h3>بلونه او پورونه</h3><p>د خرڅلاو بلونه، ورکړې او پاتې پورونه</p></div></div>   
+        <div class="card">   
+          <div class="search-row no-print">   
+            <input id="billSearch" placeholder="د بیل نمبر، مشتری یا جنس لټون..." oninput="renderBills()">   
+            <select id="billStatusFilter" onchange="renderBills()"><option value="">ټول</option><option value="paid">خلاص شوي</option><option value="debt">قرضداران</option></select>   
+          </div>   
+          <div class="table-wrap"><table>   
+            <thead><tr><th>بیل نمبر</th><th>نېټه</th><th>مشتري</th><th>جنسونه</th><th>خرڅ</th><th>لګښت</th><th>ګټه/تاوان</th><th>ورکړل</th><th>پور</th><th>حالت</th><th class="no-print">عملیات</th></tr></thead>   
+            <tbody id="billsBody"></tbody>   
+          </table></div>   
+        </div>   
+      </section>   
+   
+    </div>   
+  </main>   
+</div>   
+   
+<!-- Edit bill modal -->   
+<div class="modal" id="editBillModal">   
+  <div class="modal-box">   
+    <div class="modal-head"><h3>د بل معلومات بدلول</h3><button class="close" onclick="closeEditModal()">✕</button></div>   
+    <input type="hidden" id="editBillId">   
+    <div class="form-grid">   
+      <div class="field"><label>مشتري</label><input id="editCustomerName"></div>   
+      <div class="field"><label>موبایل</label><input id="editCustomerPhone"></div>   
+      <div class="field"><label>ادرس</label><input id="editCustomerAddress"></div>   
+      <div class="field"><label>نېټه</label><input id="editBillDate" type="date"></div>   
+      <div class="field"><label>کودام</label><input id="editBillWarehouse"></div>   
+      <div class="field full"><label>یادښت</label><textarea id="editBillNotes"></textarea></div>   
+      <div class="field"><label>اضافي ورکړه</label><input id="editAdditionalPayment" type="number" min="0" step="any" value="0"></div>   
+    </div>   
+    <div class="actions"><button class="btn btn-primary" onclick="updateBill()">💾 ساتل</button><button class="btn btn-secondary" onclick="closeEditModal()">بندول</button></div>   
+  </div>   
+</div>   
+   
+<!-- Password Change Modal -->   
+<div class="modal" id="passModal">   
+  <div class="modal-box" style="max-width:400px">   
+    <div class="modal-head"><h3>د پاسورډ بدلول</h3><button class="close" onclick="closePassModal()">✕</button></div>   
+    <div class="field" style="margin-bottom:12px"><label>نوی یوزرنیم</label><input id="newUsername"></div>   
+    <div class="field" style="margin-bottom:18px"><label>نوی پاسورډ</label><input id="newPassword" type="password"></div>   
+    <div class="actions"><button class="btn btn-primary" onclick="saveNewAuth()">💾 ثبتول</button></div>   
+  </div>   
+</div>   
+   
+<div class="toast" id="toast"></div>   
+   
+<script>   
+"use strict";   
+   
+/* =========================   
+   امنیت او لاګین (Auth)   
+========================= */   
+const AUTH_KEY = "jinsi_hisab_auth";
+let auth = { user: "admin", pass: "1234" };
 
-        <div class="card no-print" style="margin-bottom:18px">
-          <div class="search-row" style="margin:0">
-            <select id="reportPeriod" onchange="renderReports()">
-              <option value="day">ورځنی راپور</option>
-              <option value="month" selected>میاشتنی راپور</option>
-              <option value="quarter">ربع وار راپور</option>
-            </select>
-            <input id="reportDate" type="date" onchange="renderReports()">
-            <select id="reportQuarter" onchange="renderReports()" style="display:none">
-              <option value="1">لومړۍ ربع — جنوري تر مارچ</option>
-              <option value="2">دوهمه ربع — اپرېل تر جون</option>
-              <option value="3">درېیمه ربع — جولای تر سپتمبر</option>
-              <option value="4">څلورمه ربع — اکتوبر تر دسمبر</option>
-            </select>
-            <button class="btn btn-primary" onclick="renderReports()">🔄 راپور تازه کول</button>
-          </div>
-        </div>
-
-        <div class="grid grid-4 report-summary">
-          <div class="card metric info"><div><div class="label">ټول خرڅلاو</div><div class="value" id="rSales">0</div></div><div class="symbol">💰</div></div>
-          <div class="card metric success"><div><div class="label">ګټه</div><div class="value" id="rProfit">0</div></div><div class="symbol">📈</div></div>
-          <div class="card metric danger"><div><div class="label">تاوان</div><div class="value" id="rLoss">0</div></div><div class="symbol">📉</div></div>
-          <div class="card metric warning"><div><div class="label">پور</div><div class="value" id="rDebt">0</div></div><div class="symbol">💳</div></div>
-        </div>
-
-        <div class="grid grid-2" style="margin-top:18px">
-          <div class="card">
-            <div class="section-title"><div><h3>د ګټې، تاوان او پور چارټ</h3><p id="reportRangeText">د ټاکلې مودې معلومات</p></div></div>
-            <div class="chart-box"><canvas id="reportChart"></canvas></div>
-          </div>
-          <div class="card">
-            <div class="section-title"><div><h3>د راپور لنډیز</h3><p>د ټاکلې مودې ټول مالي معلومات</p></div></div>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>برخه</th><th>مبلغ</th></tr></thead>
-                <tbody id="reportBody"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- New Invoice (Updated UI & Summary) -->  
-      <section class="section" id="invoice">  
-        <div class="section-title">  
-          <div><h3>نوی بیل / فاکتور</h3><p>څو جنسونه په یوه بیل کې ثبت او خرڅ کړئ</p></div>  
-          <div class="actions no-print" style="margin:0">  
-            <button class="btn btn-secondary" onclick="clearInvoice()">پاکول</button>  
-            <button class="btn btn-info" onclick="printCurrentInvoice()">🖨️ چاپ بې له ثبتولو</button>  
-            <button class="btn btn-primary" onclick="saveInvoice(true)">💾 ثبت او چاپ</button>  
-          </div>  
-        </div>  
-  
-        <div class="card invoice-print" id="invoicePrintArea">  
-            
-          <!-- Print Only Template -->  
-          <div class="print-only print-bill-container">  
-            <div class="print-header">  
-              <div class="print-shop-info">  
-                <h2 id="printShopName">د مختار سوداکریز مرکز </h2>  
-                <p id="printShopAddress">ادرس: زابل قلات ښار، افغانستان | اړیکه: 0702624188</p>  
-              </div>  
-              <div class="print-bill-meta">  
-                <div><b>د بیل نمبر:</b> <span id="printNumber"></span></div>  
-                <div><b>نېټه:</b> <span id="printDate"></span></div>  
-              </div>  
-            </div>  
-  
-            <div class="print-customer-box">  
-              <div><b>د پیرودونکي نوم:</b> <span id="printCustomer"></span></div>  
-              <div><b>د ټلیفون شماره:</b> <span id="printPhone"></span></div>  
-              <div><b>ادرس:</b> <span id="printAddress"></span></div>  
-            </div>  
-  
-            <table class="print-table">  
-              <thead>  
-                <tr>  
-                  <th>شمېره</th>  
-                  <th>د جنس نوم</th>  
-                  <th>واحد</th>  
-                  <th>مقدار</th>  
-                  <th>فی واحد قیمت</th>  
-                  <th>مجموعي قیمت</th>  
-                </tr>  
-              </thead>  
-              <tbody id="printTableBody"></tbody>  
-            </table>  
-  
-            <div class="print-summary">  
-              <div>  
-                <p style="margin:0;font-size:12px;color:#64748b;">نوټ: <span id="printNotes"></span></p>  
-              </div>  
-              <table class="print-totals-table">  
-                <tr><td>مجموعي بل (ټول):</td><td id="printTotalSale">0</td></tr>  
-                <tr><td>ورکړل شوې (نغدې):</td><td id="printTotalPaid">0</td></tr>  
-                <tr class="highlight"><td>پاتې پور (باقي):</td><td id="printTotalDue">0</td></tr>  
-              </table>  
-            </div>  
-  
-            <div class="print-footer">  
-              <div class="print-sign">د پلورونکي لاسلیک</div>  
-              <div>له موږ څخه د پیرودلو له امله مننه!</div>  
-              <div class="print-sign">د پیرودونکي لاسلیک</div>  
-            </div>  
-          </div>  
-  
-          <!-- On Screen Invoice Form -->  
-          <div class="invoice-head no-print">  
-            <div class="field"><label>د دوکان / شرکت نوم</label><input id="shopName" value="د جنسي محاسبې سوداګریز مرکز"></div>  
-            <div class="field"><label>د دوکان ادرس او اړیکه</label><input id="shopAddress" value="ادرس: کابل، افغانستان | اړیکه: 0700000000"></div>  
-            <div class="field"><label>د بیل نمبر</label><input id="invoiceNumber" readonly></div>  
-  
-            <div class="field"><label>مشتري نوم</label><input id="invoiceCustomerName" placeholder="د مشتری نوم"></div>  
-            <div class="field"><label>د موبایل شمېره</label><input id="invoiceCustomerPhone" placeholder="اختیاري"></div>  
-            <div class="field"><label>د مشتری ادرس</label><input id="invoiceCustomerAddress" placeholder="اختیاري"></div>  
-  
-            <div class="field"><label>نېټه</label><input id="invoiceDate" type="date"></div>  
-            <div class="field"><label>کودام</label><input id="invoiceWarehouse" value="اصلي کودام"></div>  
-            <div class="field"><label>یادښت</label><input id="invoiceNotes" placeholder="اختیاري"></div>  
-          </div>  
-  
-          <datalist id="itemList"></datalist>  
-  
-          <div class="invoice-items no-print">  
-            <div class="table-wrap">  
-              <table style="min-width:1000px" class="inv-table">  
-                <thead>  
-                  <tr>  
-                    <th style="width: 25%;">جنس (لټون / نوی)</th>  
-                    <th style="width: 10%;">واحد</th>  
-                    <th style="width: 10%;">مقدار</th>  
-                    <th style="width: 12%;">لګښت/واحد</th>  
-                    <th style="width: 12%;">خرڅ/واحد</th>  
-                    <th style="width: 12%;">ټول خرڅ</th>  
-                    <th style="width: 12%;">ګټه/تاوان</th>  
-                    <th style="width: 7%;">عمل</th>  
-                  </tr>  
-                </thead>  
-                <tbody id="invoiceItemsBody"></tbody>  
-              </table>  
-            </div>  
-            <div class="actions no-print" style="margin-top:14px"><button class="btn btn-secondary" onclick="addInvoiceRow()">➕ نوی جنس اضافه کول</button></div>  
-          </div>  
-  
-          <!-- Invoice Summary Cards -->  
-          <div class="invoice-summary-grid no-print">  
-            <div class="inv-summary-card">  
-              <div class="s-label">ټول خرڅ</div>  
-              <div class="s-value" id="invoiceSaleTotal">0</div>  
-            </div>  
-            <div class="inv-summary-card">  
-              <div class="s-label">ټول لګښت</div>  
-              <div class="s-value" id="invoiceCostTotal">0</div>  
-            </div>  
-            <div class="inv-summary-card">  
-              <div class="s-label">ګټه / تاوان</div>  
-              <div class="s-value" id="invoiceProfitTotal">0</div>  
-            </div>  
-            <div class="inv-summary-card highlight">  
-              <div class="s-label">ورکړل شوي (نغدې)</div>  
-              <div style="margin-top:4px">  
-                <input id="invoicePaid" type="number" min="0" step="any" value="0" style="width:100%;text-align:center;font-size:18px;font-weight:800;border:1.5px solid #86efac;border-radius:10px;padding:6px" oninput="updateInvoiceTotals()">  
-              </div>  
-            </div>  
-            <div class="inv-summary-card danger">  
-              <div class="s-label">پور (باقي)</div>  
-              <div class="s-value" style="color:var(--danger)" id="invoiceDue">0</div>  
-            </div>  
-          </div>  
-  
-        </div>  
-      </section>  
-  
-      <!-- Bills -->  
-      <section class="section" id="bills">  
-        <div class="section-title"><div><h3>بلونه او پورونه</h3><p>د خرڅلاو بلونه، ورکړې او پاتې پورونه</p></div></div>  
-        <div class="card">  
-          <div class="search-row no-print">  
-            <input id="billSearch" placeholder="د بیل نمبر، مشتری یا جنس لټون..." oninput="renderBills()">  
-            <select id="billStatusFilter" onchange="renderBills()"><option value="">ټول</option><option value="paid">خلاص شوي</option><option value="debt">قرضداران</option></select>  
-          </div>  
-          <div class="table-wrap"><table>  
-            <thead><tr><th>بیل نمبر</th><th>نېټه</th><th>مشتري</th><th>جنسونه</th><th>خرڅ</th><th>لګښت</th><th>ګټه/تاوان</th><th>ورکړل</th><th>پور</th><th>حالت</th><th class="no-print">عملیات</th></tr></thead>  
-            <tbody id="billsBody"></tbody>  
-          </table></div>  
-        </div>  
-      </section>  
-  
-    </div>  
-  </main>  
-</div>  
-  
-<!-- Edit bill modal -->  
-<div class="modal" id="editBillModal">  
-  <div class="modal-box">  
-    <div class="modal-head"><h3>د بل معلومات بدلول</h3><button class="close" onclick="closeEditModal()">✕</button></div>  
-    <input type="hidden" id="editBillId">  
-    <div class="form-grid">  
-      <div class="field"><label>مشتري</label><input id="editCustomerName"></div>  
-      <div class="field"><label>موبایل</label><input id="editCustomerPhone"></div>  
-      <div class="field"><label>ادرس</label><input id="editCustomerAddress"></div>  
-      <div class="field"><label>نېټه</label><input id="editBillDate" type="date"></div>  
-      <div class="field"><label>کودام</label><input id="editBillWarehouse"></div>  
-      <div class="field full"><label>یادښت</label><textarea id="editBillNotes"></textarea></div>  
-      <div class="field"><label>اضافي ورکړه</label><input id="editAdditionalPayment" type="number" min="0" step="any" value="0"></div>  
-    </div>  
-    <div class="actions"><button class="btn btn-primary" onclick="updateBill()">💾 ساتل</button><button class="btn btn-secondary" onclick="closeEditModal()">بندول</button></div>  
-  </div>  
-</div>  
-  
-<!-- Password Change Modal -->  
-<div class="modal" id="passModal">  
-  <div class="modal-box" style="max-width:400px">  
-    <div class="modal-head"><h3>د پاسورډ بدلول</h3><button class="close" onclick="closePassModal()">✕</button></div>  
-    <div class="field" style="margin-bottom:12px"><label>نوی یوزرنیم</label><input id="newUsername"></div>  
-    <div class="field" style="margin-bottom:18px"><label>نوی پاسورډ</label><input id="newPassword" type="password"></div>  
-    <div class="actions"><button class="btn btn-primary" onclick="saveNewAuth()">💾 ثبتول</button></div>  
-  </div>  
-</div>  
-  
-<div class="toast" id="toast"></div>  
-  
-<script>  
-"use strict";  
-  
-/* =========================  
-   امنیت او لاګین (Auth)  
-========================= */  
-const AUTH_KEY = "jinsi_hisab_auth";  
-let auth = JSON.parse(localStorage.getItem(AUTH_KEY)) || { user: "admin", pass: "1234" };  
-  
-function checkLogin(){  
-  if(sessionStorage.getItem("isLoggedIn") === "true"){  
-    document.getElementById("loginScreen").style.display = "none";  
-  } else {  
-    document.getElementById("loginScreen").style.display = "flex";  
-  }  
-}  
-  
-document.getElementById("loginForm").addEventListener("submit", function(e){  
-  e.preventDefault();  
-  const u = document.getElementById("loginUser").value.trim();  
-  const p = document.getElementById("loginPass").value.trim();  
-  if(u === auth.user && p === auth.pass){  
-    sessionStorage.setItem("isLoggedIn", "true");  
-    document.getElementById("loginScreen").style.display = "none";  
-    showToast("ښه راغلاست!");  
-    renderAll();  
-  } else {  
-    alert("نوی یوزرنیم یا پاسورډ غلط دی!");  
-  }  
-});  
-  
-function logout(){  
-  sessionStorage.removeItem("isLoggedIn");  
-  location.reload();  
-}  
-  
-function openPassModal(){  
-  document.getElementById("newUsername").value = auth.user;  
-  document.getElementById("newPassword").value = auth.pass;  
-  document.getElementById("passModal").classList.add("show");  
-}  
-function closePassModal(){ document.getElementById("passModal").classList.remove("show"); }  
-function saveNewAuth(){  
-  const u = document.getElementById("newUsername").value.trim();  
-  const p = document.getElementById("newPassword").value.trim();  
-  if(!u || !p){ showToast("معلومات پوره داخل کړئ"); return; }  
-  auth = { user: u, pass: p };  
-  localStorage.setItem(AUTH_KEY, JSON.stringify(auth));  
-  closePassModal();  
-  showToast("یوزرنیم او پاسورډ بدل شول!");  
-}  
-  
-/* =========================  
-   ذخیره او عمومي حالت  
-========================= */  
-const RECORD_KEY = "jinsi_hisab_records_v2";  
-const BILL_KEY = "jinsi_hisab_bills_v2";
-  
-let records = loadArray(RECORD_KEY);  
-let bills = loadArray(BILL_KEY);
-let inventoryChart = null, financeChart = null, salesChart = null, reportChart = null;
-let invoiceRows = 0;  
-  
-const titles = {  
-  dashboard:"ډشبورډ","new-record":"نوی جنس / ثبت",records:"ثبتونه",warehouse:"کودام",  
-  stock:"موجودي",book:"د کتاب پاڼه",invoice:"نوی بیل / فاکتور",bills:"بلونه / پورونه",reports:"راپورونه"  
-};  
-  
-function loadArray(key){  
-  try{  
-    const data = JSON.parse(localStorage.getItem(key) || "[]");  
-    return Array.isArray(data) ? data : [];  
-  }catch(e){ return []; }  
-}  
-function saveAll(){  
-  localStorage.setItem(RECORD_KEY, JSON.stringify(records));  
-  localStorage.setItem(BILL_KEY, JSON.stringify(bills));
-}  
-function uid(prefix="id"){  
-  return prefix + "_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,7);  
-}  
-function normalizeDigits(value){  
-  const map={"۰":"0","۱":"1","۲":"2","۳":"3","۴":"4","۵":"5","۶":"6","۷":"7","۸":"8","۹":"9",  
-             "٠":"0","١":"1","٢":"2","٣":"3","٤":"4","٥":"5","٦":"6","٧":"7","٨":"8","٩":"9"};  
-  return String(value ?? "").replace(/[۰-۹٠-٩]/g,d=>map[d]);  
-}  
-function num(v){ return Number(normalizeDigits(v)) || 0; }  
-function fmt(v){ return new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(num(v)); }  
-function esc(v){  
-  return String(v ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));  
-}  
-function todayISO(){  
-  const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset());  
-  return d.toISOString().slice(0,10);  
-}  
-function displayDate(date){  
-  if(!date) return "";  
-  try{return new Intl.DateTimeFormat("fa-AF-u-ca-persian",{year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(date+"T00:00:00"))}  
-  catch(e){return date}  
-}  
-function showToast(message){  
-  const t=document.getElementById("toast"); t.textContent=message; t.classList.add("show");  
-  clearTimeout(showToast.timer); showToast.timer=setTimeout(()=>t.classList.remove("show"),2600);  
-}  
-function showSection(id){  
-  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active","print-active"));  
-  const section=document.getElementById(id); if(!section) return;  
-  section.classList.add("active");  
-  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.section===id));  
-  document.getElementById("pageTitle").textContent=titles[id] || id;  
-  document.getElementById("sidebar").classList.remove("open");  
-  if(id==="dashboard") renderDashboard();  
-  if(id==="records") renderRecords();  
-  if(id==="warehouse") renderWarehouse();  
-  if(id==="stock") renderStock();  
-  if(id==="book") renderBook();  
-  if(id==="invoice") {   
-    updateDatalistOptions();  
-    if(!document.querySelector("#invoiceItemsBody tr")) initInvoice();   
-  }  
-  if(id==="bills") renderBills();
-  if(id==="reports") renderReports();  
-}  
-document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showSection(b.dataset.section)));  
-document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));  
-  
-/* =========================  
-   ثبتونه  
-========================= */  
-document.getElementById("recordDate").value=todayISO();  
-document.getElementById("recordQty").addEventListener("input",calcRecordTotal);  
-document.getElementById("recordRate").addEventListener("input",calcRecordTotal);  
-document.getElementById("recordForm").addEventListener("submit",saveRecord);  
-  
-function calcRecordTotal(){  
-  document.getElementById("recordTotal").value=(num(document.getElementById("recordQty").value)*num(document.getElementById("recordRate").value)).toFixed(2);  
-}  
-function saveRecord(e){  
-  e.preventDefault();  
-  const id=document.getElementById("recordId").value;  
-  const item=document.getElementById("recordItem").value.trim();  
-  const warehouse=document.getElementById("recordWarehouse").value.trim() || "اصلي کودام";  
-  const unit=document.getElementById("recordUnit").value.trim() || "دانه";  
-  const qty=num(document.getElementById("recordQty").value);  
-  const rate=num(document.getElementById("recordRate").value);  
-  if(!item || qty<=0 || rate<0){showToast("مهرباني وکړئ معلومات سم داخل کړئ");return}  
-  
-  const data={  
-    id:id || uid("rec"),  
-    type:document.getElementById("recordType").value,  
-    date:document.getElementById("recordDate").value || todayISO(),  
-    item,unit,warehouse,qty,rate,total:qty*rate,  
-    party:document.getElementById("recordParty").value.trim(),  
-    ref:document.getElementById("recordRef").value.trim(),  
-    notes:document.getElementById("recordNotes").value.trim(),  
-    source:id ? undefined : "manual"  
-  };  
-  if(id){  
-    const old=records.find(r=>r.id===id);  
-    data.source=old?.source || "manual"; data.billId=old?.billId; data.billNo=old?.billNo;  
-    const i=records.findIndex(r=>r.id===id); if(i>=0) records[i]=data;  
-    showToast("ثبت اصلاح شو");  
-  }else{  
-    records.push(data); showToast("ثبت په بریالیتوب سره اضافه شو");  
-  }  
-  saveAll(); resetRecordForm(); renderAll();  
-}  
-function resetRecordForm(){  
-  document.getElementById("recordForm").reset();  
-  document.getElementById("recordId").value="";  
-  document.getElementById("recordDate").value=todayISO();  
-  document.getElementById("recordUnit").value="دانه";  
-  document.getElementById("recordWarehouse").value="اصلي کودام";  
-  document.getElementById("recordFormTitle").textContent="نوی جنس / ثبت";  
-  calcRecordTotal();  
-}  
-function editRecord(id){  
-  const r=records.find(x=>x.id===id); if(!r)return;  
-  showSection("new-record");  
-  document.getElementById("recordId").value=r.id;  
-  document.getElementById("recordType").value=r.type;  
-  document.getElementById("recordDate").value=r.date;  
-  document.getElementById("recordItem").value=r.item;  
-  document.getElementById("recordUnit").value=r.unit;  
-  document.getElementById("recordWarehouse").value=r.warehouse;  
-  document.getElementById("recordQty").value=r.qty;  
-  document.getElementById("recordRate").value=r.rate;  
-  document.getElementById("recordParty").value=r.party||"";  
-  document.getElementById("recordRef").value=r.ref||"";  
-  document.getElementById("recordNotes").value=r.notes||"";  
-  calcRecordTotal();  
-  document.getElementById("recordFormTitle").textContent="د ثبت اصلاح";  
-}  
-function deleteRecord(id){  
-  if(!confirm("ایا دا ثبت حذف کړئ؟"))return;  
-  records=records.filter(r=>r.id!==id); saveAll(); renderAll(); showToast("ثبت حذف شو");  
-}  
-function renderRecords(){  
-  const q=(document.getElementById("recordSearch")?.value||"").trim().toLowerCase();  
-  const type=document.getElementById("recordFilterType")?.value||"";  
-  const wh=document.getElementById("recordFilterWarehouse")?.value||"";  
-  const list=records.filter(r=>{  
-    const text=[r.item,r.party,r.ref,r.notes,r.warehouse].join(" ").toLowerCase();  
-    return (!q||text.includes(q))&&(!type||r.type===type)&&(!wh||r.warehouse===wh);  
-  }).sort((a,b)=>String(b.date).localeCompare(String(a.date)));  
-  const body=document.getElementById("recordsBody");  
-  if(!list.length){body.innerHTML='<tr><td colspan="11" class="empty">تر اوسه کوم ثبت نشته</td></tr>';return}  
-  body.innerHTML=list.map(r=>`<tr>  
-    <td>${esc(displayDate(r.date))}</td><td>${esc(r.item)}</td><td>${esc(r.unit)}</td><td>${esc(r.warehouse)}</td>  
-    <td><span class="badge ${r.type==="in"?"badge-in":"badge-out"}">${r.type==="in"?"داخل":"خارج"}</span></td>  
-    <td>${fmt(r.qty)}</td><td>${fmt(r.rate)}</td><td>${fmt(r.total)}</td><td>${esc(r.party)}</td><td>${esc(r.ref)}</td>  
-    <td class="no-print"><button class="btn btn-info" onclick="editRecord('${r.id}')">سمول</button>  
-    <button class="btn btn-danger" onclick="deleteRecord('${r.id}')">حذف</button></td>  
-  </tr>`).join("");  
-  fillWarehouseFilter();  
-}  
-function fillWarehouseFilter(){  
-  const sel=document.getElementById("recordFilterWarehouse"); if(!sel)return;  
-  const current=sel.value;  
-  const names=[...new Set(records.map(r=>r.warehouse).filter(Boolean))].sort();  
-  sel.innerHTML='<option value="">ټول کودامونه</option>'+names.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");  
-  sel.value=names.includes(current)?current:"";  
-}  
-function resetRecordFilters(){  
-  document.getElementById("recordSearch").value="";  
-  document.getElementById("recordFilterType").value="";  
-  document.getElementById("recordFilterWarehouse").value="";  
-  renderRecords();  
-}  
-  
-/* =========================  
-   موجودي / کودام  
-========================= */  
-function getStockMap(){  
-  const map=new Map();  
-  records.forEach(r=>{  
-    const key=[r.warehouse,r.item,r.unit].join("|||");  
-    if(!map.has(key))map.set(key,{warehouse:r.warehouse,item:r.item,unit:r.unit,inQty:0,outQty:0,inValue:0,outValue:0});  
-    const s=map.get(key);  
-    if(r.type==="in"){s.inQty+=num(r.qty);s.inValue+=num(r.total)}  
-    else{s.outQty+=num(r.qty);s.outValue+=num(r.total)}  
-  });  
-  return [...map.values()].map(s=>({...s,qty:s.inQty-s.outQty,avgCost:s.inQty?s.inValue/s.inQty:0,value:Math.max(0,s.qty)*(s.avgCost)}));  
-}  
-function getStock(item,warehouse,unit){  
-  const s=getStockMap().find(x=>x.item===item&&x.warehouse===warehouse&&x.unit===unit);  
-  return s||{qty:0,avgCost:0};  
-}  
-function renderStock(){  
-  const q=(document.getElementById("stockSearch")?.value||"").trim().toLowerCase();  
-  const list=getStockMap().filter(s=>[s.item,s.warehouse,s.unit].join(" ").toLowerCase().includes(q));  
-  const body=document.getElementById("stockBody");  
-  if(!list.length){body.innerHTML='<tr><td colspan="9" class="empty">موجودي نشته</td></tr>';return}  
-  body.innerHTML=list.sort((a,b)=>a.item.localeCompare(b.item)).map(s=>{  
-    const status=s.qty<0?'<span class="stock-negative">منفي</span>':s.qty===0?'<span class="muted">خالي</span>':s.qty<=5?'<span class="stock-low">کمه موجودي</span>':'<span class="success-text">ښه</span>';  
-    return `<tr><td>${esc(s.item)}</td><td>${esc(s.unit)}</td><td>${esc(s.warehouse)}</td><td>${fmt(s.inQty)}</td><td>${fmt(s.outQty)}</td><td>${fmt(s.qty)}</td><td>${fmt(s.avgCost)}</td><td>${fmt(s.value)}</td><td>${status}</td></tr>`  
-  }).join("");  
-}  
-function renderWarehouse(){  
-  const map=new Map();  
-  const stocks = getStockMap();  
-    
-  stocks.forEach(s=>{  
-    if(!map.has(s.warehouse))map.set(s.warehouse,{inQty:0,outQty:0,value:0,items:new Set()});  
-    const x=map.get(s.warehouse);x.inQty+=s.inQty;x.outQty+=s.outQty;x.value+=s.value;x.items.add(s.item);  
-  });  
-    
-  const body=document.getElementById("warehouseBody");  
-  const arr=[...map.entries()];  
-  if(!arr.length){  
-    body.innerHTML='<tr><td colspan="6" class="empty">کودام معلومات نشته</td></tr>';  
-  } else {  
-    body.innerHTML=arr.map(([w,s])=>`<tr><td><b>${esc(w)}</b></td><td>${fmt(s.inQty)}</td><td>${fmt(s.outQty)}</td><td>${fmt(s.inQty-s.outQty)}</td><td>${fmt(s.value)}</td><td><span class="badge badge-paid">${s.items.size} ډولونه</span></td></tr>`).join("");  
-  }  
-  
-  // Render Detailed Items inside Warehouse  
-  const detailsBody=document.getElementById("warehouseDetailsBody");  
-  if(!stocks.length){  
-    detailsBody.innerHTML='<tr><td colspan="8" class="empty">په کودام کې د هیڅ جنس تفصیلي معلومات نشته</td></tr>';  
-  } else {  
-    detailsBody.innerHTML=stocks.sort((a,b)=>a.warehouse.localeCompare(b.warehouse)).map(s=>`  
-      <tr>  
-        <td><b>${esc(s.warehouse)}</b></td>  
-        <td>${esc(s.item)}</td>  
-        <td>${esc(s.unit)}</td>  
-        <td>${fmt(s.inQty)}</td>  
-        <td>${fmt(s.outQty)}</td>  
-        <td><b>${fmt(s.qty)}</b></td>  
-        <td>${fmt(s.avgCost)}</td>  
-        <td>${fmt(s.value)}</td>  
-      </tr>  
-    `).join("");  
-  }  
-}  
-  
-/* =========================  
-   کتاب  
-========================= */  
-function renderBook(){  
-  const from=document.getElementById("bookFrom")?.value||"";  
-  const to=document.getElementById("bookTo")?.value||"";  
-  const q=(document.getElementById("bookSearch")?.value||"").toLowerCase();  
-  const list=records.filter(r=>(!from||r.date>=from)&&(!to||r.date<=to)&&(!q||[r.item,r.party,r.ref,r.notes,r.warehouse].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.date.localeCompare(b.date));  
-  const body=document.getElementById("bookBody");  
-  if(!list.length){body.innerHTML='<tr><td colspan="9" class="empty">د ټاکل شوي فلټر لپاره معلومات نشته</td></tr>';return}  
-  body.innerHTML=list.map(r=>`<tr>  
-    <td>${esc(displayDate(r.date))}</td><td>${esc(r.item)}</td><td>${r.type==="in"?"داخل":"خارج"}</td><td>${fmt(r.qty)} ${esc(r.unit)}</td><td>${fmt(r.rate)}</td>  
-    <td>${r.type==="in"?fmt(r.total):"-"}</td><td>${r.type==="out"?fmt(r.total):"-"}</td><td>${esc(r.billNo||r.ref)}</td><td>${esc(r.notes)}</td>  
-  </tr>`).join("");  
-}  
-  
-/* =========================  
-   بیل / فاکتور  
-========================= */  
-function nextBillNumber(){  
-  const nums=bills.map(b=>Number(b.billNo)).filter(Number.isFinite);  
-  return String(Math.max(1000,...nums)+1);  
-}  
-function initInvoice(){  
-  document.getElementById("invoiceDate").value=todayISO();  
-  document.getElementById("invoiceNumber").value=nextBillNumber();  
-  document.getElementById("invoicePaid").value=0;  
-  document.getElementById("invoiceItemsBody").innerHTML="";  
-  invoiceRows=0; addInvoiceRow();  
-  updateInvoiceTotals();  
-}  
-function clearInvoice(){  
-  document.getElementById("invoiceCustomerName").value="";  
-  document.getElementById("invoiceCustomerPhone").value="";  
-  document.getElementById("invoiceCustomerAddress").value="";  
-  document.getElementById("invoiceDate").value=todayISO();  
-  document.getElementById("invoiceWarehouse").value="اصلي کودام";  
-  document.getElementById("invoiceNumber").value=nextBillNumber();  
-  document.getElementById("invoiceNotes").value="";  
-  document.getElementById("invoicePaid").value=0;  
-  document.getElementById("invoiceItemsBody").innerHTML="";  
-  invoiceRows=0;addInvoiceRow();updateInvoiceTotals();  
-}  
-  
-function updateDatalistOptions(){  
-  const names=[...new Set(records.map(r=>r.item).filter(Boolean))].sort();  
-  const dl=document.getElementById("itemList");  
-  dl.innerHTML=names.map(n=>`<option value="${esc(n)}"></option>`).join("");  
-}  
-  
-function addInvoiceRow(data={}){  
-  invoiceRows++;  
-  const tr=document.createElement("tr");  
-  tr.dataset.row=invoiceRows;  
-  tr.innerHTML=`  
-    <td><input list="itemList" class="inv-item" value="${esc(data.item||"")}" placeholder="د جنس نوم یا لټون..." oninput="invoiceItemChanged(this)" onchange="invoiceItemChanged(this)"></td>  
-    <td><input class="inv-unit" value="${esc(data.unit||"دانه")}" placeholder="دانه"></td>  
-    <td><input class="inv-qty" type="number" min="0.001" step="any" value="${data.qty??1}" oninput="updateInvoiceTotals()"></td>  
-    <td><input class="inv-cost" type="number" min="0" step="any" value="${data.cost??0}" oninput="updateInvoiceTotals()"></td>  
-    <td><input class="inv-sale" type="number" min="0" step="any" value="${data.sale??0}" oninput="updateInvoiceTotals()"></td>  
-    <td class="inv-line-total" style="font-weight:bold">0</td>  
-    <td class="inv-line-profit" style="font-weight:bold">0</td>  
-    <td><button class="btn btn-danger remove" onclick="this.closest('tr').remove();updateInvoiceTotals()">✕</button></td>`;  
-  document.getElementById("invoiceItemsBody").appendChild(tr);  
-  if(data.item) invoiceItemChanged(tr.querySelector(".inv-item"));  
-  updateInvoiceTotals();  
-}  
-  
-function invoiceItemChanged(input){  
-  const tr=input.closest("tr");  
-  const val = input.value.trim();  
-  if(!val) return;  
-  const unit=tr.querySelector(".inv-unit");  
-  const cost=tr.querySelector(".inv-cost");  
-  const stock=getStock(val, document.getElementById("invoiceWarehouse").value, unit.value||"دانه");  
-    
-  if(stock.qty>0 && !num(cost.value)) cost.value=stock.avgCost.toFixed(2);  
-  updateInvoiceTotals();  
-}  
-  
-document.getElementById("invoiceWarehouse").addEventListener("input",()=>{  
-  document.querySelectorAll("#invoiceItemsBody tr .inv-item").forEach(invoiceItemChanged);  
-});  
-  
-function getInvoiceItems(){  
-  return [...document.querySelectorAll("#invoiceItemsBody tr")].map(tr=>({  
-    item:tr.querySelector(".inv-item").value.trim(),  
-    unit:tr.querySelector(".inv-unit").value.trim()||"دانه",  
-    qty:num(tr.querySelector(".inv-qty").value),  
-    cost:num(tr.querySelector(".inv-cost").value),  
-    sale:num(tr.querySelector(".inv-sale").value)  
-  })).filter(x=>x.item&&x.qty>0);  
-}  
-  
-function updateInvoiceTotals(){
-
-  let sale = 0;
-  let cost = 0;
-
-  document.querySelectorAll("#invoiceItemsBody tr").forEach(tr => {
-
-    const qty  = num(tr.querySelector(".inv-qty")?.value);
-    const c    = num(tr.querySelector(".inv-cost")?.value);
-    const s    = num(tr.querySelector(".inv-sale")?.value);
-
-    const lineSale = qty * s;
-    const lineCost = qty * c;
-
-    sale += lineSale;
-    cost += lineCost;
-
-    if(tr.querySelector(".inv-line-total")){
-      tr.querySelector(".inv-line-total").textContent = fmt(lineSale);
+try {
+  const savedAuth = localStorage.getItem(AUTH_KEY);
+  if (savedAuth) {
+    const parsedAuth = JSON.parse(savedAuth);
+    if (parsedAuth && typeof parsedAuth.user === "string" && typeof parsedAuth.pass === "string") {
+      auth = parsedAuth;
     }
-
-    if(tr.querySelector(".inv-line-profit")){
-
-      const p = lineSale - lineCost;
-
-      tr.querySelector(".inv-line-profit").innerHTML =
-        p >= 0
-        ? `<span class="profit">${fmt(p)}</span>`
-        : `<span class="loss">${fmt(p)}</span>`;
-    }
-
-  });
-
-
-  /*
-   * مهم:
-   * د تادیې عدد نور د oninput پر وخت 0 ته نه اړول کېږي.
-   * کاروونکی کولای شي په موبایل او کمپیوټر کې عدد ولیکي.
-   */
-
-  const paidInput = document.getElementById("invoicePaid");
-
-  let paid = num(paidInput?.value);
-
-  if(paid < 0){
-    paid = 0;
   }
-
-  const due = Math.max(sale - paid, 0);
-  const profit = sale - cost;
-
-
-  document.getElementById("invoiceSaleTotal").textContent = fmt(sale);
-
-  if(document.getElementById("invoiceCostTotal")){
-    document.getElementById("invoiceCostTotal").textContent = fmt(cost);
+} catch (err) {
+  localStorage.removeItem(AUTH_KEY);
+}   
+   
+function showApp(){
+  const loginScreen = document.getElementById("loginScreen");
+  const app = document.querySelector(".app");
+  if (loginScreen) {
+    loginScreen.style.setProperty("display", "none", "important");
   }
-
-  if(document.getElementById("invoiceProfitTotal")){
-
-    document.getElementById("invoiceProfitTotal").innerHTML =
-      profit >= 0
-      ? `<span class="profit">${fmt(profit)}</span>`
-      : `<span class="loss">${fmt(profit)}</span>`;
+  if (app) {
+    app.style.setProperty("display", "flex", "important");
+    app.style.setProperty("visibility", "visible", "important");
+    app.style.setProperty("pointer-events", "auto", "important");
   }
-
-  document.getElementById("invoiceDue").textContent = fmt(due);
 }
 
-function saveInvoice(andPrint=false){  
-  const customer=document.getElementById("invoiceCustomerName").value.trim()||"عمومي مشتری";  
-  const phone=document.getElementById("invoiceCustomerPhone").value.trim();  
-  const address=document.getElementById("invoiceCustomerAddress").value.trim();  
-  const date=document.getElementById("invoiceDate").value||todayISO();  
-  const warehouse=document.getElementById("invoiceWarehouse").value.trim()||"اصلي کودام";  
-  const billNo=document.getElementById("invoiceNumber").value||nextBillNumber();  
-  const notes=document.getElementById("invoiceNotes").value.trim();  
-  const items=getInvoiceItems();  
-    
-  if(!items.length){showToast("لږ تر لږه یو جنس اضافه کړئ");return}  
-    
-  for(const it of items){  
-    if(it.sale<0||it.cost<0){showToast("نرخونه سم داخل کړئ");return}  
-  }  
-    
-  // که د کودام موجودي کافي نه وي، بیل ثبت نه شي؛ موجودي باید بدله نه شي.
-  const missingStock = items.filter(it => getStock(it.item, warehouse, it.unit).qty < it.qty);
-  if(missingStock.length){
-    const names = missingStock.map(it => `${it.item} (${fmt(getStock(it.item, warehouse, it.unit).qty)} موجود)`).join("، ");
-    showToast(`موجودي کافي نه ده: ${names}`);
-    return;
+function showLogin(){
+  const loginScreen = document.getElementById("loginScreen");
+  const app = document.querySelector(".app");
+  if (loginScreen) {
+    loginScreen.style.setProperty("display", "flex", "important");
+    loginScreen.style.setProperty("visibility", "visible", "important");
+    loginScreen.style.setProperty("pointer-events", "auto", "important");
   }
-
-  let totalSale=0,totalCost=0;  
-  items.forEach(it=>{totalSale+=it.qty*it.sale;totalCost+=it.qty*it.cost});  
-  const paid=Math.min(Math.max(num(document.getElementById("invoicePaid").value),0),totalSale);  
-  const bill={  
-    id:uid("bill"),billNo,date,customer,phone,address,warehouse,notes,items,  
-    totalSale,totalCost,paid,due:totalSale-paid,createdAt:new Date().toISOString()  
-  };  
-    
-  bills.push(bill);  
-  items.forEach(it=>{  
-    records.push({  
-      id:uid("rec"),type:"out",date,item:it.item,unit:it.unit,warehouse,  
-      qty:it.qty,rate:it.cost,total:it.qty*it.cost,party:customer,ref:billNo,  
-      notes:"د خرڅلاو بیل",source:"bill",billId:bill.id,billNo  
-    });  
-  });  
-    
-  saveAll();renderAll();  
-  showToast(`بیل ${billNo} ثبت شو`);  
-  if(andPrint){  
-    preparePrintBill(bill);  
-    setTimeout(()=>window.print(),100);  
-  }  
-  clearInvoice();  
-}  
-  
-function preparePrintBill(bill){  
-  document.getElementById("printShopName").textContent = document.getElementById("shopName").value || "د جنسي محاسبې سوداګریز مرکز";  
-  document.getElementById("printShopAddress").textContent = document.getElementById("shopAddress").value || "ادرس: کابل، افغانستان";  
-  
-  document.getElementById("printCustomer").textContent = bill.customer || "عمومي مشتری";  
-  document.getElementById("printPhone").textContent = bill.phone || "نشته";  
-  document.getElementById("printAddress").textContent = bill.address || "نشته";  
-    
-  document.getElementById("printNumber").textContent = bill.billNo;  
-  document.getElementById("printDate").textContent = displayDate(bill.date);  
-  document.getElementById("printNotes").textContent = bill.notes || "هیڅ";
-  document.getElementById("printTotalSale").textContent=fmt(bill.totalSale);
-  document.getElementById("printTotalPaid").textContent=fmt(bill.paid);
-  document.getElementById("printTotalDue").textContent=fmt(Math.max(num(bill.totalSale)-num(bill.paid),0));  
-  
-  const body = document.getElementById("printTableBody");  
-  body.innerHTML = "";  
-  
-  (bill.items || []).forEach((item, index) => {  
-    const total = num(item.qty) * num(item.sale);  
-    body.innerHTML += `  
-      <tr>  
-        <td>${index + 1}</td>  
-        <td>${esc(item.item)}</td>  
-        <td>${esc(item.unit)}</td>  
-        <td>${fmt(item.qty)}</td>  
-        <td>${fmt(item.sale)}</td>  
-        <td>${fmt(total)}</td>  
-      </tr>  
-    `;  
-  });  
-  
-  const sale = num(bill.totalSale);  
-  const paid = num(bill.paid);  
-  const due = Math.max(sale - paid, 0);  
-  
-  document.getElementById("printTotalSale").textContent = fmt(sale);  
-  document.getElementById("printTotalPaid").textContent = fmt(paid);  
-  document.getElementById("printTotalDue").textContent = fmt(due);  
-}  
-  
-function printCurrentInvoice(){  
-  updateInvoiceTotals();  
-  const items=getInvoiceItems();  
-  if(!items.length){showToast("د چاپ لپاره جنس اضافه کړئ");return}  
-  const fake={  
-    customer:document.getElementById("invoiceCustomerName").value||"عمومي مشتری",  
-    phone:document.getElementById("invoiceCustomerPhone").value,  
-    address:document.getElementById("invoiceCustomerAddress").value,  
-    billNo:document.getElementById("invoiceNumber").value,  
-    date:document.getElementById("invoiceDate").value,  
-    notes:document.getElementById("invoiceNotes").value,  
-    items:items,  
-    totalSale:document.getElementById("invoiceSaleTotal").textContent.replace(/,/g, ''),  
-    paid:document.getElementById("invoicePaid").value  
-  };  
-  preparePrintBill(fake);  
-  const sec=document.getElementById("invoice");sec.classList.add("print-active");  
-  window.print();  
-  setTimeout(()=>sec.classList.remove("print-active"),500);  
-}  
-  
-/* =========================  
-   بلونه / پورونه  
-========================= */  
-function billProfit(b){return num(b.totalSale)-num(b.totalCost)}  
-function renderBills(){  
-  const q=(document.getElementById("billSearch")?.value||"").trim().toLowerCase();  
-  const status=document.getElementById("billStatusFilter")?.value||"";  
-  const list=bills.filter(b=>{  
-    const text=[b.billNo,b.customer,b.phone,b.address,b.notes,...(b.items||[]).map(i=>i.item)].join(" ").toLowerCase();  
-    const isPaid=num(b.due)<=0;  
-    return (!q||text.includes(q))&&(!status||(status==="paid"?isPaid:!isPaid));  
-  }).sort((a,b)=>String(b.date).localeCompare(String(a.date)));  
-  const body=document.getElementById("billsBody");  
-  if(!list.length){body.innerHTML='<tr><td colspan="11" class="empty">بلونه ونه موندل شول</td></tr>';return}  
-  body.innerHTML=list.map(b=>{  
-    const p=billProfit(b), paid=num(b.paid), due=Math.max(num(b.totalSale)-paid,0);  
-    const items=(b.items||[]).map(i=>`${esc(i.item)} × ${fmt(i.qty)}`).join("، ");  
-    return `<tr>  
-      <td><b>${esc(b.billNo)}</b></td><td>${esc(displayDate(b.date))}</td><td>${esc(b.customer)}</td><td>${items}</td>  
-      <td>${fmt(b.totalSale)}</td><td>${fmt(b.totalCost)}</td><td>${p>=0?`<span class="profit">${fmt(p)}</span>`:`<span class="loss">${fmt(p)}</span>`}</td>  
-      <td>${fmt(paid)}</td><td>${fmt(due)}</td>  
-      <td><span class="badge ${due<=0?"badge-paid":"badge-debt"}">${due<=0?"خلاص شوی":"قرضدار"}</span></td>  
-      <td class="no-print"><button class="btn btn-info" onclick="openEditModal('${b.id}')">سمول</button>  
-      <button class="btn btn-secondary" onclick="printSavedBill('${b.id}')">چاپ</button>  
-      <button class="btn btn-danger" onclick="deleteBill('${b.id}')">حذف</button></td>  
-    </tr>`;  
-  }).join("");  
-}  
-function openEditModal(id){  
-  const b=bills.find(x=>x.id===id);if(!b)return;  
-  document.getElementById("editBillId").value=b.id;  
-  document.getElementById("editCustomerName").value=b.customer||"";  
-  document.getElementById("editCustomerPhone").value=b.phone||"";  
-  document.getElementById("editCustomerAddress").value=b.address||"";  
-  document.getElementById("editBillDate").value=b.date||todayISO();  
-  document.getElementById("editBillWarehouse").value=b.warehouse||"اصلي کودام";  
-  document.getElementById("editBillNotes").value=b.notes||"";  
-  document.getElementById("editAdditionalPayment").value=0;  
-  document.getElementById("editBillModal").classList.add("show");  
-}  
-function closeEditModal(){document.getElementById("editBillModal").classList.remove("show")}  
-function updateBill(){  
-  const id=document.getElementById("editBillId").value;  
-  const b=bills.find(x=>x.id===id);if(!b)return;  
-  b.customer=document.getElementById("editCustomerName").value.trim()||"عمومي مشتری";  
-  b.phone=document.getElementById("editCustomerPhone").value.trim();  
-  b.address=document.getElementById("editCustomerAddress").value.trim();  
-  b.date=document.getElementById("editBillDate").value||b.date;  
-  b.warehouse=document.getElementById("editBillWarehouse").value.trim()||b.warehouse;  
-  b.notes=document.getElementById("editBillNotes").value.trim();  
-  const extra=Math.max(num(document.getElementById("editAdditionalPayment").value),0);  
-  b.paid=Math.min(num(b.totalSale),num(b.paid)+extra);  
-  b.due=Math.max(num(b.totalSale)-b.paid,0);  
-  records.forEach(r=>{if(r.billId===b.id){r.party=b.customer;r.date=b.date;r.warehouse=b.warehouse;r.notes="د خرڅلاو بیل"}})  
-  saveAll();closeEditModal();renderAll();showToast("د بل معلومات اصلاح شول");  
-}  
-function deleteBill(id){  
-  const b=bills.find(x=>x.id===id);if(!b)return;  
-  if(!confirm(`ایا بیل ${b.billNo} او د هغه اړوند د موجودۍ خرڅ ثبتونه هم حذف کړئ؟`))return;  
-  bills=bills.filter(x=>x.id!==id);  
-  records=records.filter(r=>r.billId!==id);  
-  saveAll();renderAll();showToast("بیل حذف شو");  
-}  
-function printSavedBill(id){  
-  const b=bills.find(x=>x.id===id);if(!b)return;  
-  preparePrintBill(b);  
-  const section=document.getElementById("invoice");  
-  showSection("invoice");  
-  section.classList.add("print-active");  
-  setTimeout(()=>window.print(),100);  
-  setTimeout(()=>{ section.classList.remove("print-active"); },700);  
-}  
-  
-/* =========================  
-   ډشبورډ او چارتونه  
-========================= */  
-const LOW_STOCK_DISMISSED_KEY = "jinsi_hisab_low_stock_dismissed_v2";
-const LOW_STOCK_HIDE_MS = 2 * 24 * 60 * 60 * 1000;
-
-function loadLowStockDismissed(){
-  try{
-    const x=JSON.parse(localStorage.getItem(LOW_STOCK_DISMISSED_KEY)||"{}");
-    return x && typeof x==="object" && !Array.isArray(x) ? x : {};
-  }catch(e){ return {}; }
-}
-let lowStockDismissed=loadLowStockDismissed();
-
-function lowStockKey(s){
-  return [s.item||"",s.warehouse||"",s.unit||""].join("|");
-}
-
-function cleanupLowStockDismissed(keys){
-  const now=Date.now(), clean={};
-  Object.keys(lowStockDismissed).forEach(k=>{
-    const t=Number(lowStockDismissed[k]);
-    if(keys.has(k) && Number.isFinite(t) && now-t<LOW_STOCK_HIDE_MS) clean[k]=t;
-  });
-  lowStockDismissed=clean;
-  localStorage.setItem(LOW_STOCK_DISMISSED_KEY,JSON.stringify(clean));
-}
-
-function hideLowStockAlerts(){
-  const now=Date.now();
-  getStockMap().filter(s=>s.qty<=5).forEach(s=>{
-    lowStockDismissed[lowStockKey(s)]=now;
-  });
-  localStorage.setItem(LOW_STOCK_DISMISSED_KEY,JSON.stringify(lowStockDismissed));
-  renderDashboard();
-  showToast("د ټیټې موجودۍ خبرتیاوې د ۲ ورځو لپاره پټې شوې");
-}
-
-function closeLowStockAlert(){ hideLowStockAlerts(); }
-
-function formatRemaining(ms){
-  const min=Math.max(0,Math.ceil(ms/60000));
-  const d=Math.floor(min/1440), h=Math.floor((min%1440)/60), m=min%60;
-  if(d) return `${d} ورځې، ${h} ساعته وروسته`;
-  if(h) return `${h} ساعته، ${m} دقیقې وروسته`;
-  return `${m} دقیقې وروسته`;
-}
-
-
-/* ===== د ګټې/تاوان واحده محاسبه =====
-   ډیشبورډ او راپور دواړه له همدې فنکشن څخه استفاده کوي.
-*/
-function getBillCostUnified(b){
-  const savedCost = num(b.totalCost);
-  if(savedCost > 0) return savedCost;
-
-  return (Array.isArray(b.items) ? b.items : []).reduce((sum,it)=>{
-    return sum + num(it.qty) * num(it.cost);
-  },0);
-}
-
-function getBillNetUnified(b){
-  return num(b.totalSale) - getBillCostUnified(b);
-}
-
-function calculateProfitLossUnified(list){
-  const sales = list.reduce((sum,b)=>sum + num(b.totalSale),0);
-  const cost = list.reduce((sum,b)=>sum + getBillCostUnified(b),0);
-  const net = sales - cost;
-
-  return {
-    sales,
-    cost,
-    net,
-    profit: Math.max(net,0),
-    loss: Math.max(-net,0)
-  };
-}
-
-function renderDashboard(){  
-  const stocks = getStockMap();  
-    
-  // ټیټه موجودي: تر ۵ دانو کمه یا مساوي
-  const lowStocks=stocks.filter(s=>s.qty<=5);
-  const keys=new Set(lowStocks.map(lowStockKey));
-  cleanupLowStockDismissed(keys);
-
-  const now=Date.now();
-  const visibleLowStocks=lowStocks.filter(s=>{
-    const t=Number(lowStockDismissed[lowStockKey(s)]||0);
-    return !t || now-t>=LOW_STOCK_HIDE_MS;
-  });
-
-  const alertBox=document.getElementById("lowStockAlert");
-  const alertList=document.getElementById("lowStockList");
-  const timer=document.getElementById("lowStockTimer");
-
-  if(visibleLowStocks.length){
-    alertList.innerHTML=visibleLowStocks.map(s=>
-      `<li class="alert-item">${esc(s.item)} (${esc(s.warehouse)}): <b>${fmt(s.qty)}</b> ${esc(s.unit)}</li>`
-    ).join("");
-    const hiddenTimes=Object.values(lowStockDismissed).map(Number).filter(Number.isFinite);
-    const earliest=hiddenTimes.length?Math.min(...hiddenTimes):0;
-    if(timer){
-      timer.textContent=earliest
-        ? `⏱️ پټې شوې خبرتیاوې به ${formatRemaining(LOW_STOCK_HIDE_MS-(now-earliest))} په خپله بیا ښکاره شي.`
-        : "⏱️ د «پټول» تڼۍ سره خبرتیا د ۲ ورځو لپاره پټېږي.";
-    }
-    alertBox.classList.add("show");
-  }else{
-    alertList.innerHTML="";
-    if(timer) timer.textContent="";
-    alertBox.classList.remove("show");
+  if (app) {
+    app.style.setProperty("display", "none", "important");
+    app.style.setProperty("visibility", "hidden", "important");
+    app.style.setProperty("pointer-events", "none", "important");
   }
+}
 
-  const totalIn=records.filter(r=>r.type==="in").reduce((a,r)=>a+num(r.total),0);  
-  const totalOut=records.filter(r=>r.type==="out").reduce((a,r)=>a+num(r.total),0);  
-  const stockValue=stocks.reduce((a,s)=>a+s.value,0);  
-  const items=new Set(records.map(r=>r.item).filter(Boolean)).size;  
-  const warehouses=new Set(records.map(r=>r.warehouse).filter(Boolean)).size;  
-  const sales=bills.reduce((a,b)=>a+num(b.totalSale),0);  
-  const paid=bills.reduce((a,b)=>a+num(b.paid),0);  
-  const debt=bills.reduce((a,b)=>a+Math.max(num(b.totalSale)-num(b.paid),0),0);
-  const dashboardPL = calculateProfitLossUnified(bills);
-  const profit = dashboardPL.profit;
-  const loss = dashboardPL.loss;  
-    
-  document.getElementById("mIn").textContent=fmt(totalIn);  
-  document.getElementById("mOut").textContent=fmt(totalOut);  
-  document.getElementById("mStockValue").textContent=fmt(stockValue);  
-  document.getElementById("mItems").textContent=items;  
-  document.getElementById("mWarehouses").textContent=warehouses;  
-  document.getElementById("mRecords").textContent=records.length;  
-  document.getElementById("mSales").textContent=fmt(sales);  
-  document.getElementById("mPaid").textContent=fmt(paid);  
-  document.getElementById("mDebt").textContent=fmt(debt);  
-  document.getElementById("mProfit").textContent=fmt(profit);  
-  document.getElementById("mLoss").textContent=fmt(loss);  
-  document.getElementById("mBills").textContent=bills.length;  
-  
-  const recent=records.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,8);  
-  document.getElementById("recentRecords").innerHTML=recent.length?recent.map(r=>`<tr><td>${esc(displayDate(r.date))}</td><td>${esc(r.item)}</td><td>${r.type==="in"?"داخل":"خارج"}</td><td>${fmt(r.qty)}</td><td>${fmt(r.total)}</td></tr>`).join(""):'<tr><td colspan="5" class="empty">ثبت نشته</td></tr>';  
-  renderCharts();  
-}  
-setInterval(()=>{if(document.getElementById("dashboard")?.classList.contains("active"))renderDashboard();},60000);
-
-function renderCharts(){  
-  const invIn=records.filter(r=>r.type==="in").reduce((a,r)=>a+num(r.qty),0);  
-  const invOut=records.filter(r=>r.type==="out").reduce((a,r)=>a+num(r.qty),0);  
-  const paid=bills.reduce((a,b)=>a+num(b.paid),0);  
-  const debt=bills.reduce((a,b)=>a+Math.max(num(b.totalSale)-num(b.paid),0),0);  
-  if(typeof Chart==="undefined")return;  
-  if(inventoryChart)inventoryChart.destroy();  
-  if(financeChart)financeChart.destroy();  
-  if(salesChart)salesChart.destroy();  
-  inventoryChart=new Chart(document.getElementById("inventoryChart"),{type:"bar",data:{labels:["داخل","خارج"],datasets:[{label:"مقدار",data:[invIn,invOut]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}});  
-  financeChart=new Chart(document.getElementById("financeChart"),{type:"doughnut",data:{labels:["ورکړل شوي","پور"],datasets:[{data:[paid,debt]}]},options:{responsive:true,maintainAspectRatio:false}});  
-  const months={};  
-  bills.forEach(b=>{  
-    const key=String(b.date||"").slice(0,7)||"نامعلوم";  
-    months[key]=(months[key]||0)+num(b.totalSale);  
-  });  
-  const keys=Object.keys(months).sort().slice(-12);  
-  salesChart=new Chart(document.getElementById("salesChart"),{type:"line",data:{labels:keys.length?keys:["تر اوسه نشته"],datasets:[{label:"خرڅلاو",data:keys.length?keys.map(k=>months[k]):[0],tension:.25,fill:false}]},options:{responsive:true,maintainAspectRatio:false}});  
-}  
-  
-/* =========================
-   راپورونه: ورځنی / میاشتنی / ربع وار
-========================= */
-function reportDateBounds(){
-  const period=document.getElementById("reportPeriod")?.value||"month";
-  const date=document.getElementById("reportDate")?.value || todayISO();
-  const d=new Date(date+"T00:00:00");
-  let from="",to="";
-  if(period==="day"){
-    from=date; to=date;
-  }else if(period==="month"){
-    const y=d.getFullYear(),m=d.getMonth();
-    from=new Date(y,m,1); to=new Date(y,m+1,0);
-    from=from.toISOString().slice(0,10); to=to.toISOString().slice(0,10);
-  }else{
-    const q=Number(document.getElementById("reportQuarter")?.value||Math.floor(d.getMonth()/3)+1);
-    const y=d.getFullYear(),startMonth=(q-1)*3;
-    from=new Date(y,startMonth,1).toISOString().slice(0,10);
-    to=new Date(y,startMonth+3,0).toISOString().slice(0,10);
+function checkLogin(){
+  if(sessionStorage.getItem("isLoggedIn") === "true"){
+    showApp();
+  } else {
+    showLogin();
   }
-  return {period,date,from,to};
-}
-
-function renderReports(){
-  const period=document.getElementById("reportPeriod");
-  const quarter=document.getElementById("reportQuarter");
-  const dateInput=document.getElementById("reportDate");
-  if(!period||!dateInput)return;
-  dateInput.value=dateInput.value||todayISO();
-  quarter.style.display=period.value==="quarter"?"":"none";
-
-  const b=reportDateBounds();
-  const list=bills.filter(x=>String(x.date||"").slice(0,10)>=b.from && String(x.date||"").slice(0,10)<=b.to);
-  const reportPL = calculateProfitLossUnified(list);
-  const sales = reportPL.sales;
-  const cost = reportPL.cost;
-  const profitRaw = reportPL.net;
-  const profit = reportPL.profit;
-  const loss = reportPL.loss;
-  const debt = list.reduce((a,x)=>a+Math.max(num(x.totalSale)-num(x.paid),0),0);
-  const paid = list.reduce((a,x)=>a+num(x.paid),0);
-
-  document.getElementById("rSales").textContent=fmt(sales);
-  document.getElementById("rProfit").textContent=fmt(profit);
-  document.getElementById("rLoss").textContent=fmt(Number.isFinite(loss) ? loss : 0);
-  document.getElementById("rDebt").textContent=fmt(debt);
-
-  const title=period.value==="day"?"ورځنی راپور":period.value==="month"?"میاشتنی راپور":"ربع وار راپور";
-  document.getElementById("reportRangeText").textContent=`${title}: ${displayDate(b.from)} تر ${displayDate(b.to)}`;
-
-  document.getElementById("reportBody").innerHTML=`
-    <tr><td>ټول خرڅلاو</td><td><b>${fmt(sales)}</b></td></tr>
-    <tr><td>ټول لګښت</td><td>${fmt(cost)}</td></tr>
-    <tr><td>خالص ګټه</td><td class="profit">${fmt(profit)}</td></tr>
-    <tr><td>ټول تاوان</td><td class="loss">${fmt(loss)}</td></tr>
-    <tr><td>نغدې ورکړې</td><td>${fmt(paid)}</td></tr>
-    <tr><td>پاتې پور</td><td class="stock-low">${fmt(debt)}</td></tr>
-    <tr><td>د بلونو شمېر</td><td>${list.length}</td></tr>
-  `;
-
-  if(typeof Chart==="undefined")return;
-  if(reportChart)reportChart.destroy();
-  const canvas=document.getElementById("reportChart");
-  if(!canvas)return;
-  reportChart=new Chart(canvas,{
-    type:"bar",
-    data:{
-      labels:["ګټه","تاوان","پور"],
-      datasets:[{label:title,data:[profit,loss,debt]}]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false}},
-      scales:{y:{beginAtZero:true}}
-    }
-  });
-}
-
-function printReport(){
-  const sec=document.getElementById("reports");
-  document.querySelectorAll(".section").forEach(x=>x.classList.remove("print-active"));
-  sec.classList.add("print-active");
-  window.print();
-}
-
-/* =========================  
-   بیکاپ / ریسټور  
-========================= */  
-function exportData(){  
-  const data={version:3,exportedAt:new Date().toISOString(),records,bills};  
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});  
-  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`jinsi-hisab-backup-${todayISO()}.json`;a.click();URL.revokeObjectURL(a.href);  
-}  
-document.getElementById("importFile").addEventListener("change",function(){  
-  const file=this.files[0];if(!file)return;  
-  const reader=new FileReader();  
-  reader.onload=e=>{  
-    try{  
-      const data=JSON.parse(e.target.result);  
-      const newRecords=Array.isArray(data)?data:data.records;  
-      const newBills=Array.isArray(data)?[]:data.bills;
-       if(!Array.isArray(newRecords))throw new Error("bad");  
-      if(!confirm("اوسني معلومات به د بیکاپ معلوماتو سره بدل شي. دوام ورکړو؟"))return;  
-      records=newRecords;  
-      bills=Array.isArray(newBills)?newBills:[];  
-      saveAll();renderAll();showToast("بیکاپ په بریالیتوب سره راوستل شو");  
-    }catch(err){alert("د بیکاپ فایل ناسم دی")}  
-  };  
-  reader.readAsText(file);this.value="";  
-});  
-  
-/* =========================  
-   عمومي رینډر  
-========================= */  
-function renderAll(){  
-  updateDatalistOptions();  
-  renderDashboard();renderRecords();renderWarehouse();renderStock();renderBook();renderBills();
-  if(document.getElementById("reports")?.classList.contains("active")) renderReports();  
-  if(!document.querySelector("#invoiceItemsBody tr"))initInvoice();  
-}  
-window.addEventListener("beforeprint",()=>{  
-  const active=document.querySelector(".section.active");  
-  if(active)active.classList.add("print-active");  
-});  
-window.addEventListener("afterprint",()=>{  
-  document.querySelectorAll(".section").forEach(s=>s.classList.remove("print-active"));  
-});  
-document.getElementById("editBillModal").addEventListener("click",e=>{if(e.target.id==="editBillModal")closeEditModal()});  
-document.getElementById("passModal").addEventListener("click",e=>{if(e.target.id==="passModal")closePassModal()});  
-  
-// Initial Setup  
-checkLogin();  
-initInvoice();  
-renderAll();  
-</script>  
-</body>  
-</html> جوړونکی عبدالله مختار  . تماس 0702624188
+}   
+   
+document.getElementById("loginForm").addEventListener("submit", function(e){   
+  e.preventDefault();   
+  const u = document.getElementById("loginUser").value.trim();   
+  const p = document.getElementById("loginPass").value.trim();   
+  if(u === auth.user && p === auth.pass){   
+    sessionStorage.setItem("isLoggedIn", "true");
+    showApp();
+    showToast("ښه راغلاست!");
+    renderAll();   
+  } else {   
+    alert("نوی یوزرنیم یا پاسورډ غلط دی!");   
+  }   
+});   
+   
+function logout(){   
+  sessionStorage.removeItem("isLoggedIn");   
+  location.reload();   
+}   
+   
+function openPassModal(){   
+  document.getElementById("newUsername").value = auth.user;   
+  document.getElementById("newPassword").value = auth.pass;   
+  document.getElementById("passModal").classList.add("show");   
+}   
+function closePassModal(){ document.getElementById("passModal").classList.remove("show"); }   
+function saveNewAuth(){   
+  const u = document.getElementById("newUsername").value.trim();   
+  const p = document.getElementById("newPassword").value.trim();   
+  if(!u || !p){ showToast("معلومات پوره داخل کړئ"); return; }   
+  auth = { user: u, pass: p };   
+  localStorage.setItem(AUTH_KEY, JSON.stringify(auth));   
+  closePassModal();   
+  showToast("یوزرنیم او پاسورډ بدل شول!");   
+}   
+   
+/* =========================   
+   ذخیره او عمومي حالت   
+========================= */   
+const RECORD_KEY = "jinsi_hisab_records_v2";   
+const BILL_KEY = "jinsi_hisab_bills_v2"; 
+   
+let records = loadArray(RECORD_KEY);   
+let bills = loadArray(BILL_KEY); 
+let inventoryChart = null, financeChart = null, salesChart = null, reportChart = null; 
+let invoiceRows = 0;   
+   
+const titles = {   
+  dashboard:"ډشبورډ","new-record":"نوی جنس / ثبت",records:"ثبتونه",warehouse:"کودام",   
+  stock:"موجودي",book:"د کتاب پاڼه",invoice:"نوی بیل / فاکتور",bills:"بلونه / پورونه",reports:"راپورونه"   
+};   
+   
+function loadArray(key){   
+  try{   
+    const data = JSON.parse(localStorage.getItem(key) || "[]");   
+    return Array.isArray(data) ? data : [];   
+  }catch(e){ return []; }   
+}   
+function saveAll(){   
+  localStorage.setItem(RECORD_KEY, JSON.stringify(records));   
+  localStorage.setItem(BILL_KEY, JSON.stringify(bills)); 
+}   
+function uid(prefix="id"){   
+  return prefix + "_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,7);   
+}   
+function normalizeDigits(value){   
+  const map={"۰":"0","۱":"1","۲":"2","۳":"3","۴":"4","۵":"5","۶":"6","۷":"7","۸":"8","۹":"9",   
+             "٠":"0","١":"1","٢":"2","٣":"3","٤":"4","٥":"5","٦":"6","٧":"7","٨":"8","٩":"9"};   
+  return String(value ?? "").replace(/[۰-۹٠-٩]/g,d=>map[d]);   
+}   
+function num(v){ return Number(normalizeDigits(v)) || 0; }   
+function fmt(v){ return new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(num(v)); }   
+function esc(v){   
+  return String(v ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));   
+}   
+function todayISO(){   
+  const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset());   
+  return d.toISOString().slice(0,10);   
+}   
+function displayDate(date){   
+  if(!date) return "";   
+  try{return new Intl.DateTimeFormat("fa-AF-u-ca-persian",{year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(date+"T00:00:00"))}   
+  catch(e){return date}   
+}   
+function showToast(message){   
+  const t=document.getElementById("toast"); t.textContent=message; t.classList.add("show");   
+  clearTimeout(showToast.timer); showToast.timer=setTimeout(()=>t.classList.remove("show"),2600);   
+}   
+function showSection(id){   
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active","print-active"));   
+  const section=document.getElementById(id); if(!section) return;   
+  section.classList.add("active");   
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.section===id));   
+  document.getElementById("pageTitle").textContent=titles[id] || id;   
+  document.getElementById("sidebar").classList.remove("open");   
+  if(id==="dashboard") renderDashboard();   
+  if(id==="records") renderRecords();   
+  if(id==="warehouse") renderWarehouse();   
+  if(id==="stock") renderStock();   
+  if(id==="book") renderBook();   
+  if(id==="invoice") {    
+    updateDatalistOptions();   
+    if(!document.querySelector("#invoiceItemsBody tr")) initInvoice();    
+  }   
+  if(id==="bills") renderBills(); 
+  if(id==="reports") renderReports();   
+}   
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showSection(b.dataset.section)));   
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));   
+   
+/* =========================   
+   ثبتونه   
+========================= */   
+document.getElementById("recordDate").value=todayISO();   
+document.getElementById("recordQty").addEventListener("input",calcRecordTotal);   
+document.getElementById("recordRate").addEventListener("input",calcRecordTotal);   
+document.getElementById("recordForm").addEventListener("submit",saveRecord);   
+   
+function calcRecordTotal(){   
+  document.getElementById("recordTotal").value=(num(document.getElementById("recordQty").value)*num(document.getElementById("recordRate").value)).toFixed(2);   
+}   
+function saveRecord(e){   
+  e.preventDefault();   
+  const id=document.getElementById("recordId").value;   
+  const item=document.getElementById("recordItem").value.trim();   
+  const warehouse=document.getElementById("recordWarehouse").value.trim() || "اصلي کودام";   
+  const unit=document.getElementById("recordUnit").value.trim() || "دانه";   
+  const qty=num(document.getElementById("recordQty").value);   
+  const rate=num(document.getElementById("recordRate").value);   
+  if(!item || qty<=0 || rate<0){showToast("مهرباني وکړئ معلومات سم داخل کړئ");return}   
+   
+  const data={   
+    id:id || uid("rec"),   
+    type:document.getElementById("recordType").value,   
+    date:document.getElementById("recordDate").value || todayISO(),   
+    item,unit,warehouse,qty,rate,total:qty*rate,   
+    party:document.getElementById("recordParty").value.trim(),   
+    ref:document.getElementById("recordRef").value.trim(),   
+    notes:document.getElementById("recordNotes").value.trim(),   
+    source:id ? undefined : "manual"   
+  };   
+  if(id){   
+    const old=records.find(r=>r.id===id);   
+    data.source=old?.source || "manual"; data.billId=old?.billId; data.billNo=old?.billNo;   
+    const i=records.findIndex(r=>r.id===id); if(i>=0) records[i]=data;   
+    showToast("ثبت اصلاح شو");   
+  }else{   
+    records.push(data); showToast("ثبت په بریالیتوب سره اضافه شو");   
+  }   
+  saveAll(); resetRecordForm(); renderAll();   
+}   
+function resetRecordForm(){   
+  document.getElementById("recordForm").reset();   
+  document.getElementById("recordId").value="";   
+  document.getElementById("recordDate").value=todayISO();   
+  document.getElementById("recordUnit").value="دانه";   
+  document.getElementById("recordWarehouse").value="اصلي کودام";   
+  document.getElementById("recordFormTitle").textContent="نوی جنس / ثبت";   
+  calcRecordTotal();   
+}   
+function editRecord(id){   
+  const r=records.find(x=>x.id===id); if(!r)return;   
+  showSection("new-record");   
+  document.getElementById("recordId").value=r.id;   
+  document.getElementById("recordType").value=r.type;   
+  document.getElementById("recordDate").value=r.date;   
+  document.getElementById("recordItem").value=r.item;   
+  document.getElementById("recordUnit").value=r.unit;   
+  document.getElementById("recordWarehouse").value=r.warehouse;   
+  document.getElementById("recordQty").value=r.qty;   
+  document.getElementById("recordRate").value=r.rate;   
+  document.getElementById("recordParty").value=r.party||"";   
+  document.getElementById("recordRef").value=r.ref||"";   
+  document.getElementById("recordNotes").value=r.notes||"";   
+  calcRecordTotal();   
+  document.getElementById("recordFormTitle").textContent="د ثبت اصلاح";   
+}   
+function deleteRecord(id){   
+  if(!confirm("ایا دا ثبت حذف کړئ؟"))return;   
+  records=records.filter(r=>r.id!==id); saveAll(); renderAll(); showToast("ثبت حذف شو");   
+}   
+function renderRecords(){   
+  const q=(document.getElementById("recordSearch")?.value||"").trim().toLowerCase();   
+  const type=document.getElementById("recordFilterType")?.value||"";   
+  const wh=document.getElementById("recordFilterWarehouse")?.value||"";   
+  const list=records.filter(r=>{   
+    const text=[r.item,r.party,r.ref,r.notes,r.warehouse].join(" ").toLowerCase();   
+    return (!q||text.includes(q))&&(!type||r.type===type)&&(!wh||r.warehouse===wh);   
+  }).sort((a,b)=>String(b.date).localeCompare(String(a.date)));   
+  const body=document.getElementById("recordsBody");   
+  if(!list.length){body.innerHTML='<tr><td colspan="11" class="empty">تر اوسه کوم ثبت نشته</td></tr>';return}   
+  body.innerHTML=list.map(r=>`<tr>   
+    <td>${esc(displayDate(r.date))}</td><td>${esc(r.item)}</td><td>${esc(r.unit)}</td><td>${esc(r.warehouse)}</td>   
+    <td><span class="badge ${r.type==="in"?"badge-in":"badge-out"}">${r.type==="in"?"داخل":"خارج"}</span></td>   
+    <td>${fmt(r.qty)}</td><td>${fmt(r.rate)}</td><td>${fmt(r.total)}</td><td>${esc(r.party)}</td><td>${esc(r.ref)}</td>   
+    <td class="no-print"><button class="btn btn-info" onclick="editRecord('${r.id}')">سمول</button>   
+    <button class="btn btn-danger" onclick="deleteRecord('${r.id}')">حذف</button></td>   
+  </tr>`).join("");   
+  fillWarehouseFilter();   
+}   
+function fillWarehouseFilter(){   
+  const sel=document.getElementById("recordFilterWarehouse"); if(!sel)return;   
+  const current=sel.value;   
+  const names=[...new Set(records.map(r=>r.warehouse).filter(Boolean))].sort();   
+  sel.innerHTML='<option value="">ټول کودامونه</option>'+names.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");   
+  sel.value=names.includes(current)?current:"";   
+}   
+function resetRecordFilters(){   
+  document.getElementById("recordSearch").value="";   
+  document.getElementById("recordFilterType").value="";   
+  document.getElementById("recordFilterWarehouse").value="";   
+  renderRecords();   
+}   
+   
+/* =========================   
+   موجودي / کودام   
+========================= */   
+function getStockMap(){   
+  const map=new Map();   
+  records.forEach(r=>{   
+    const key=[r.warehouse,r.item,r.unit].join("|||");   
+    if(!map.has(key))map.set(key,{warehouse:r.warehouse,item:r.item,unit:r.unit,inQty:0,outQty:0,inValue:0,outValue:0});   
+    const s=map.get(key);   
+    if(r.type==="in"){s.inQty+=num(r.qty);s.inValue+=num(r.total)}   
+    else{s.outQty+=num(r.qty);s.outValue+=num(r.total)}   
+  });   
+  return [...map.values()].map(s=>({...s,qty:s.inQty-s.outQty,avgCost:s.inQty?s.inValue/s.inQty:0,value:Math.max(0,s.qty)*(s.avgCost)}));   
+}   
+function getStock(item,warehouse,unit){   
+  const s=getStockMap().find(x=>x.item===item&&x.warehouse===warehouse&&x.unit===unit);   
+  return s||{qty:0,avgCost:0};   
+}   
+function renderStock(){   
+  const q=(document.getElementById("stockSearch")?.value||"").trim().toLowerCase();   
+  const list=getStockMap().filter(s=>[s.item,s.warehouse,s.unit].join(" ").toLowerCase().includes(q));   
+  const body=document.getElementById("stockBody");   
+  if(!list.length){body.innerHTML='<tr><td colspan="9" class="empty">موجودي نشته</td></tr>';return}   
+  body.innerHTML=list.sort((a,b)=>a.item.localeCompare(b.item)).map(s=>{   
+    const status=s.qty<0?'<span class="stock-negative">منفي</span>':s.qty===0?'<span class="muted">خالي</span>':s.qty<=5?'<span class="stock-low">کمه موجودي</span>':'<span class="success-text">ښه</span>';   
+    return `<tr><td>${esc(s.item)}</td><td>${esc(s.unit)}</td><td>${esc(s.warehouse)}</td><td>${fmt(s.inQty)}</td><td>${fmt(s.outQty)}</td><td>${fmt(s.qty)}</td><td>${fmt(s.avgCost)}</td><td>${fmt(s.value)}</td><td>${status}</td></tr>`   
+  }).join("");   
+}   
+function renderWarehouse(){   
+  const map=new Map();   
+  const stocks = getStockMap();   
+     
+  stocks.forEach(s=>{   
+    if(!map.has(s.warehouse))map.set(s.warehouse,{inQty:0,outQty:0,value:0,items:new Set()});   
+    const x=map.get(s.warehouse);x.inQty+=s.inQty;x.outQty+=s.outQty;x.value+=s.value;x.items.add(s.item);   
+  });   
+     
+  const body=document.getElementById("warehouseBody");   
+  const arr=[...map.entries()];   
+  if(!arr.length){   
+    body.innerHTML='<tr><td colspan="6" class="empty">کودام معلومات نشته</td></tr>';   
+  } else {   
+    body.innerHTML=arr.map(([w,s])=>`<tr><td><b>${esc(w)}</b></td><td>${fmt(s.inQty)}</td><td>${fmt(s.outQty)}</td><td>${fmt(s.inQty-s.outQty)}</td><td>${fmt(s.value)}</td><td><span class="badge badge-paid">${s.items.size} ډولونه</span></td></tr>`).join("");   
+  }   
+   
+  // Render Detailed Items inside Warehouse   
+  const detailsBody=document.getElementById("warehouseDetailsBody");   
+  if(!stocks.length){   
+    detailsBody.innerHTML='<tr><td colspan="8" class="empty">په کودام کې د هیڅ جنس تفصیلي معلومات نشته</td></tr>';   
+  } else {   
+    detailsBody.innerHTML=stocks.sort((a,b)=>a.warehouse.localeCompare(b.warehouse)).map(s=>`   
+      <tr>   
+        <td><b>${esc(s.warehouse)}</b></td>   
+        <td>${esc(s.item)}</td>   
+        <td>${esc(s.unit)}</td>   
+        <td>${fmt(s.inQty)}</td>   
+        <td>${fmt(s.outQty)}</td>   
+        <td><b>${fmt(s.qty)}</b></td>   
+        <td>${fmt(s.avgCost)}</td>   
+        <td>${fmt(s.value)}</td>   
+      </tr>   
+    `).join("");   
+  }   
+}   
+   
+/* =========================   
+   کتاب   
+========================= */   
+function renderBook(){   
+  const from=document.getElementById("bookFrom")?.value||"";   
+  const to=document.getElementById("bookTo")?.value||"";   
+  const q=(document.getElementById("bookSearch")?.value||"").toLowerCase();   
+  const list=records.filter(r=>(!from||r.date>=from)&&(!to||r.date<=to)&&(!q||[r.item,r.party,r.ref,r.notes,r.warehouse].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.date.localeCompare(b.date));   
+  const body=document.getElementById("bookBody");   
+  if(!list.length){body.innerHTML='<tr><td colspan="9" class="empty">د ټاکل شوي فلټر لپاره معلومات نشته</td></tr>';return}   
+  body.innerHTML=list.map(r=>`<tr>   
+    <td>${esc(displayDate(r.date))}</td><td>${esc(r.item)}</td><td>${r.type==="in"?"داخل":"خارج"}</td><td>${fmt(r.qty)} ${esc(r.unit)}</td><td>${fmt(r.rate)}</td>   
+    <td>${r.type==="in"?fmt(r.total):"-"}</td><td>${r.type==="out"?fmt(r.total):"-"}</td><td>${esc(r.billNo||r.ref)}</td><td>${esc(r.notes)}</td>   
+  </tr>`).join("");   
+}   
+   
+/* =========================   
+   بیل / فاکتور   
+========================= */   
+function nextBillNumber(){   
+  const nums=bills.map(b=>Number(b.billNo)).filter(Number.isFinite);   
+  return String(Math.max(1000,...nums)+1);   
+}   
+function initInvoice(){   
+  document.getElementById("invoiceDate").value=todayISO();   
+  document.getElementById("invoiceNumber").value=nextBillNumber();   
+  document.getElementById("invoicePaid").value=0;   
+  document.getElementById("invoiceItemsBody").innerHTML="";   
+  invoiceRows=0; addInvoiceRow();   
+  updateInvoiceTotals();   
+}   
+function clearInvoice(){   
+  document.getElementById("invoiceCustomerName").value="";   
+  document.getElementById("invoiceCustomerPhone").value="";   
+  document.getElementById("invoiceCustomerAddress").value="";   
+  document.getElementById("invoiceDate").value=todayISO();   
+  document.getElementById("invoiceWarehouse").value="اصلي کودام";   
+  document.getElementById("invoiceNumber").value=nextBillNumber();   
+  document.getElementById("invoiceNotes").value="";   
+  document.getElementById("invoicePaid").value=0;   
+  document.getElementById("invoiceItemsBody").innerHTML="";   
+  invoiceRows=0;addInvoiceRow();updateInvoiceTotals();   
+}   
+   
+function updateDatalistOptions(){   
+  const names=[...new Set(records.map(r=>r.item).filter(Boolean))].sort();   
+  const dl=document.getElementById("itemList");   
+  dl.innerHTML=names.map(n=>`<option value="${esc(n)}"></option>`).join("");   
+}   
+   
+function addInvoiceRow(data={}){   
+  invoiceRows++;   
+  const tr=document.createElement("tr");   
+  tr.dataset.row=invoiceRows;   
+  tr.innerHTML=`   
+    <td><input list="itemList" class="inv-item" value="${esc(data.item||"")}" placeholder="د جنس نوم یا لټون..." oninput="invoiceItemChanged(this)" onchange="invoiceItemChanged(this)"></td>   
+    <td><input class="inv-unit" value="${esc(data.unit||"دانه")}" placeholder="دانه"></td>   
+    <td><input class="inv-qty" type="number" min="0.001" step="any" value="${data.qty??1}" oninput="updateInvoiceTotals()"></td>   
+    <td><input class="inv-cost" type="number" min="0" step="any" value="${data.cost??0}" oninput="updateInvoiceTotals()"></td>   
+    <td><input class="inv-sale" type="number" min="0" step="any" value="${data.sale??0}" oninput="updateInvoiceTotals()"></td>   
+    <td class="inv-line-total" style="font-weight:bold">0</td>   
+    <td class="inv-line-profit" style="font-weight:bold">0</td>   
+    <td><button class="btn btn-danger remove" onclick="this.closest('tr').remove();updateInvoiceTotals()">✕</button></td>`;   
+  document.getElementById("invoiceItemsBody").appendChild(tr);   
+  if(data.item) invoiceItemChanged(tr.querySelector(".inv-item"));   
+  updateInvoiceTotals();   
+}   
+   
+function invoiceItemChanged(input){   
+  const tr=input.closest("tr");   
+  const val = input.value.trim();   
+  if(!val) return;   
+  const unit=tr.querySelector(".inv-unit");   
+  const cost=tr.querySelector(".inv-cost");   
+  const stock=getStock(val, document.getElementById("invoiceWarehouse").value, unit.value||"دانه");   
+     
+  if(stock.qty>0 && !num(cost.value)) cost.value=stock.avgCost.toFixed(2);   
+  updateInvoiceTotals();   
+}   
+   
+document.getElementById("invoiceWarehouse").addEventListener("input",()=>{   
+  document.querySelectorAll("#invoiceItemsBody tr .inv-item").forEach(invoiceItemChanged);   
+});   
+   
+function getInvoiceItems(){   
+  return [...document.querySelectorAll("#invoiceItemsBody tr")].map(tr=>({   
+    item:tr.querySelector(".inv-item").value.trim(),   
+    unit:tr.querySelector(".inv-unit").value.trim()||"دانه",   
+    qty:num(tr.querySelector(".inv-qty").value),   
+    cost:num(tr.querySelector(".inv-cost").value),   
+    sale:num(tr.querySelector(".inv-sale").value)   
+  })).filter(x=>x.item&&x.qty>0);   
+}   
+   
+function updateInvoiceTotals(){ 
+ 
+  let sale = 0; 
+  let cost = 0; 
+ 
+  document.querySelectorAll("#invoiceItemsBody tr").forEach(tr => { 
+ 
+    const qty  = num(tr.querySelector(".inv-qty")?.value); 
+    const c    = num(tr.querySelector(".inv-cost")?.value); 
+    const s    = num(tr.querySelector(".inv-sale")?.value); 
+ 
+    const lineSale = qty * s; 
+    const lineCost = qty * c; 
+ 
+    sale += lineSale; 
+    cost += lineCost; 
+ 
+    if(tr.querySelector(".inv-line-total")){ 
+      tr.querySelector(".inv-line-total").textContent = fmt(lineSale); 
+    } 
+ 
+    if(tr.querySelector(".inv-line-profit")){ 
+ 
+      const p = lineSale - lineCost; 
+ 
+      tr.querySelector(".inv-line-profit").innerHTML = 
+        p >= 0 
+        ? `<span class="profit">${fmt(p)}</span>` 
+        : `<span class="loss">${fmt(p)}</span>`; 
+    } 
+ 
+  }); 
+ 
+ 
+  /* 
+   * مهم: 
+   * د تادیې عدد نور د oninput پر وخت 0 ته نه اړول کېږي. 
+   * کاروونکی کولای شي په موبایل او کمپیوټر کې عدد ولیکي. 
+   */ 
+ 
+  const paidInput = document.getElementById("invoicePaid"); 
+ 
+  let paid = num(paidInput?.value); 
+ 
+  if(paid < 0){ 
+    paid = 0; 
+  } 
+ 
+  const due = Math.max(sale - paid, 0); 
+  const profit = sale - cost; 
+ 
+ 
+  document.getElementById("invoiceSaleTotal").textContent = fmt(sale); 
+ 
+  if(document.getElementById("invoiceCostTotal")){ 
+    document.getElementById("invoiceCostTotal").textContent = fmt(cost); 
+  } 
+ 
+  if(document.getElementById("invoiceProfitTotal")){ 
+ 
+    document.getElementById("invoiceProfitTotal").innerHTML = 
+      profit >= 0 
+      ? `<span class="profit">${fmt(profit)}</span>` 
+      : `<span class="loss">${fmt(profit)}</span>`; 
+  } 
+ 
+  document.getElementById("invoiceDue").textContent = fmt(due); 
+} 
+ 
+function saveInvoice(andPrint=false){   
+  const customer=document.getElementById("invoiceCustomerName").value.trim()||"عمومي مشتری";   
+  const phone=document.getElementById("invoiceCustomerPhone").value.trim();   
+  const address=document.getElementById("invoiceCustomerAddress").value.trim();   
+  const date=document.getElementById("invoiceDate").value||todayISO();   
+  const warehouse=document.getElementById("invoiceWarehouse").value.trim()||"اصلي کودام";   
+  const billNo=document.getElementById("invoiceNumber").value||nextBillNumber();   
+  const notes=document.getElementById("invoiceNotes").value.trim();   
+  const items=getInvoiceItems();   
+     
+  if(!items.length){showToast("لږ تر لږه یو جنس اضافه کړئ");return}   
+     
+  for(const it of items){   
+    if(it.sale<0||it.cost<0){showToast("نرخونه سم داخل کړئ");return}   
+  }   
+     
+  // که د کودام موجودي کافي نه وي، بیل ثبت نه شي؛ موجودي باید بدله نه شي. 
+  const missingStock = items.filter(it => getStock(it.item, warehouse, it.unit).qty < it.qty); 
+  if(missingStock.length){ 
+    const names = missingStock.map(it => `${it.item} (${fmt(getStock(it.item, warehouse, it.unit).qty)} موجود)`).join("، "); 
+    showToast(`موجودي کافي نه ده: ${names}`); 
+    return; 
+  } 
+ 
+  let totalSale=0,totalCost=0;   
+  items.forEach(it=>{totalSale+=it.qty*it.sale;totalCost+=it.qty*it.cost});   
+  const paid=Math.min(Math.max(num(document.getElementById("invoicePaid").value),0),totalSale);   
+  const bill={   
+    id:uid("bill"),billNo,date,customer,phone,address,warehouse,notes,items,   
+    totalSale,totalCost,paid,due:totalSale-paid,createdAt:new Date().toISOString()   
+  };   
+     
+  bills.push(bill);   
+  items.forEach(it=>{   
+    records.push({   
+      id:uid("rec"),type:"out",date,item:it.item,unit:it.unit,warehouse,   
+      qty:it.qty,rate:it.cost,total:it.qty*it.cost,party:customer,ref:billNo,   
+      notes:"د خرڅلاو بیل",source:"bill",billId:bill.id,billNo   
+    });   
+  });   
+     
+  saveAll();renderAll();   
+  showToast(`بیل ${billNo} ثبت شو`);   
+  if(andPrint){   
+    preparePrintBill(bill);   
+    setTimeout(()=>window.print(),100);   
+  }   
+  clearInvoice();   
+}   
+   
+function preparePrintBill(bill){   
+  document.getElementById("printShopName").textContent = document.getElementById("shopName").value || "د جنسي محاسبې سوداګریز مرکز";   
+  document.getElementById("printShopAddress").textContent = document.getElementById("shopAddress").value || "ادرس: کابل، افغانستان";   
+   
+  document.getElementById("printCustomer").textContent = bill.customer || "عمومي مشتری";   
+  document.getElementById("printPhone").textContent = bill.phone || "نشته";   
+  document.getElementById("printAddress").textContent = bill.address || "نشته";   
+     
+  document.getElementById("printNumber").textContent = bill.billNo;   
+  document.getElementById("printDate").textContent = displayDate(bill.date);   
+  document.getElementById("printNotes").textContent = bill.notes || "هیڅ"; 
+  document.getElementById("printTotalSale").textContent=fmt(bill.totalSale); 
+  document.getElementById("printTotalPaid").textContent=fmt(bill.paid); 
+  document.getElementById("printTotalDue").textContent=fmt(Math.max(num(bill.totalSale)-num(bill.paid),0));   
+   
+  const body = document.getElementById("printTableBody");   
+  body.innerHTML = "";   
+   
+  (bill.items || []).forEach((item, index) => {   
+    const total = num(item.qty) * num(item.sale);   
+    body.innerHTML += `   
+      <tr>   
+        <td>${index + 1}</td>   
+        <td>${esc(item.item)}</td>   
+        <td>${esc(item.unit)}</td>   
+        <td>${fmt(item.qty)}</td>   
+        <td>${fmt(item.sale)}</td>   
+        <td>${fmt(total)}</td>   
+      </tr>   
+    `;   
+  });   
+   
+  const sale = num(bill.totalSale);   
+  const paid = num(bill.paid);   
+  const due = Math.max(sale - paid, 0);   
+   
+  document.getElementById("printTotalSale").textContent = fmt(sale);   
+  document.getElementById("printTotalPaid").textContent = fmt(paid);   
+  document.getElementById("printTotalDue").textContent = fmt(due);   
+}   
+   
+function printCurrentInvoice(){   
+  updateInvoiceTotals();   
+  const items=getInvoiceItems();   
+  if(!items.length){showToast("د چاپ لپاره جنس اضافه کړئ");return}   
+  const fake={   
+    customer:document.getElementById("invoiceCustomerName").value||"عمومي مشتری",   
+    phone:document.getElementById("invoiceCustomerPhone").value,   
+    address:document.getElementById("invoiceCustomerAddress").value,   
+    billNo:document.getElementById("invoiceNumber").value,   
+    date:document.getElementById("invoiceDate").value,   
+    notes:document.getElementById("invoiceNotes").value,   
+    items:items,   
+    totalSale:document.getElementById("invoiceSaleTotal").textContent.replace(/,/g, ''),   
+    paid:document.getElementById("invoicePaid").value   
+  };   
+  preparePrintBill(fake);   
+  const sec=document.getElementById("invoice");sec.classList.add("print-active");   
+  window.print();   
+  setTimeout(()=>sec.classList.remove("print-active"),500);   
+}   
+   
+/* =========================   
+   بلونه / پورونه   
+========================= */   
+function billProfit(b){return num(b.totalSale)-num(b.totalCost)}   
+function renderBills(){   
+  const q=(document.getElementById("billSearch")?.value||"").trim().toLowerCase();   
+  const status=document.getElementById("billStatusFilter")?.value||"";   
+  const list=bills.filter(b=>{   
+    const text=[b.billNo,b.customer,b.phone,b.address,b.notes,...(b.items||[]).map(i=>i.item)].join(" ").toLowerCase();   
+    const isPaid=num(b.due)<=0;   
+    return (!q||text.includes(q))&&(!status||(status==="paid"?isPaid:!isPaid));   
+  }).sort((a,b)=>String(b.date).localeCompare(String(a.date)));   
+  const body=document.getElementById("billsBody");   
+  if(!list.length){body.innerHTML='<tr><td colspan="11" class="empty">بلونه ونه موندل شول</td></tr>';return}   
+  body.innerHTML=list.map(b=>{   
+    const p=billProfit(b), paid=num(b.paid), due=Math.max(num(b.totalSale)-paid,0);   
+    const items=(b.items||[]).map(i=>`${esc(i.item)} × ${fmt(i.qty)}`).join("، ");   
+    return `<tr>   
+      <td><b>${esc(b.billNo)}</b></td><td>${esc(displayDate(b.date))}</td><td>${esc(b.customer)}</td><td>${items}</td>   
+      <td>${fmt(b.totalSale)}</td><td>${fmt(b.totalCost)}</td><td>${p>=0?`<span class="profit">${fmt(p)}</span>`:`<span class="loss">${fmt(p)}</span>`}</td>   
+      <td>${fmt(paid)}</td><td>${fmt(due)}</td>   
+      <td><span class="badge ${due<=0?"badge-paid":"badge-debt"}">${due<=0?"خلاص شوی":"قرضدار"}</span></td>   
+      <td class="no-print"><button class="btn btn-info" onclick="openEditModal('${b.id}')">سمول</button>   
+      <button class="btn btn-secondary" onclick="printSavedBill('${b.id}')">چاپ</button>   
+      <button class="btn btn-danger" onclick="deleteBill('${b.id}')">حذف</button></td>   
+    </tr>`;   
+  }).join("");   
+}   
+function openEditModal(id){   
+  const b=bills.find(x=>x.id===id);if(!b)return;   
+  document.getElementById("editBillId").value=b.id;   
+  document.getElementById("editCustomerName").value=b.customer||"";   
+  document.getElementById("editCustomerPhone").value=b.phone||"";   
+  document.getElementById("editCustomerAddress").value=b.address||"";   
+  document.getElementById("editBillDate").value=b.date||todayISO();   
+  document.getElementById("editBillWarehouse").value=b.warehouse||"اصلي کودام";   
+  document.getElementById("editBillNotes").value=b.notes||"";   
+  document.getElementById("editAdditionalPayment").value=0;   
+  document.getElementById("editBillModal").classList.add("show");   
+}   
+function closeEditModal(){document.getElementById("editBillModal").classList.remove("show")}   
+function updateBill(){   
+  const id=document.getElementById("editBillId").value;   
+  const b=bills.find(x=>x.id===id);if(!b)return;   
+  b.customer=document.getElementById("editCustomerName").value.trim()||"عمومي مشتری";   
+  b.phone=document.getElementById("editCustomerPhone").value.trim();   
+  b.address=document.getElementById("editCustomerAddress").value.trim();   
+  b.date=document.getElementById("editBillDate").value||b.date;   
+  b.warehouse=document.getElementById("editBillWarehouse").value.trim()||b.warehouse;   
+  b.notes=document.getElementById("editBillNotes").value.trim();   
+  const extra=Math.max(num(document.getElementById("editAdditionalPayment").value),0);   
+  b.paid=Math.min(num(b.totalSale),num(b.paid)+extra);   
+  b.due=Math.max(num(b.totalSale)-b.paid,0);   
+  records.forEach(r=>{if(r.billId===b.id){r.party=b.customer;r.date=b.date;r.warehouse=b.warehouse;r.notes="د خرڅلاو بیل"}})   
+  saveAll();closeEditModal();renderAll();showToast("د بل معلومات اصلاح شول");   
+}   
+function deleteBill(id){   
+  const b=bills.find(x=>x.id===id);if(!b)return;   
+  if(!confirm(`ایا بیل ${b.billNo} او د هغه اړوند د موجودۍ خرڅ ثبتونه هم حذف کړئ؟`))return;   
+  bills=bills.filter(x=>x.id!==id);   
+  records=records.filter(r=>r.billId!==id);   
+  saveAll();renderAll();showToast("بیل حذف شو");   
+}   
+function printSavedBill(id){   
+  const b=bills.find(x=>x.id===id);if(!b)return;   
+  preparePrintBill(b);   
+  const section=document.getElementById("invoice");   
+  showSection("invoice");   
+  section.classList.add("print-active");   
+  setTimeout(()=>window.print(),100);   
+  setTimeout(()=>{ section.classList.remove("print-active"); },700);   
+}   
+   
+/* =========================   
+   ډشبورډ او چارتونه   
+========================= */   
+const LOW_STOCK_DISMISSED_KEY = "jinsi_hisab_low_stock_dismissed_v2"; 
+const LOW_STOCK_HIDE_MS = 2 * 24 * 60 * 60 * 1000; 
+ 
+function loadLowStockDismissed(){ 
+  try{ 
+    const x=JSON.parse(localStorage.getItem(LOW_STOCK_DISMISSED_KEY)||"{}"); 
+    return x && typeof x==="object" && !Array.isArray(x) ? x : {}; 
+  }catch(e){ return {}; } 
+} 
+let lowStockDismissed=loadLowStockDismissed(); 
+ 
+function lowStockKey(s){ 
+  return [s.item||"",s.warehouse||"",s.unit||""].join("|"); 
+} 
+ 
+function cleanupLowStockDismissed(keys){ 
+  const now=Date.now(), clean={}; 
+  Object.keys(lowStockDismissed).forEach(k=>{ 
+    const t=Number(lowStockDismissed[k]); 
+    if(keys.has(k) && Number.isFinite(t) && now-t<LOW_STOCK_HIDE_MS) clean[k]=t; 
+  }); 
+  lowStockDismissed=clean; 
+  localStorage.setItem(LOW_STOCK_DISMISSED_KEY,JSON.stringify(clean)); 
+} 
+ 
+function hideLowStockAlerts(){ 
+  const now=Date.now(); 
+  getStockMap().filter(s=>s.qty<=5).forEach(s=>{ 
+    lowStockDismissed[lowStockKey(s)]=now; 
+  }); 
+  localStorage.setItem(LOW_STOCK_DISMISSED_KEY,JSON.stringify(lowStockDismissed)); 
+  renderDashboard(); 
+  showToast("د ټیټې موجودۍ خبرتیاوې د ۲ ورځو لپاره پټې شوې"); 
+} 
+ 
+function closeLowStockAlert(){ hideLowStockAlerts(); } 
+ 
+function formatRemaining(ms){ 
+  const min=Math.max(0,Math.ceil(ms/60000)); 
+  const d=Math.floor(min/1440), h=Math.floor((min%1440)/60), m=min%60; 
+  if(d) return `${d} ورځې، ${h} ساعته وروسته`; 
+  if(h) return `${h} ساعته، ${m} دقیقې وروسته`; 
+  return `${m} دقیقې وروسته`; 
+} 
+ 
+ 
+/* ===== د ګټې/تاوان واحده محاسبه ===== 
+   ډیشبورډ او راپور دواړه له همدې فنکشن څخه استفاده کوي. 
+*/ 
+function getBillCostUnified(b){ 
+  const savedCost = num(b.totalCost); 
+  if(savedCost > 0) return savedCost; 
+ 
+  return (Array.isArray(b.items) ? b.items : []).reduce((sum,it)=>{ 
+    return sum + num(it.qty) * num(it.cost); 
+  },0); 
+} 
+ 
+function getBillNetUnified(b){ 
+  return num(b.totalSale) - getBillCostUnified(b); 
+} 
+ 
+function calculateProfitLossUnified(list){ 
+  const sales = list.reduce((sum,b)=>sum + num(b.totalSale),0); 
+  const cost = list.reduce((sum,b)=>sum + getBillCostUnified(b),0); 
+  const net = sales - cost; 
+ 
+  return { 
+    sales, 
+    cost, 
+    net, 
+    profit: Math.max(net,0), 
+    loss: Math.max(-net,0) 
+  }; 
+} 
+ 
+function renderDashboard(){   
+  const stocks = getStockMap();   
+     
+  // ټیټه موجودي: تر ۵ دانو کمه یا مساوي 
+  const lowStocks=stocks.filter(s=>s.qty<=5); 
+  const keys=new Set(lowStocks.map(lowStockKey)); 
+  cleanupLowStockDismissed(keys); 
+ 
+  const now=Date.now(); 
+  const visibleLowStocks=lowStocks.filter(s=>{ 
+    const t=Number(lowStockDismissed[lowStockKey(s)]||0); 
+    return !t || now-t>=LOW_STOCK_HIDE_MS; 
+  }); 
+ 
+  const alertBox=document.getElementById("lowStockAlert"); 
+  const alertList=document.getElementById("lowStockList"); 
+  const timer=document.getElementById("lowStockTimer"); 
+ 
+  if(visibleLowStocks.length){ 
+    alertList.innerHTML=visibleLowStocks.map(s=> 
+      `<li class="alert-item">${esc(s.item)} (${esc(s.warehouse)}): <b>${fmt(s.qty)}</b> ${esc(s.unit)}</li>` 
+    ).join(""); 
+    const hiddenTimes=Object.values(lowStockDismissed).map(Number).filter(Number.isFinite); 
+    const earliest=hiddenTimes.length?Math.min(...hiddenTimes):0; 
+    if(timer){ 
+      timer.textContent=earliest 
+        ? `⏱️ پټې شوې خبرتیاوې به ${formatRemaining(LOW_STOCK_HIDE_MS-(now-earliest))} په خپله بیا ښکاره شي.` 
+        : "⏱️ د «پټول» تڼۍ سره خبرتیا د ۲ ورځو لپاره پټېږي."; 
+    } 
+    alertBox.classList.add("show"); 
+  }else{ 
+    alertList.innerHTML=""; 
+    if(timer) timer.textContent=""; 
+    alertBox.classList.remove("show"); 
+  } 
+ 
+  const totalIn=records.filter(r=>r.type==="in").reduce((a,r)=>a+num(r.total),0);   
+  const totalOut=records.filter(r=>r.type==="out").reduce((a,r)=>a+num(r.total),0);   
+  const stockValue=stocks.reduce((a,s)=>a+s.value,0);   
+  const items=new Set(records.map(r=>r.item).filter(Boolean)).size;   
+  const warehouses=new Set(records.map(r=>r.warehouse).filter(Boolean)).size;   
+  const sales=bills.reduce((a,b)=>a+num(b.totalSale),0);   
+  const paid=bills.reduce((a,b)=>a+num(b.paid),0);   
+  const debt=bills.reduce((a,b)=>a+Math.max(num(b.totalSale)-num(b.paid),0),0); 
+  const dashboardPL = calculateProfitLossUnified(bills); 
+  const profit = dashboardPL.profit; 
+  const loss = dashboardPL.loss;   
+     
+  document.getElementById("mIn").textContent=fmt(totalIn);   
+  document.getElementById("mOut").textContent=fmt(totalOut);   
+  document.getElementById("mStockValue").textContent=fmt(stockValue);   
+  document.getElementById("mItems").textContent=items;   
+  document.getElementById("mWarehouses").textContent=warehouses;   
+  document.getElementById("mRecords").textContent=records.length;   
+  document.getElementById("mSales").textContent=fmt(sales);   
+  document.getElementById("mPaid").textContent=fmt(paid);   
+  document.getElementById("mDebt").textContent=fmt(debt);   
+  document.getElementById("mProfit").textContent=fmt(profit);   
+  document.getElementById("mLoss").textContent=fmt(loss);   
+  document.getElementById("mBills").textContent=bills.length;   
+   
+  const recent=records.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,8);   
+  document.getElementById("recentRecords").innerHTML=recent.length?recent.map(r=>`<tr><td>${esc(displayDate(r.date))}</td><td>${esc(r.item)}</td><td>${r.type==="in"?"داخل":"خارج"}</td><td>${fmt(r.qty)}</td><td>${fmt(r.total)}</td></tr>`).join(""):'<tr><td colspan="5" class="empty">ثبت نشته</td></tr>';   
+  renderCharts();   
+}   
+setInterval(()=>{if(document.getElementById("dashboard")?.classList.contains("active"))renderDashboard();},60000); 
+ 
+function renderCharts(){   
+  const invIn=records.filter(r=>r.type==="in").reduce((a,r)=>a+num(r.qty),0);   
+  const invOut=records.filter(r=>r.type==="out").reduce((a,r)=>a+num(r.qty),0);   
+  const paid=bills.reduce((a,b)=>a+num(b.paid),0);   
+  const debt=bills.reduce((a,b)=>a+Math.max(num(b.totalSale)-num(b.paid),0),0);   
+  if(typeof Chart==="undefined")return;   
+  if(inventoryChart)inventoryChart.destroy();   
+  if(financeChart)financeChart.destroy();   
+  if(salesChart)salesChart.destroy();   
+  inventoryChart=new Chart(document.getElementById("inventoryChart"),{type:"bar",data:{labels:["داخل","خارج"],datasets:[{label:"مقدار",data:[invIn,invOut]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}});   
+  financeChart=new Chart(document.getElementById("financeChart"),{type:"doughnut",data:{labels:["ورکړل شوي","پور"],datasets:[{data:[paid,debt]}]},options:{responsive:true,maintainAspectRatio:false}});   
+  const months={};   
+  bills.forEach(b=>{   
+    const key=String(b.date||"").slice(0,7)||"نامعلوم";   
+    months[key]=(months[key]||0)+num(b.totalSale);   
+  });   
+  const keys=Object.keys(months).sort().slice(-12);   
+  salesChart=new Chart(document.getElementById("salesChart"),{type:"line",data:{labels:keys.length?keys:["تر اوسه نشته"],datasets:[{label:"خرڅلاو",data:keys.length?keys.map(k=>months[k]):[0],tension:.25,fill:false}]},options:{responsive:true,maintainAspectRatio:false}});   
+}   
+   
+/* ========================= 
+   راپورونه: ورځنی / میاشتنی / ربع وار 
+========================= */ 
+function reportDateBounds(){ 
+  const period=document.getElementById("reportPeriod")?.value||"month"; 
+  const date=document.getElementById("reportDate")?.value || todayISO(); 
+  const d=new Date(date+"T00:00:00"); 
+  let from="",to=""; 
+  if(period==="day"){ 
+    from=date; to=date; 
+  }else if(period==="month"){ 
+    const y=d.getFullYear(),m=d.getMonth(); 
+    from=new Date(y,m,1); to=new Date(y,m+1,0); 
+    from=from.toISOString().slice(0,10); to=to.toISOString().slice(0,10); 
+  }else{ 
+    const q=Number(document.getElementById("reportQuarter")?.value||Math.floor(d.getMonth()/3)+1); 
+    const y=d.getFullYear(),startMonth=(q-1)*3; 
+    from=new Date(y,startMonth,1).toISOString().slice(0,10); 
+    to=new Date(y,startMonth+3,0).toISOString().slice(0,10); 
+  } 
+  return {period,date,from,to}; 
+} 
+ 
+function renderReports(){ 
+  const period=document.getElementById("reportPeriod"); 
+  const quarter=document.getElementById("reportQuarter"); 
+  const dateInput=document.getElementById("reportDate"); 
+  if(!period||!dateInput)return; 
+  dateInput.value=dateInput.value||todayISO(); 
+  quarter.style.display=period.value==="quarter"?"":"none"; 
+ 
+  const b=reportDateBounds(); 
+  const list=bills.filter(x=>String(x.date||"").slice(0,10)>=b.from && String(x.date||"").slice(0,10)<=b.to); 
+  const reportPL = calculateProfitLossUnified(list); 
+  const sales = reportPL.sales; 
+  const cost = reportPL.cost; 
+  const profitRaw = reportPL.net; 
+  const profit = reportPL.profit; 
+  const loss = reportPL.loss; 
+  const debt = list.reduce((a,x)=>a+Math.max(num(x.totalSale)-num(x.paid),0),0); 
+  const paid = list.reduce((a,x)=>a+num(x.paid),0); 
+ 
+  document.getElementById("rSales").textContent=fmt(sales); 
+  document.getElementById("rProfit").textContent=fmt(profit); 
+  document.getElementById("rLoss").textContent=fmt(Number.isFinite(loss) ? loss : 0); 
+  document.getElementById("rDebt").textContent=fmt(debt); 
+ 
+  const title=period.value==="day"?"ورځنی راپور":period.value==="month"?"میاشتنی راپور":"ربع وار راپور"; 
+  document.getElementById("reportRangeText").textContent=`${title}: ${displayDate(b.from)} تر ${displayDate(b.to)}`; 
+ 
+  document.getElementById("reportBody").innerHTML=` 
+    <tr><td>ټول خرڅلاو</td><td><b>${fmt(sales)}</b></td></tr> 
+    <tr><td>ټول لګښت</td><td>${fmt(cost)}</td></tr> 
+    <tr><td>خالص ګټه</td><td class="profit">${fmt(profit)}</td></tr> 
+    <tr><td>ټول تاوان</td><td class="loss">${fmt(loss)}</td></tr> 
+    <tr><td>نغدې ورکړې</td><td>${fmt(paid)}</td></tr> 
+    <tr><td>پاتې پور</td><td class="stock-low">${fmt(debt)}</td></tr> 
+    <tr><td>د بلونو شمېر</td><td>${list.length}</td></tr> 
+  `; 
+ 
+  if(typeof Chart==="undefined")return; 
+  if(reportChart)reportChart.destroy(); 
+  const canvas=document.getElementById("reportChart"); 
+  if(!canvas)return; 
+  reportChart=new Chart(canvas,{ 
+    type:"bar", 
+    data:{ 
+      labels:["ګټه","تاوان","پور"], 
+      datasets:[{label:title,data:[profit,loss,debt]}] 
+    }, 
+    options:{ 
+      responsive:true,maintainAspectRatio:false, 
+      plugins:{legend:{display:false}}, 
+      scales:{y:{beginAtZero:true}} 
+    } 
+  }); 
+} 
+ 
+function printReport(){ 
+  const sec=document.getElementById("reports"); 
+  document.querySelectorAll(".section").forEach(x=>x.classList.remove("print-active")); 
+  sec.classList.add("print-active"); 
+  window.print(); 
+} 
+ 
+/* =========================   
+   بیکاپ / ریسټور   
+========================= */   
+function exportData(){   
+  const data={version:3,exportedAt:new Date().toISOString(),records,bills};   
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});   
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`jinsi-hisab-backup-${todayISO()}.json`;a.click();URL.revokeObjectURL(a.href);   
+}   
+document.getElementById("importFile").addEventListener("change",function(){   
+  const file=this.files[0];if(!file)return;   
+  const reader=new FileReader();   
+  reader.onload=e=>{   
+    try{   
+      const data=JSON.parse(e.target.result);   
+      const newRecords=Array.isArray(data)?data:data.records;   
+      const newBills=Array.isArray(data)?[]:data.bills; 
+       if(!Array.isArray(newRecords))throw new Error("bad");   
+      if(!confirm("اوسني معلومات به د بیکاپ معلوماتو سره بدل شي. دوام ورکړو؟"))return;   
+      records=newRecords;   
+      bills=Array.isArray(newBills)?newBills:[];   
+      saveAll();renderAll();showToast("بیکاپ په بریالیتوب سره راوستل شو");   
+    }catch(err){alert("د بیکاپ فایل ناسم دی")}   
+  };   
+  reader.readAsText(file);this.value="";   
+});   
+   
+/* =========================   
+   عمومي رینډر   
+========================= */   
+function renderAll(){   
+  updateDatalistOptions();   
+  renderDashboard();renderRecords();renderWarehouse();renderStock();renderBook();renderBills(); 
+  if(document.getElementById("reports")?.classList.contains("active")) renderReports();   
+  if(!document.querySelector("#invoiceItemsBody tr"))initInvoice();   
+}   
+window.addEventListener("beforeprint",()=>{   
+  const active=document.querySelector(".section.active");   
+  if(active)active.classList.add("print-active");   
+});   
+window.addEventListener("afterprint",()=>{   
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("print-active"));   
+});   
+document.getElementById("editBillModal").addEventListener("click",e=>{if(e.target.id==="editBillModal")closeEditModal()});   
+document.getElementById("passModal").addEventListener("click",e=>{if(e.target.id==="passModal")closePassModal()});   
+   
+// Initial Setup   
+checkLogin();   
+initInvoice();   
+renderAll();   
+</script>   
+</body>   
+</html>
