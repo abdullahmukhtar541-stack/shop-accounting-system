@@ -2876,6 +2876,23 @@ html body .login-screen.login-hidden {
     } 
 } 
 </style>
+<style>
+/* ================= V2: Customers / Suppliers / Cash Box ================= */
+.v2-dashboard-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:18px 0}
+.v2-stat{background:linear-gradient(135deg,#fff,#f8fafc);border:1px solid #dbe4ea;border-radius:18px;padding:18px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 24px rgba(15,23,42,.06);transition:.25s}
+.v2-stat:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(15,23,42,.10)}
+.v2-stat-icon{width:50px;height:50px;border-radius:15px;background:#ccfbf1;display:flex;align-items:center;justify-content:center;font-size:23px;flex:none}
+.v2-stat span{display:block;color:#64748b;font-size:13px;font-weight:700}.v2-stat strong{display:block;font-size:22px;margin-top:4px;color:#0f172a}
+.v2-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.v2-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.v2-form .full{grid-column:1/-1}
+#customers .field input,#customers .field textarea,#suppliers .field input,#suppliers .field textarea,#expenses .field input,#expenses .field select{background:var(--card);color:var(--text)}
+.v2-expense-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v2-edit{background:#dbeafe;color:#1d4ed8;border:0;border-radius:9px;padding:7px 10px}.v2-delete{background:#fee2e2;color:#991b1b;border:0;border-radius:9px;padding:7px 10px;margin-right:5px}
+.v2-debt{color:#b45309;font-weight:800}.v2-zero{color:#15803d;font-weight:700}
+body.v2-dark{--bg:#0b1120;--card:#111827;--text:#f8fafc;--muted:#94a3b8;--border:#334155}body.v2-dark .topbar{background:#111827;color:#fff}body.v2-dark .card,body.v2-dark .v2-box,body.v2-dark .v2-stat,body.v2-dark .table-wrap,body.v2-dark table,body.v2-dark th,body.v2-dark td{background:#111827;color:#f8fafc;border-color:#334155}body.v2-dark th{background:#1e293b;color:#cbd5e1}body.v2-dark .field label{color:#cbd5e1}body.v2-dark .field input,body.v2-dark .field select,body.v2-dark .field textarea,body.v2-dark .search-row input,body.v2-dark .search-row select{background:#0f172a;color:#fff;border-color:#475569}body.v2-dark .v2-stat strong{color:#fff}
+@media(max-width:1000px){.v2-dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.v2-dashboard-grid,.v2-expense-stats{grid-template-columns:1fr}.v2-form{grid-template-columns:1fr}.v2-form .full{grid-column:auto}.v2-box{padding:14px}.v2-stat{padding:15px}.v2-stat strong{font-size:20px}}
+</style>
 </head>
 <body>   
    
@@ -2917,7 +2934,10 @@ html body .login-screen.login-hidden {
       <button data-section="book"><span class="icon">📖</span> د کتاب پاڼه</button>   
       <button data-section="invoice"><span class="icon">🧾</span> نوی بیل / فاکتور</button>   
       <button data-section="bills"><span class="icon">💳</span> بلونه / پورونه</button> 
-      <button data-section="reports"><span class="icon">📊</span> راپورونه</button> 
+      <button data-section="reports"><span class="icon">📊</span> راپورونه</button>
+      <button data-section="customers"><span class="icon">👥</span> مشتریان</button>
+      <button data-section="suppliers"><span class="icon">🚚</span> عرضه کوونکي</button>
+      <button data-section="expenses"><span class="icon">💵</span> مصارف / Cash Box</button> 
       <button type="button" onclick="openSystemInfo()"> 
   <span class="icon">ℹ️</span> د سیستم معلومات 
 </button> 
@@ -2933,7 +2953,8 @@ html body .login-screen.login-hidden {
       <div class="top-actions no-print">   
          
         <button class="btn btn-warning" onclick="openPassModal()">🔑 پاسورډ بدلول</button>   
-        <button class="btn btn-info" onclick="exportData()">⬇️ بیکاپ</button>   
+        <button class="btn btn-info" onclick="exportData()">⬇️ بیکاپ</button>
+        <button class="btn btn-secondary" id="v2DarkBtn" onclick="toggleV2DarkMode()">🌙 تیاره حالت</button>   
         <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">⬆️ بېرته راوستل</button>   
         <button class="btn btn-danger" onclick="logout()">وتل 🚪</button>   
         <input id="importFile" type="file" accept=".json" hidden>   
@@ -2955,8 +2976,15 @@ html body .login-screen.login-hidden {
             <span>⚠️ خبرداری: د لاندې جنسونو موجودي تر ۵ عددونو کمه شوه!</span>   
           </div>   
           <div style="display:flex;justify-content:flex-start;margin-bottom:8px"><button class="btn btn-warning no-print" type="button" onclick="hideLowStockAlerts()">پټول ⏳</button></div><div id="lowStockTimer" style="font-size:12px;color:#991b1b;margin-bottom:10px"></div><ul class="alert-list" id="lowStockList"></ul>   
-        </div>   
-   
+        </div>
+
+        <div class="v2-dashboard-grid">
+          <div class="v2-stat"><div class="v2-stat-icon">👥</div><div><span>مشتریان</span><strong id="v2CustomerCount">0</strong></div></div>
+          <div class="v2-stat"><div class="v2-stat-icon">🚚</div><div><span>عرضه کوونکي</span><strong id="v2SupplierCount">0</strong></div></div>
+          <div class="v2-stat"><div class="v2-stat-icon">💵</div><div><span>د نن ورځې مصارف</span><strong id="v2TodayExpenses">0</strong></div></div>
+          <div class="v2-stat"><div class="v2-stat-icon">💰</div><div><span>د نغدو صندوق بیلانس</span><strong id="v2CashBalance">0</strong></div></div>
+        </div>
+
         <div class="grid grid-6">   
            
           <div class="card metric"><div><div class="label">د داخل جنس ارزښت</div><div class="value" id="mIn">0</div></div><div class="symbol">📥</div></div>   
@@ -3286,6 +3314,69 @@ html body .login-screen.login-hidden {
         </div>   
       </section>   
    
+
+      <!-- V2 Customers -->
+      <section class="section" id="customers">
+        <div class="section-title"><div><h3>👥 مشتریان</h3><p>د مشتریانو نوم، ټیلیفون، پته او معلومات</p></div></div>
+        <div class="v2-box">
+          <form id="customerForm" class="v2-form">
+            <input type="hidden" id="customerId">
+            <div class="field"><label>د مشتری نوم</label><input id="customerName" required placeholder="مثلاً: احمد خان"></div>
+            <div class="field"><label>ټیلیفون</label><input id="customerPhone" placeholder="0700000000"></div>
+            <div class="field"><label>پته</label><input id="customerAddress" placeholder="کلی / بازار / سیمه"></div>
+            <div class="field full"><label>یادښت</label><textarea id="customerNotes" placeholder="اضافي معلومات"></textarea></div>
+            <div class="actions full"><button class="btn btn-primary" type="submit">💾 مشتری ثبت کړه</button><button class="btn btn-secondary" type="button" onclick="clearV2CustomerForm()">پاکول</button></div>
+          </form>
+        </div>
+        <div class="v2-box" style="margin-top:18px">
+          <div class="search-row"><input id="customerSearch" placeholder="د مشتری نوم، ټیلیفون یا پته ولټوئ..." oninput="renderV2Customers()"></div>
+          <div class="table-wrap"><table><thead><tr><th>نوم</th><th>ټیلیفون</th><th>پته</th><th>پور</th><th>یادښت</th><th>عملیات</th></tr></thead><tbody id="customersBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <!-- V2 Suppliers -->
+      <section class="section" id="suppliers">
+        <div class="section-title"><div><h3>🚚 عرضه کوونکي</h3><p>د مال راوړونکو او عرضه کوونکو معلومات</p></div></div>
+        <div class="v2-box">
+          <form id="supplierForm" class="v2-form">
+            <input type="hidden" id="supplierId">
+            <div class="field"><label>د عرضه کوونکي نوم</label><input id="supplierName" required placeholder="مثلاً: حبیب شرکت"></div>
+            <div class="field"><label>ټیلیفون</label><input id="supplierPhone"></div>
+            <div class="field"><label>پته</label><input id="supplierAddress"></div>
+            <div class="field full"><label>یادښت</label><textarea id="supplierNotes"></textarea></div>
+            <div class="actions full"><button class="btn btn-primary" type="submit">💾 عرضه کوونکی ثبت کړه</button><button class="btn btn-secondary" type="button" onclick="clearV2SupplierForm()">پاکول</button></div>
+          </form>
+        </div>
+        <div class="v2-box" style="margin-top:18px">
+          <div class="search-row"><input id="supplierSearch" placeholder="د عرضه کوونکي لټون..." oninput="renderV2Suppliers()"></div>
+          <div class="table-wrap"><table><thead><tr><th>نوم</th><th>ټیلیفون</th><th>پته</th><th>د ثبتونو شمېر</th><th>یادښت</th><th>عملیات</th></tr></thead><tbody id="suppliersBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <!-- V2 Expenses -->
+      <section class="section" id="expenses">
+        <div class="section-title"><div><h3>💵 مصارف / Cash Box</h3><p>کرایه، برق، ترانسپورټ، چای، معاش او نور مصارف</p></div></div>
+        <div class="v2-dashboard-grid v2-expense-stats">
+          <div class="v2-stat"><div class="v2-stat-icon">💰</div><div><span>نغدي بیلانس</span><strong id="v2ExpenseCash">0</strong></div></div>
+          <div class="v2-stat"><div class="v2-stat-icon">📅</div><div><span>د نن ورځې مصارف</span><strong id="v2ExpenseToday">0</strong></div></div>
+          <div class="v2-stat"><div class="v2-stat-icon">📊</div><div><span>ټول مصارف</span><strong id="v2ExpenseTotal">0</strong></div></div>
+        </div>
+        <div class="v2-box" style="margin-top:18px">
+          <form id="expenseForm" class="v2-form">
+            <input type="hidden" id="expenseId">
+            <div class="field"><label>نېټه</label><input type="date" id="expenseDate" required></div>
+            <div class="field"><label>د مصرف ډول</label><select id="expenseCategory"><option>کرایه</option><option>برق</option><option>ترانسپورټ</option><option>چای</option><option>معاش</option><option>نور</option></select></div>
+            <div class="field"><label>مقدار</label><input type="number" id="expenseAmount" min="0" step="0.01" required placeholder="0"></div>
+            <div class="field"><label>توضیحات</label><input id="expenseNote" placeholder="د مصرف تفصیل"></div>
+            <div class="actions full"><button class="btn btn-primary" type="submit">💾 مصرف ثبت کړه</button><button class="btn btn-secondary" type="button" onclick="clearV2ExpenseForm()">پاکول</button></div>
+          </form>
+        </div>
+        <div class="v2-box" style="margin-top:18px">
+          <div class="search-row"><input id="expenseSearch" placeholder="د مصرف لټون..." oninput="renderV2Expenses()"><input type="date" id="expenseFilterDate" onchange="renderV2Expenses()"><select id="expenseFilterCategory" onchange="renderV2Expenses()"><option value="">ټول ډولونه</option><option>کرایه</option><option>برق</option><option>ترانسپورټ</option><option>چای</option><option>معاش</option><option>نور</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>نېټه</th><th>ډول</th><th>مقدار</th><th>توضیحات</th><th>عملیات</th></tr></thead><tbody id="expensesBody"></tbody></table></div>
+        </div>
+      </section>
+
     </div>   
   </main>   
 </div>   
@@ -3425,7 +3516,7 @@ let invoiceRows = 0;
    
 const titles = {   
   dashboard:"ډشبورډ","new-record":"نوی جنس / ثبت",records:"ثبتونه",warehouse:"کودام",   
-  stock:"موجودي",book:"د کتاب پاڼه",invoice:"نوی بیل / فاکتور",bills:"بلونه / پورونه",reports:"راپورونه"   
+  stock:"موجودي",book:"د کتاب پاڼه",invoice:"نوی بیل / فاکتور",bills:"بلونه / پورونه",reports:"راپورونه",customers:"مشتریان",suppliers:"عرضه کوونکي",expenses:"مصارف / Cash Box"   
 };   
    
 function loadArray(key){   
@@ -4258,7 +4349,7 @@ function printReport(){
    بیکاپ / ریسټور   
 ========================= */   
 function exportData(){   
-  const data={version:3,exportedAt:new Date().toISOString(),records,bills};   
+  const data={version:4,exportedAt:new Date().toISOString(),records,bills,customers:v2Customers,suppliers:v2Suppliers,expenses:v2Expenses};   
   const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});   
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`jinsi-hisab-backup-${todayISO()}.json`;a.click();URL.revokeObjectURL(a.href);   
 }   
@@ -4274,17 +4365,99 @@ document.getElementById("importFile").addEventListener("change",function(){
       if(!confirm("اوسني معلومات به د بیکاپ معلوماتو سره بدل شي. دوام ورکړو؟"))return;   
       records=newRecords;   
       bills=Array.isArray(newBills)?newBills:[];   
-      saveAll();renderAll();showToast("بیکاپ په بریالیتوب سره راوستل شو");   
+      saveAll();saveV2();renderAll();showToast("بیکاپ په بریالیتوب سره راوستل شو");   
     }catch(err){alert("د بیکاپ فایل ناسم دی")}   
   };   
   reader.readAsText(file);this.value="";   
 });   
    
+
+/* =========================
+   V2: مشتریان / عرضه کوونکي / مصارف / تیاره حالت
+========================= */
+const V2_CUSTOMERS_KEY="shop_customers_v2";
+const V2_SUPPLIERS_KEY="shop_suppliers_v2";
+const V2_EXPENSES_KEY="shop_expenses_v2";
+let v2Customers=loadArray(V2_CUSTOMERS_KEY);
+let v2Suppliers=loadArray(V2_SUPPLIERS_KEY);
+let v2Expenses=loadArray(V2_EXPENSES_KEY);
+
+function saveV2(){
+  localStorage.setItem(V2_CUSTOMERS_KEY,JSON.stringify(v2Customers));
+  localStorage.setItem(V2_SUPPLIERS_KEY,JSON.stringify(v2Suppliers));
+  localStorage.setItem(V2_EXPENSES_KEY,JSON.stringify(v2Expenses));
+}
+function toggleV2DarkMode(){
+  document.body.classList.toggle("v2-dark");
+  const on=document.body.classList.contains("v2-dark");
+  localStorage.setItem("shop_dark_mode_v2",on?"1":"0");
+  const b=document.getElementById("v2DarkBtn");
+  if(b)b.textContent=on?"☀️ روښانه حالت":"🌙 تیاره حالت";
+}
+function initV2(){
+  if(localStorage.getItem("shop_dark_mode_v2")==="1")document.body.classList.add("v2-dark");
+  const b=document.getElementById("v2DarkBtn");
+  if(b)b.textContent=document.body.classList.contains("v2-dark")?"☀️ روښانه حالت":"🌙 تیاره حالت";
+  const ef=document.getElementById("expenseDate"); if(ef && !ef.value)ef.value=todayISO();
+  const cf=document.getElementById("customerForm"); if(cf)cf.addEventListener("submit",saveV2Customer);
+  const sf=document.getElementById("supplierForm"); if(sf)sf.addEventListener("submit",saveV2Supplier);
+  const ex=document.getElementById("expenseForm"); if(ex)ex.addEventListener("submit",saveV2Expense);
+}
+function renderV2Customers(){
+  const body=document.getElementById("customersBody"); if(!body)return;
+  const q=(document.getElementById("customerSearch")?.value||"").trim().toLowerCase();
+  const list=v2Customers.filter(c=>[c.name,c.phone,c.address,c.notes].join(" ").toLowerCase().includes(q));
+  if(!list.length){body.innerHTML='<tr><td colspan="6" class="empty">تر اوسه مشتری نشته</td></tr>';return;}
+  body.innerHTML=list.map(c=>{
+    const debt=bills.filter(b=>(b.customer||"").trim()===c.name.trim()).reduce((a,b)=>a+Math.max(num(b.totalSale)-num(b.paid),0),0);
+    return `<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.phone)}</td><td>${esc(c.address)}</td><td class="${debt>0?'v2-debt':'v2-zero'}">${fmt(debt)}</td><td>${esc(c.notes)}</td><td><button class="v2-edit" onclick="editV2Customer('${c.id}')">سمول</button><button class="v2-delete" onclick="deleteV2Customer('${c.id}')">حذف</button></td></tr>`;
+  }).join("");
+}
+function clearV2CustomerForm(){document.getElementById("customerForm")?.reset();document.getElementById("customerId").value="";}
+function saveV2Customer(e){
+  e.preventDefault(); const id=document.getElementById("customerId").value;
+  const data={id:id||uid("cus"),name:document.getElementById("customerName").value.trim(),phone:document.getElementById("customerPhone").value.trim(),address:document.getElementById("customerAddress").value.trim(),notes:document.getElementById("customerNotes").value.trim()};
+  if(!data.name){showToast("د مشتری نوم ولیکئ");return;}
+  const i=v2Customers.findIndex(x=>x.id===id); if(i>=0)v2Customers[i]=data; else v2Customers.push(data);
+  saveV2();clearV2CustomerForm();renderV2Customers();showToast(i>=0?"مشتری اصلاح شو":"مشتری ثبت شو");
+}
+function editV2Customer(id){const c=v2Customers.find(x=>x.id===id);if(!c)return;showSection("customers");document.getElementById("customerId").value=c.id;document.getElementById("customerName").value=c.name;document.getElementById("customerPhone").value=c.phone||"";document.getElementById("customerAddress").value=c.address||"";document.getElementById("customerNotes").value=c.notes||"";}
+function deleteV2Customer(id){if(!confirm("ایا دا مشتری حذف کړئ؟"))return;v2Customers=v2Customers.filter(x=>x.id!==id);saveV2();renderV2Customers();showToast("مشتری حذف شو");}
+
+function renderV2Suppliers(){
+  const body=document.getElementById("suppliersBody");if(!body)return; const q=(document.getElementById("supplierSearch")?.value||"").trim().toLowerCase();
+  const list=v2Suppliers.filter(x=>[x.name,x.phone,x.address,x.notes].join(" ").toLowerCase().includes(q));
+  if(!list.length){body.innerHTML='<tr><td colspan="6" class="empty">تر اوسه عرضه کوونکی نشته</td></tr>';return;}
+  body.innerHTML=list.map(s=>{const count=records.filter(r=>(r.party||"").trim()===s.name.trim()).length;return `<tr><td><b>${esc(s.name)}</b></td><td>${esc(s.phone)}</td><td>${esc(s.address)}</td><td>${count}</td><td>${esc(s.notes)}</td><td><button class="v2-edit" onclick="editV2Supplier('${s.id}')">سمول</button><button class="v2-delete" onclick="deleteV2Supplier('${s.id}')">حذف</button></td></tr>`}).join("");
+}
+function clearV2SupplierForm(){document.getElementById("supplierForm")?.reset();document.getElementById("supplierId").value="";}
+function saveV2Supplier(e){e.preventDefault();const id=document.getElementById("supplierId").value;const data={id:id||uid("sup"),name:document.getElementById("supplierName").value.trim(),phone:document.getElementById("supplierPhone").value.trim(),address:document.getElementById("supplierAddress").value.trim(),notes:document.getElementById("supplierNotes").value.trim()};if(!data.name){showToast("د عرضه کوونکي نوم ولیکئ");return;}const i=v2Suppliers.findIndex(x=>x.id===id);if(i>=0)v2Suppliers[i]=data;else v2Suppliers.push(data);saveV2();clearV2SupplierForm();renderV2Suppliers();showToast(i>=0?"عرضه کوونکی اصلاح شو":"عرضه کوونکی ثبت شو");}
+function editV2Supplier(id){const s=v2Suppliers.find(x=>x.id===id);if(!s)return;showSection("suppliers");document.getElementById("supplierId").value=s.id;document.getElementById("supplierName").value=s.name;document.getElementById("supplierPhone").value=s.phone||"";document.getElementById("supplierAddress").value=s.address||"";document.getElementById("supplierNotes").value=s.notes||"";}
+function deleteV2Supplier(id){if(!confirm("ایا دا عرضه کوونکی حذف کړئ؟"))return;v2Suppliers=v2Suppliers.filter(x=>x.id!==id);saveV2();renderV2Suppliers();showToast("عرضه کوونکی حذف شو");}
+
+function renderV2Expenses(){
+  const body=document.getElementById("expensesBody");if(!body)return;const q=(document.getElementById("expenseSearch")?.value||"").trim().toLowerCase(),df=document.getElementById("expenseFilterDate")?.value||"",cat=document.getElementById("expenseFilterCategory")?.value||"";
+  const list=v2Expenses.filter(x=>(!q||[x.category,x.note].join(" ").toLowerCase().includes(q))&&(!df||x.date===df)&&(!cat||x.category===cat)).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  const total=v2Expenses.reduce((a,x)=>a+num(x.amount),0),today=v2Expenses.filter(x=>x.date===todayISO()).reduce((a,x)=>a+num(x.amount),0),cash=bills.reduce((a,b)=>a+num(b.paid),0)-total;
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=fmt(v)};set("v2ExpenseTotal",total);set("v2ExpenseToday",today);set("v2ExpenseCash",cash);
+  if(!list.length){body.innerHTML='<tr><td colspan="5" class="empty">تر اوسه مصرف نشته</td></tr>';return;}
+  body.innerHTML=list.map(x=>`<tr><td>${esc(displayDate(x.date))}</td><td>${esc(x.category)}</td><td><b>${fmt(x.amount)}</b></td><td>${esc(x.note)}</td><td><button class="v2-edit" onclick="editV2Expense('${x.id}')">سمول</button><button class="v2-delete" onclick="deleteV2Expense('${x.id}')">حذف</button></td></tr>`).join("");
+}
+function clearV2ExpenseForm(){document.getElementById("expenseForm")?.reset();document.getElementById("expenseId").value="";document.getElementById("expenseDate").value=todayISO();}
+function saveV2Expense(e){e.preventDefault();const id=document.getElementById("expenseId").value;const data={id:id||uid("exp"),date:document.getElementById("expenseDate").value||todayISO(),category:document.getElementById("expenseCategory").value,amount:num(document.getElementById("expenseAmount").value),note:document.getElementById("expenseNote").value.trim()};if(data.amount<=0){showToast("د مصرف مقدار سم ولیکئ");return;}const i=v2Expenses.findIndex(x=>x.id===id);if(i>=0)v2Expenses[i]=data;else v2Expenses.push(data);saveV2();clearV2ExpenseForm();renderV2Expenses();showToast(i>=0?"مصرف اصلاح شو":"مصرف ثبت شو");}
+function editV2Expense(id){const x=v2Expenses.find(e=>e.id===id);if(!x)return;showSection("expenses");document.getElementById("expenseId").value=x.id;document.getElementById("expenseDate").value=x.date;document.getElementById("expenseCategory").value=x.category;document.getElementById("expenseAmount").value=x.amount;document.getElementById("expenseNote").value=x.note||"";}
+function deleteV2Expense(id){if(!confirm("ایا دا مصرف حذف کړئ؟"))return;v2Expenses=v2Expenses.filter(x=>x.id!==id);saveV2();renderV2Expenses();showToast("مصرف حذف شو");}
+function renderV2Dashboard(){renderV2Customers();renderV2Suppliers();renderV2Expenses();}
+
+const _oldShowSection=showSection;
+showSection=function(id){_oldShowSection(id);if(id==="customers")renderV2Customers();if(id==="suppliers")renderV2Suppliers();if(id==="expenses")renderV2Expenses();};
+
 /* =========================   
    عمومي رینډر   
 ========================= */   
 function renderAll(){   
-  updateDatalistOptions();   
+  updateDatalistOptions();
+  try{renderV2Dashboard();}catch(e){}   
   renderDashboard();renderRecords();renderWarehouse();renderStock();renderBook();renderBills(); 
   if(document.getElementById("reports")?.classList.contains("active")) renderReports();   
   if(!document.querySelector("#invoiceItemsBody tr"))initInvoice();   
